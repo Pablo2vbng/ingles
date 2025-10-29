@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 1: Vocabulario de Trabajo (Interactivo)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Azul claro */
+            color: #333; /* Negro */
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff; /* Blanco */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 30px;
+            max-width: 800px;
+            margin: auto;
+        }
+        h1, h2, h3 {
+            color: #005f73; /* Azul oscuro */
+            text-align: center;
+        }
+        h2 {
+            border-top: 2px solid #ff8c00; /* Naranja */
+            padding-top: 20px;
+            margin-top: 40px;
+        }
+        p {
+            text-align: center;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .exercise-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+        .column {
+            width: 48%;
+            min-width: 300px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            padding: 12px;
+            border-radius: 5px;
+            border-left: 5px solid #ff8c00; /* Naranja */
+            display: flex;
+            align-items: center;
+        }
+        /* Estilos para los inputs de los ejercicios */
+        .matching-input {
+            width: 30px;
+            height: 30px;
+            margin-left: 15px;
+            text-align: center;
+            font-size: 1em;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+        .fill-in-select {
+            font-size: 1em;
+            padding: 5px;
+            margin: 0 5px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            transition: border-color 0.3s;
+        }
+        /* Clases para la corrección */
+        .correct {
+            border-color: #28a745 !important; /* Verde */
+            background-color: #e9f7ef;
+        }
+        .incorrect {
+            border-color: #dc3545 !important; /* Rojo */
+            background-color: #fce8e6;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 1em;
+            font-weight: bold;
+            color: #ffffff; /* Blanco */
+            background-color: #0077b6; /* Azul */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #005f73;
+        }
+        button.reset {
+            background-color: #ff8c00; /* Naranja */
+        }
+        button.reset:hover {
+            background-color: #e67e00;
+        }
+        #results {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #005f73;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            padding: 12px 20px;
+            background-color: #6c757d;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .back-link:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Tema 1: Vocabulario de Trabajo</h1>
+        
+        <div id="exercise1">
+            <p><strong>Ejercicio 1:</strong> Relaciona cada palabra con su definición. Escribe la letra correcta en el recuadro.</p>
+            <div class="exercise-container">
+                <div class="column">
+                    <ul>
+                        <li>1. Application <input type="text" id="match1" class="matching-input" maxlength="1"></li>
+                        <li>2. Colleague <input type="text" id="match2" class="matching-input" maxlength="1"></li>
+                        <li>3. Deadline <input type="text" id="match3" class="matching-input" maxlength="1"></li>
+                        <li>4. Interview <input type="text" id="match4" class="matching-input" maxlength="1"></li>
+                        <li>5. Promotion <input type="text" id="match5" class="matching-input" maxlength="1"></li>
+                        <li>6. Salary <input type="text" id="match6" class="matching-input" maxlength="1"></li>
+                        <li>7. Sick leave <input type="text" id="match7" class="matching-input" maxlength="1"></li>
+                        <li>8. Vacation <input type="text" id="match8" class="matching-input" maxlength="1"></li>
+                        <li>9. Workplace <input type="text" id="match9" class="matching-input" maxlength="1"></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <ul>
+                        <li>a. A meeting with a potential employer to discuss a job.</li>
+                        <li>b. The amount of money you are paid for your work.</li>
+                        <li>c. A period of time when you are not at work because you are ill.</li>
+                        <li>d. A period of time when you are not at work for pleasure.</li>
+                        <li>e. The place where you work.</li>
+                        <li>f. A request for a job.</li>
+                        <li>g. A person who works with you.</li>
+                        <li>h. The date by which something must be done.</li>
+                        <li>i. A raise in your job position and pay.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="practice-section" id="exercise2">
+            <h2>PRACTICE</h2>
+            <h3>1. Fill in the gap with the correct word.</h3>
+            <ol>
+                <li>I have a job 
+                    <select id="fill1" class="fill-in-select">
+                        <option value="">-- selecciona --</option>
+                        <option value="interview">interview</option>
+                        <option value="deadline">deadline</option>
+                        <option value="vacation">vacation</option>
+                        <option value="colleague">colleague</option>
+                        <option value="promotion">promotion</option>
+                        <option value="sick leave">sick leave</option>
+                        <option value="workplace">workplace</option>
+                        <option value="salary">salary</option>
+                    </select> 
+                on Monday.</li>
+                <li>I need to finish this project by the 
+                    <select id="fill2" class="fill-in-select">
+                        <option value="">-- selecciona --</option>
+                        <option value="interview">interview</option>
+                        <option value="deadline">deadline</option>
+                        <option value="vacation">vacation</option>
+                        <option value="colleague">colleague</option>
+                        <option value="promotion">promotion</option>
+                        <option value="sick leave">sick leave</option>
+                        <option value="workplace">workplace</option>
+                        <option value="salary">salary</option>
+                    </select> .</li>
+                <li>I’m taking 
+                    <select id="fill3" class="fill-in-select">
+                         <option value="">-- selecciona --</option>
+                        <option value="interview">interview</option>
+                        <option value="deadline">deadline</option>
+                        <option value="vacation">vacation</option>
+                        <option value="colleague">colleague</option>
+                        <option value="promotion">promotion</option>
+                        <option value="sick leave">sick leave</option>
+                        <option value="workplace">workplace</option>
+                        <option value="salary">salary</option>
+                    </select> next week.</li>
+                <li>My 
+                    <select id="fill4" class="fill-in-select">
+                         <option value="">-- selecciona --</option>
+                        <option value="interview">interview</option>
+                        <option value="deadline">deadline</option>
+                        <option value="vacation">vacation</option>
+                        <option value="colleague">colleague</option>
+                        <option value="promotion">promotion</option>
+                        <option value="sick leave">sick leave</option>
+                        <option value="workplace">workplace</option>
+                        <option value="salary">salary</option>
+                    </select> is very supportive.</li>
+                <li>I’m hoping to get a 
+                    <select id="fill5" class="fill-in-select">
+                        <option value="">-- selecciona --</option>
+                        <option value="interview">interview</option>
+                        <option value="deadline">deadline</option>
+                        <option value="vacation">vacation</option>
+                        <option value="colleague">colleague</option>
+                        <option value="promotion">promotion</option>
+                        <option value="sick leave">sick leave</option>
+                        <option value="workplace">workplace</option>
+                        <option value="salary">salary</option>
+                    </select> soon.</li>
+                <li>I’m calling in 
+                    <select id="fill6" class="fill-in-select">
+                        <option value="">-- selecciona --</option>
+                        <option value="interview">interview</option>
+                        <option value="deadline">deadline</option>
+                        <option value="vacation">vacation</option>
+                        <option value="colleague">colleague</option>
+                        <option value="promotion">promotion</option>
+                        <option value="sick leave">sick leave</option>
+                        <option value="workplace">workplace</option>
+                        <option value="salary">salary</option>
+                    </select> today because I’m not feeling well.</li>
+                <li>I love my 
+                    <select id="fill7" class="fill-in-select">
+                         <option value="">-- selecciona --</option>
+                        <option value="interview">interview</option>
+                        <option value="deadline">deadline</option>
+                        <option value="vacation">vacation</option>
+                        <option value="colleague">colleague</option>
+                        <option value="promotion">promotion</option>
+                        <option value="sick leave">sick leave</option>
+                        <option value="workplace">workplace</option>
+                        <option value="salary">salary</option>
+                    </select>. It’s a great place to work.</li>
+                <li>My 
+                    <select id="fill8" class="fill-in-select">
+                        <option value="">-- selecciona --</option>
+                        <option value="interview">interview</option>
+                        <option value="deadline">deadline</option>
+                        <option value="vacation">vacation</option>
+                        <option value="colleague">colleague</option>
+                        <option value="promotion">promotion</option>
+                        <option value="sick leave">sick leave</option>
+                        <option value="workplace">workplace</option>
+                        <option value="salary">salary</option>
+                    </select> is $50,000 per year.</li>
+            </ol>
+        </div>
+
+        <div id="exercise3">
+            <h3>2. SDG Sustainable Development. Match the terms.</h3>
+            <div class="exercise-container">
+                <div class="column">
+                    <ul>
+                        <li>1. Sustainable development <input type="text" id="sdg1" class="matching-input" maxlength="1"></li>
+                        <li>2. Decent work <input type="text" id="sdg2" class="matching-input" maxlength="1"></li>
+                        <li>3. Economic growth <input type="text" id="sdg3" class="matching-input" maxlength="1"></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <ul>
+                        <li>a) Development that meets the needs of the present without compromising the ability of future generations...</li>
+                        <li>b) Work that is productive and decent in working conditions and security...</li>
+                        <li>c) An increase in the production of goods and services in an economy over time.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="button-container">
+            <button onclick="checkAnswers()">Corregir Ejercicios</button>
+            <button class="reset" onclick="resetQuiz()">Intentar de Nuevo</button>
+        </div>
+        <div id="results"></div>
+        
+        <a href="menu.html" class="back-link">Volver al Menú Principal</a>
+    </div>
+
+<script>
+    // --- RESPUESTAS CORRECTAS ---
+    const correctAnswers = {
+        // Ejercicio 1
+        match1: 'f', match2: 'g', match3: 'h', match4: 'a', match5: 'i',
+        match6: 'b', match7: 'c', match8: 'd', match9: 'e',
+        // Ejercicio 2
+        fill1: 'interview', fill2: 'deadline', fill3: 'vacation', fill4: 'colleague',
+        fill5: 'promotion', fill6: 'sick leave', fill7: 'workplace', fill8: 'salary',
+        // Ejercicio 3
+        sdg1: 'a', sdg2: 'b', sdg3: 'c'
+    };
+
+    function checkAnswers() {
+        let score = 0;
+        const totalQuestions = Object.keys(correctAnswers).length;
+
+        // Itera sobre todas las respuestas correctas para comprobar cada pregunta
+        for (const id in correctAnswers) {
+            const inputElement = document.getElementById(id);
+            const userAnswer = inputElement.value.trim().toLowerCase();
+            const correctAnswer = correctAnswers[id];
+            
+            // Limpia clases previas
+            inputElement.classList.remove('correct', 'incorrect');
+
+            if (userAnswer === correctAnswer) {
+                inputElement.classList.add('correct');
+                score++;
+            } else {
+                inputElement.classList.add('incorrect');
+            }
+        }
+        
+        // Muestra el resultado final
+        const resultsElement = document.getElementById('results');
+        resultsElement.innerHTML = `Has acertado ${score} de ${totalQuestions} preguntas.`;
+    }
+
+    function resetQuiz() {
+        // Itera sobre todas las preguntas para limpiar los valores y estilos
+        for (const id in correctAnswers) {
+            const inputElement = document.getElementById(id);
+            inputElement.classList.remove('correct', 'incorrect');
+            
+            // Diferencia entre input de texto y select
+            if (inputElement.tagName === 'SELECT') {
+                inputElement.selectedIndex = 0;
+            } else {
+                inputElement.value = '';
+            }
+        }
+        
+        // Limpia el mensaje de resultados
+        document.getElementById('results').innerHTML = '';
+    }
+</script>
+
+</body>
+</html>

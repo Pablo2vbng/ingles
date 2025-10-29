@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 2: Vocabulario de Gestión de Proyectos (Interactivo)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 30px;
+            max-width: 800px;
+            margin: auto;
+        }
+        h1, h2 {
+            color: #005f73;
+            text-align: center;
+        }
+        h2 {
+            border-top: 2px solid #ff8c00;
+            padding-top: 20px;
+            margin-top: 40px;
+        }
+        p {
+            text-align: center;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .exercise-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+        .column {
+            width: 48%;
+            min-width: 300px;
+        }
+        ul, ol {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            padding: 12px;
+            border-radius: 5px;
+            border-left: 5px solid #ff8c00;
+            display: flex;
+            align-items: center;
+        }
+        .matching-input {
+            width: 30px;
+            height: 30px;
+            margin-left: 15px;
+            text-align: center;
+            font-size: 1em;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+        .fill-in-select {
+            font-size: 1em;
+            padding: 5px;
+            margin: 0 5px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            transition: border-color 0.3s;
+        }
+        .correct {
+            border-color: #28a745 !important;
+            background-color: #e9f7ef;
+        }
+        .incorrect {
+            border-color: #dc3545 !important;
+            background-color: #fce8e6;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 1em;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #0077b6;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #005f73;
+        }
+        button.reset {
+            background-color: #ff8c00;
+        }
+        button.reset:hover {
+            background-color: #e67e00;
+        }
+        #results {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #005f73;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            padding: 12px 20px;
+            background-color: #6c757d;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .back-link:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Tema 2: Vocabulario de Gestión de Proyectos</h1>
+        
+        <div id="exercise1">
+            <p><strong>Exercise 1:</strong> Match each word (A) with its definition (B). Write the correct letter in the box.</p>
+            <div class="exercise-container">
+                <div class="column">
+                    <h3>A</h3>
+                    <ul>
+                        <li>1. Deliverable <input type="text" id="match1" class="matching-input" maxlength="1"></li>
+                        <li>2. Milestone <input type="text" id="match2" class="matching-input" maxlength="1"></li>
+                        <li>3. Stakeholder <input type="text" id="match3" class="matching-input" maxlength="1"></li>
+                        <li>4. Scope <input type="text" id="match4" class="matching-input" maxlength="1"></li>
+                        <li>5. Timeline <input type="text" id="match5" class="matching-input" maxlength="1"></li>
+                        <li>6. Budget <input type="text" id="match6" class="matching-input" maxlength="1"></li>
+                        <li>7. Risk <input type="text" id="match7" class="matching-input" maxlength="1"></li>
+                        <li>8. Issue <input type="text" id="match8" class="matching-input" maxlength="1"></li>
+                        <li>9. To brainstorm <input type="text" id="match9" class="matching-input" maxlength="1"></li>
+                        <li>10. To prioritize <input type="text" id="match10" class="matching-input" maxlength="1"></li>
+                        <li>11. To launch <input type="text" id="match11" class="matching-input" maxlength="1"></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>B</h3>
+                    <ul>
+                        <li>a. A specific outcome or result that must be completed.</li>
+                        <li>b. A person or organization who has an interest in the project.</li>
+                        <li>c. The range of work that must be completed for the project.</li>
+                        <li>d. A plan that shows when each task will be completed.</li>
+                        <li>e. An estimate of the amount of money that will be spent.</li>
+                        <li>f. A potential event that could have a negative impact on the project.</li>
+                        <li>g. A problem or difficulty that arises during the project.</li>
+                        <li>h. To generate many ideas quickly, often without judgment.</li>
+                        <li>i. To rank tasks in order of importance.</li>
+                        <li>j. A key point in the project’s timeline that marks the completion of a major phase.</li>
+                        <li>k. The introduction of a new product or service to the market.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="exercise2">
+            <h2>PRACTICE</h2>
+            <p><strong>Exercise 2:</strong> Fill in the gaps with the correct word.</p>
+            <ol>
+                <li>The project manager ensures that all <select id="fill1" class="fill-in-select"><option value="">-- select --</option></select> are completed on time.</li>
+                <li>The team has reached a major <select id="fill2" class="fill-in-select"><option value="">-- select --</option></select> by completing the design phase.</li>
+                <li>The <select id="fill3" class="fill-in-select"><option value="">-- select --</option></select> in the project include the client and the team.</li>
+                <li>The project <select id="fill4" class="fill-in-select"><option value="">-- select --</option></select> includes developing a new website.</li>
+                <li>The project <select id="fill5" class="fill-in-select"><option value="">-- select --</option></select> shows that the website should be launched within 6 months.</li>
+                <li>The project <select id="fill6" class="fill-in-select"><option value="">-- select --</option></select> is $100,000.</li>
+                <li>One of the <select id="fill7" class="fill-in-select"><option value="">-- select --</option></select> is that the team may not complete the website on time.</li>
+                <li>The team is currently working to solve an <select id="fill8" class="fill-in-select"><option value="">-- select --</option></select> with the website’s navigation.</li>
+                <li>The team needs <select id="fill9" class="fill-in-select"><option value="">-- select --</option></select> a list of ideas for the website’s home page.</li>
+                <li>The team has <select id="fill10" class="fill-in-select"><option value="">-- select --</option></select> the tasks so that the most important ones are completed first.</li>
+            </ol>
+        </div>
+        
+        <div class="button-container">
+            <button onclick="checkAnswers()">Check Answers</button>
+            <button class="reset" onclick="resetQuiz()">Try Again</button>
+        </div>
+        <div id="results"></div>
+        
+        <a href="menu.html" class="back-link">Back to Main Menu</a>
+    </div>
+
+<script>
+    const vocabularyWords = [
+        'Deliverable', 'Milestone', 'Stakeholder', 'Scope', 'Timeline', 'Budget', 
+        'Risk', 'Issue', 'To brainstorm', 'To prioritize', 'To launch'
+    ];
+
+    const correctAnswers = {
+        // Exercise 1
+        match1: 'a', match2: 'j', match3: 'b', match4: 'c', match5: 'd',
+        match6: 'e', match7: 'f', match8: 'g', match9: 'h', match10: 'i', match11: 'k',
+        // Exercise 2
+        fill1: 'Deliverable', fill2: 'Milestone', fill3: 'Stakeholder', fill4: 'Scope',
+        fill5: 'Timeline', fill6: 'Budget', fill7: 'Risk', fill8: 'Issue',
+        fill9: 'To brainstorm', fill10: 'To prioritize'
+    };
+
+    // Populate dropdowns on page load
+    window.onload = function() {
+        const selects = document.querySelectorAll('.fill-in-select');
+        selects.forEach(select => {
+            vocabularyWords.forEach(word => {
+                const option = document.createElement('option');
+                option.value = word;
+                option.textContent = word;
+                select.appendChild(option);
+            });
+        });
+    };
+
+    function checkAnswers() {
+        let score = 0;
+        const totalQuestions = Object.keys(correctAnswers).length;
+
+        for (const id in correctAnswers) {
+            const inputElement = document.getElementById(id);
+            const userAnswer = inputElement.value.trim().toLowerCase();
+            const correctAnswer = correctAnswers[id];
+            
+            inputElement.classList.remove('correct', 'incorrect');
+
+            if (userAnswer === correctAnswer.toLowerCase()) {
+                inputElement.classList.add('correct');
+                score++;
+            } else {
+                inputElement.classList.add('incorrect');
+            }
+        }
+        
+        const resultsElement = document.getElementById('results');
+        resultsElement.innerHTML = `You got ${score} out of ${totalQuestions} questions correct.`;
+    }
+
+    function resetQuiz() {
+        for (const id in correctAnswers) {
+            const inputElement = document.getElementById(id);
+            inputElement.classList.remove('correct', 'incorrect');
+            
+            if (inputElement.tagName === 'SELECT') {
+                inputElement.selectedIndex = 0;
+            } else {
+                inputElement.value = '';
+            }
+        }
+        
+        document.getElementById('results').innerHTML = '';
+    }
+</script>
+
+</body>
+</html>

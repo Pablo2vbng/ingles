@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <title>Quiz Interactivo de Inglés</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f9;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            padding: 25px 40px;
+        }
+        h1 {
+            color: #005f73;
+            text-align: center;
+            border-bottom: 2px solid #005f73;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #0077b6;
+            margin-top: 40px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+        .exercise-section {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px dashed #ccc;
+        }
+        .exercise-section:last-child {
+            border-bottom: none;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .question ol {
+            padding-left: 25px;
+            margin: 0;
+        }
+        .question li {
+            margin-bottom: 15px;
+        }
+        .word-bank {
+            background-color: #e0f7fa;
+            border: 1px solid #0077b6;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .interactive-input {
+            font-size: 1em;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin: 0 5px;
+            width: 150px;
+            transition: border-color 0.3s;
+        }
+        .interactive-input:focus {
+            outline: none;
+            border-color: #0077b6;
+        }
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .options label {
+            display: inline-block;
+            background-color: #e9ecef;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border: 1px solid transparent;
+        }
+        .options input[type="radio"] {
+            display: none;
+        }
+        .options input[type="radio"]:checked + span {
+            font-weight: bold;
+        }
+        .correct-input { border-color: #28a745; background-color: #e8f5e9; }
+        .incorrect-input { border-color: #dc3545; background-color: #ffebee; }
+        .correct-option { background-color: #d4edda !important; border-color: #28a745 !important; color: #155724; }
+        .incorrect-option { background-color: #f8d7da !important; border-color: #dc3545 !important; color: #721c24; }
+
+        .check-button {
+            display: block;
+            width: 100%;
+            background-color: #0077b6;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .check-button:hover { background-color: #005f73; }
+        
+        .results-container {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #e0f7fa;
+            border: 2px solid #0077b6;
+            font-size: 1.1em;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h1>Quiz: Comparatives & Present Perfect</h1>
+
+    <!-- EJERCICIO 1 -->
+    <div class="exercise-section" id="exercise-1">
+        <h2>Ejercicio 1: Antónimos Comparativos</h2>
+        <div class="question">
+            <p>Escribe el comparativo del antónimo de la palabra dada. Usa las palabras de la lista:</p>
+            <div class="word-bank">bad – big – difficult – expensive – far – fat – happy – hot – old – short</div>
+            <ol>
+                <li>younger ⇒ <input type="text" id="q1_1" class="interactive-input"></li>
+                <li>colder ⇒ <input type="text" id="q1_2" class="interactive-input"></li>
+                <li>better ⇒ <input type="text" id="q1_3" class="interactive-input"></li>
+                <li>thinner ⇒ <input type="text" id="q1_4" class="interactive-input"></li>
+                <li>cheaper ⇒ <input type="text" id="q1_5" class="interactive-input"></li>
+                <li>nearer ⇒ <input type="text" id="q1_6" class="interactive-input"></li>
+                <li>sadder ⇒ <input type="text" id="q1_7" class="interactive-input"></li>
+                <li>smaller ⇒ <input type="text" id="q1_8" class="interactive-input"></li>
+                <li>easier ⇒ <input type="text" id="q1_9" class="interactive-input"></li>
+                <li>taller ⇒ <input type="text" id="q1_10" class="interactive-input"></li>
+            </ol>
+        </div>
+        <button class="check-button" onclick="checkExercise(1)">Corregir Ejercicio 1</button>
+        <div class="results-container" id="results-1"></div>
+    </div>
+
+    <!-- EJERCICIO 2 -->
+    <div class="exercise-section" id="exercise-2">
+        <h2>Ejercicio 2: Completa con Comparativos</h2>
+        <div class="question">
+            <p>Completa las frases con la forma comparativa del adjetivo entre paréntesis.</p>
+            <ol>
+                <li>We're stronger than he was. (strong)</li>
+                <li>Nothing could be more absurd than such an idea. (absurd)</li>
+                <li>It worked even better than I had hoped. (good)</li>
+                <li value="4">It is far <input type="text" id="q2_4" class="interactive-input"> than a whip. (good)</li>
+                <li>The demand is always <input type="text" id="q2_5" class="interactive-input"> than the supply. (great)</li>
+                <li>She was much <input type="text" id="q2_6" class="interactive-input"> than she knew. (ill)</li>
+                <li>It was <input type="text" id="q2_7" class="interactive-input"> than they had dreamed. (wonderful)</li>
+                <li>The effect was <input type="text" id="q2_8" class="interactive-input"> than he expected. (serious)</li>
+                <li>He's <input type="text" id="q2_9" class="interactive-input"> than some men. (wise)</li>
+                <li>Silence was even <input type="text" id="q2_10" class="interactive-input"> than speech. (terrible)</li>
+                <li>Nothing could be <input type="text" id="q2_11" class="interactive-input"> than her appearance. (startling)</li>
+                <li>Her courage was <input type="text" id="q2_12" class="interactive-input"> than her strength. (great)</li>
+                <li>Perhaps you know <input type="text" id="q2_13" class="interactive-input"> than I do. (good)</li>
+                <li>She was <input type="text" id="q2_14" class="interactive-input"> than she would admit. (tired)</li>
+                <li>You are <input type="text" id="q2_15" class="interactive-input"> than I am. (fortunate)</li>
+                <li>It was even <input type="text" id="q2_16" class="interactive-input"> than she had expected. (difficult)</li>
+                <li>Nothing could be <input type="text" id="q2_17" class="interactive-input"> than those words. (bitter)</li>
+                <li>It would do <input type="text" id="q2_18" class="interactive-input"> than no good. (bad)</li>
+                <li>He looked even <input type="text" id="q2_19" class="interactive-input"> than he felt. (good)</li>
+                <li>It was <input type="text" id="q2_20" class="interactive-input"> than he had thought. (early)</li>
+            </ol>
+        </div>
+        <button class="check-button" onclick="checkExercise(2)">Corregir Ejercicio 2</button>
+        <div class="results-container" id="results-2"></div>
+    </div>
+
+    <!-- EJERCICIO 3 -->
+    <div class="exercise-section" id="exercise-3">
+        <h2>Ejercicio 3: Past Simple o Present Perfect</h2>
+        <div class="question">
+            <ol>
+                <li id="q3_1"> '___________ painting the bedroom yet?' 'Not yet. I'll finish it tomorrow.'
+                    <div class="options">
+                        <label><input type="radio" name="q3_1" value="Did you finish"><span>Did you finish</span></label>
+                        <label><input type="radio" name="q3_1" value="Have you finished"><span>Have you finished</span></label>
+                    </div>
+                </li>
+                <li id="q3_2"> I ___________ much last year, but I ___________ a lot this year.
+                    <div class="options">
+                        <label><input type="radio" name="q3_2a" value="didn't travel"><span>didn't travel</span></label>
+                        <label><input type="radio" name="q3_2a" value="haven't travelled"><span>haven't travelled</span></label>
+                    </div>
+                    <div class="options" style="margin-top:10px;">
+                        <label><input type="radio" name="q3_2b" value="travelled"><span>travelled</span></label>
+                        <label><input type="radio" name="q3_2b" value="have travelled"><span>have travelled</span></label>
+                    </div>
+                </li>
+                <li id="q3_3"> ___________ a holiday recently?
+                    <div class="options">
+                        <label><input type="radio" name="q3_3" value="Did you have"><span>Did you have</span></label>
+                        <label><input type="radio" name="q3_3" value="Have you had"><span>Have you had</span></label>
+                    </div>
+                </li>
+                <li id="q3_4"> We ___________ last week. We ___________ here for 5 days.
+                    <div class="options">
+                        <label><input type="radio" name="q3_4a" value="arrived"><span>arrived</span></label>
+                        <label><input type="radio" name="q3_4a" value="have arrived"><span>have arrived</span></label>
+                    </div>
+                     <div class="options" style="margin-top:10px;">
+                        <label><input type="radio" name="q3_4b" value="were"><span>were</span></label>
+                        <label><input type="radio" name="q3_4b" value="have been"><span>have been</span></label>
+                    </div>
+                </li>
+                <li id="q3_5"> Mr. Barnes is very important in this company. He ___________ here for 30 years.
+                     <div class="options">
+                        <label><input type="radio" name="q3_5" value="worked"><span>worked</span></label>
+                        <label><input type="radio" name="q3_5" value="has worked"><span>has worked</span></label>
+                    </div>
+                </li>
+                 <li id="q3_6"> He loves gardening. He ___________ a gardener all his life.
+                     <div class="options">
+                        <label><input type="radio" name="q3_6" value="was"><span>was</span></label>
+                        <label><input type="radio" name="q3_6" value="has been"><span>has been</span></label>
+                    </div>
+                </li>
+                 <li id="q3_7"> ___________ anything like this before?
+                     <div class="options">
+                        <label><input type="radio" name="q3_7" value="Did you ever see"><span>Did you ever see</span></label>
+                        <label><input type="radio" name="q3_7" value="Have you ever seen"><span>Have you ever seen</span></label>
+                    </div>
+                </li>
+                 <li id="q3_8"> This is the most delicious dish I ___________.
+                     <div class="options">
+                        <label><input type="radio" name="q3_8" value="ever tasted"><span>ever tasted</span></label>
+                        <label><input type="radio" name="q3_8" value="have ever tasted"><span>have ever tasted</span></label>
+                    </div>
+                </li>
+                 <li id="q3_9"> I ___________ him behave like this before.
+                     <div class="options">
+                        <label><input type="radio" name="q3_9" value="never saw"><span>never saw</span></label>
+                        <label><input type="radio" name="q3_9" value="have never seen"><span>have never seen</span></label>
+                    </div>
+                </li>
+                 <li id="q3_10"> My mother ___________ in Scotland.
+                     <div class="options">
+                        <label><input type="radio" name="q3_10" value="grew up"><span>grew up</span></label>
+                        <label><input type="radio" name="q3_10" value="has grown up"><span>has grown up</span></label>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <button class="check-button" onclick="checkExercise(3)">Corregir Ejercicio 3</button>
+        <div class="results-container" id="results-3"></div>
+    </div>
+
+     <!-- EJERCICIO 4 -->
+    <div class="exercise-section" id="exercise-4">
+        <h2>Ejercicio 4: Elige la respuesta correcta</h2>
+        <div class="question">
+            <ol>
+                <li id="q4_1"> I ___________ John in the office so far today. Maybe I will see him later.
+                    <div class="options">
+                        <label><input type="radio" name="q4_1" value="didn't see"><span>didn't see</span></label>
+                        <label><input type="radio" name="q4_1" value="haven't seen"><span>haven't seen</span></label>
+                    </div>
+                </li>
+                <li id="q4_2"> I ___________ this room only half an hour ago, and you have already made a mess!
+                    <div class="options">
+                        <label><input type="radio" name="q4_2" value="cleaned"><span>cleaned</span></label>
+                        <label><input type="radio" name="q4_2" value="have cleaned"><span>have cleaned</span></label>
+                    </div>
+                </li>
+                <li id="q4_3"> I ___________ as an engineer for 3 years, but now I am a mechanic.
+                    <div class="options">
+                        <label><input type="radio" name="q4_3" value="worked"><span>worked</span></label>
+                        <label><input type="radio" name="q4_3" value="have worked"><span>have worked</span></label>
+                    </div>
+                </li>
+                <li id="q4_4"> I ___________ the screen on my laptop computer. It is impossible to use it so I'm going to buy a new one!
+                    <div class="options">
+                        <label><input type="radio" name="q4_4" value="broke"><span>broke</span></label>
+                        <label><input type="radio" name="q4_4" value="have broken"><span>have broken</span></label>
+                    </div>
+                </li>
+                 <li id="q4_5"> The former footballer Pelé ___________ 3 world cups in his career.
+                    <div class="options">
+                        <label><input type="radio" name="q4_5" value="won"><span>won</span></label>
+                        <label><input type="radio" name="q4_5" value="has won"><span>has won</span></label>
+                    </div>
+                </li>
+                 <li id="q4_6"> I ___________ swimming with dolphins when I was in New Zealand.
+                    <div class="options">
+                        <label><input type="radio" name="q4_6" value="went"><span>went</span></label>
+                        <label><input type="radio" name="q4_6" value="have been"><span>have been</span></label>
+                    </div>
+                </li>
+                <li id="q4_7"> Oh no! I ___________ in some mud, and it is all over my new shoes!
+                    <div class="options">
+                        <label><input type="radio" name="q4_7" value="just stepped"><span>just stepped</span></label>
+                        <label><input type="radio" name="q4_7" value="have just stepped"><span>have just stepped</span></label>
+                    </div>
+                </li>
+                <li id="q4_8"> I ___________ some coffee on my shirt yesterday, and now I can't get it off!
+                    <div class="options">
+                        <label><input type="radio" name="q4_8" value="spilt"><span>spilt</span></label>
+                        <label><input type="radio" name="q4_8" value="have spilt"><span>have spilt</span></label>
+                    </div>
+                </li>
+                 <li id="q4_9"> I love to see animals in their natural habitats, but I ___________ a kangaroo in the wild.
+                    <div class="options">
+                        <label><input type="radio" name="q4_9" value="didn't ever see"><span>didn't ever see</span></label>
+                        <label><input type="radio" name="q4_9" value="haven't ever seen"><span>haven't ever seen</span></label>
+                    </div>
+                </li>
+                 <li id="q4_10"> I ___________ football this afternoon but we lost 3-2.
+                    <div class="options">
+                        <label><input type="radio" name="q4_10" value="played"><span>played</span></label>
+                        <label><input type="radio" name="q4_10" value="have played"><span>have played</span></label>
+                    </div>
+                </li>
+                 <li id="q4_11"> ___________ John recently?
+                    <div class="options">
+                        <label><input type="radio" name="q4_11" value="Did you see"><span>Did you see</span></label>
+                        <label><input type="radio" name="q4_11" value="Have you seen"><span>Have you seen</span></label>
+                    </div>
+                </li>
+                 <li id="q4_12"> I ___________ as a mechanic for 3 years and I love the job!
+                    <div class="options">
+                        <label><input type="radio" name="q4_12" value="worked"><span>worked</span></label>
+                        <label><input type="radio" name="q4_12" value="have worked"><span>have worked</span></label>
+                    </div>
+                </li>
+                <li id="q4_13"> I ___________ my suit, but I ___________ it to the dry-cleaners and it looks OK.
+                    <div class="options">
+                        <label><input type="radio" name="q4_13a" value="stained"><span>stained</span></label>
+                        <label><input type="radio" name="q4_13a" value="have stained"><span>have stained</span></label>
+                    </div>
+                     <div class="options" style="margin-top:10px;">
+                        <label><input type="radio" name="q4_13b" value="sent"><span>sent</span></label>
+                        <label><input type="radio" name="q4_13b" value="have sent"><span>have sent</span></label>
+                    </div>
+                </li>
+                <li id="q4_14"> ___________ that report yet? It is due tomorrow!
+                    <div class="options">
+                        <label><input type="radio" name="q4_14" value="Did you finish"><span>Did you finish</span></label>
+                        <label><input type="radio" name="q4_14" value="Have you finished"><span>Have you finished</span></label>
+                    </div>
+                </li>
+                <li id="q4_15"> So far, we ___________ the introduction.
+                    <div class="options">
+                        <label><input type="radio" name="q4_15" value="only did"><span>only did</span></label>
+                        <label><input type="radio" name="q4_15" value="have only done"><span>have only done</span></label>
+                    </div>
+                </li>
+                <li id="q4_16"> I ___________ Greece 3 times since my friend ___________ there 3 years ago, and I love it!
+                    <div class="options">
+                        <label><input type="radio" name="q4_16a" value="visited"><span>visited</span></label>
+                        <label><input type="radio" name="q4_16a" value="have visited"><span>have visited</span></label>
+                    </div>
+                     <div class="options" style="margin-top:10px;">
+                        <label><input type="radio" name="q4_16b" value="moved"><span>moved</span></label>
+                        <label><input type="radio" name="q4_16b" value="has moved"><span>has moved</span></label>
+                    </div>
+                </li>
+            </ol>
+        </div>
+         <button class="check-button" onclick="checkExercise(4)">Corregir Ejercicio 4</button>
+        <div class="results-container" id="results-4"></div>
+    </div>
+
+    <!-- EJERCICIO 5 -->
+    <div class="exercise-section" id="exercise-5">
+        <h2>Ejercicio 5: Elige la respuesta correcta</h2>
+        <div class="question">
+            <ol>
+                <li id="q5_1"> Mum ___________ ill all week so she's going to the doctor today.
+                     <div class="options">
+                        <label><input type="radio" name="q5_1" value="was"><span>was</span></label>
+                        <label><input type="radio" name="q5_1" value="has been"><span>has been</span></label>
+                    </div>
+                </li>
+                 <li id="q5_2"> I finally ___________ better this morning after that terrible cold!
+                     <div class="options">
+                        <label><input type="radio" name="q5_2" value="felt"><span>felt</span></label>
+                        <label><input type="radio" name="q5_2" value="have felt"><span>have felt</span></label>
+                    </div>
+                </li>
+                 <li id="q5_3"> Yesterday we ___________ to the new museum for the first time.
+                     <div class="options">
+                        <label><input type="radio" name="q5_3" value="went"><span>went</span></label>
+                        <label><input type="radio" name="q5_3" value="have been"><span>have been</span></label>
+                    </div>
+                </li>
+                 <li id="q5_4"> Jamie's great - he ___________ a footballer all his life.
+                     <div class="options">
+                        <label><input type="radio" name="q5_4" value="was"><span>was</span></label>
+                        <label><input type="radio" name="q5_4" value="has been"><span>has been</span></label>
+                    </div>
+                </li>
+                 <li id="q5_5"> ___________ the new neighbours?
+                     <div class="options">
+                        <label><input type="radio" name="q5_5" value="Did you meet"><span>Did you meet</span></label>
+                        <label><input type="radio" name="q5_5" value="Have you met"><span>Have you met</span></label>
+                    </div>
+                </li>
+                 <li id="q5_6"> Penny and Kim ___________ this morning not to go to the party.
+                     <div class="options">
+                        <label><input type="radio" name="q5_6" value="decided"><span>decided</span></label>
+                        <label><input type="radio" name="q5_6" value="have decided"><span>have decided</span></label>
+                    </div>
+                </li>
+                 <li id="q5_7"> ___________ the new exhibition at the museum last week?
+                     <div class="options">
+                        <label><input type="radio" name="q5_7" value="Did you see"><span>Did you see</span></label>
+                        <label><input type="radio" name="q5_7" value="Have you seen"><span>Have you seen</span></label>
+                    </div>
+                </li>
+                 <li id="q5_8"> Tina wanted to be a teacher when she ___________ younger.
+                     <div class="options">
+                        <label><input type="radio" name="q5_8" value="was"><span>was</span></label>
+                        <label><input type="radio" name="q5_8" value="has been"><span>has been</span></label>
+                    </div>
+                </li>
+                 <li id="q5_9"> ___________ a game of rugby?
+                     <div class="options">
+                        <label><input type="radio" name="q5_9" value="Did you ever play"><span>Did you ever play</span></label>
+                        <label><input type="radio" name="q5_9" value="Have you ever played"><span>Have you ever played</span></label>
+                    </div>
+                </li>
+                 <li id="q5_10"> It's amazing! He ___________ a computer!
+                     <div class="options">
+                        <label><input type="radio" name="q5_10" value="never used"><span>never used</span></label>
+                        <label><input type="radio" name="q5_10" value="has never used"><span>has never used</span></label>
+                    </div>
+                </li>
+                 <li id="q5_11"> When she was in America, Marion ___________ any theme parks.
+                     <div class="options">
+                        <label><input type="radio" name="q5_11" value="didn't visit"><span>didn't visit</span></label>
+                        <label><input type="radio" name="q5_11" value="hasn't visited"><span>hasn't visited</span></label>
+                    </div>
+                </li>
+                 <li id="q5_12"> ___________ the monkeys at the zoo?
+                     <div class="options">
+                        <label><input type="radio" name="q5_12" value="Did they feed"><span>Did they feed</span></label>
+                        <label><input type="radio" name="q5_12" value="Have they fed"><span>Have they fed</span></label>
+                    </div>
+                </li>
+                 <li id="q5_13"> ___________ today's homework yet?
+                     <div class="options">
+                        <label><input type="radio" name="q5_13" value="Did you do"><span>Did you do</span></label>
+                        <label><input type="radio" name="q5_13" value="Have you done"><span>Have you done</span></label>
+                    </div>
+                </li>
+                 <li id="q5_14"> ___________ the magazine last week?
+                     <div class="options">
+                        <label><input type="radio" name="q5_14" value="Did you buy"><span>Did you buy</span></label>
+                        <label><input type="radio" name="q5_14" value="Have you bought"><span>Have you bought</span></label>
+                    </div>
+                </li>
+                 <li id="q5_15"> Because Anna ___________ the name of the film, she asked her dad.
+                     <div class="options">
+                        <label><input type="radio" name="q5_15" value="forgot"><span>forgot</span></label>
+                        <label><input type="radio" name="q5_15" value="has forgotten"><span>has forgotten</span></label>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <button class="check-button" onclick="checkExercise(5)">Corregir Ejercicio 5</button>
+        <div class="results-container" id="results-5"></div>
+    </div>
+</div>
+
+<script>
+    const answers = {
+        // Exercise 1
+        q1_1: ["older"], q1_2: ["hotter"], q1_3: ["worse"], q1_4: ["fatter"], q1_5: ["more expensive"],
+        q1_6: ["further", "farther"], q1_7: ["happier"], q1_8: ["bigger"], q1_9: ["more difficult"], q1_10: ["shorter"],
+        // Exercise 2
+        q2_4: ["better"], q2_5: ["greater"], q2_6: ["more ill", "iller"], q2_7: ["more wonderful"], q2_8: ["more serious"],
+        q2_9: ["wiser"], q2_10: ["more terrible"], q2_11: ["more startling"], q2_12: ["greater"], q2_13: ["better"],
+        q2_14: ["more tired"], q2_15: ["more fortunate"], q2_16: ["more difficult"], q2_17: ["more bitter"], q2_18: ["worse"],
+        q2_19: ["better"], q2_20: ["earlier"],
+        // Exercise 3
+        q3_1: "Have you finished", q3_2a: "didn't travel", q3_2b: "have travelled", q3_3: "Have you had", q3_4a: "arrived",
+        q3_4b: "have been", q3_5: "has worked", q3_6: "has been", q3_7: "Have you ever seen", q3_8: "have ever tasted",
+        q3_9: "have never seen", q3_10: "grew up",
+        // Exercise 4
+        q4_1: "haven't seen", q4_2: "cleaned", q4_3: "worked", q4_4: "have broken", q4_5: "won",
+        q4_6: "went", q4_7: "have just stepped", q4_8: "spilt", q4_9: "haven't ever seen", q4_10: "played",
+        q4_11: "Have you seen", q4_12: "have worked", q4_13a: "stained", q4_13b: "sent", q4_14: "Have you finished",
+        q4_15: "have only done", q4_16a: "have visited", q4_16b: "moved",
+        // Exercise 5
+        q5_1: "has been", q5_2: "felt", q5_3: "went", q5_4: "has been", q5_5: "Have you met",
+        q5_6: "decided", q5_7: "Did you see", q5_8: "was", q5_9: "Have you ever played", q5_10: "has never used",
+        q5_11: "didn't visit", q5_12: "Have they fed", q5_13: "Have you done", q5_14: "Did you buy", q5_15: "forgot"
+    };
+
+    function checkExercise(exerciseNumber) {
+        let score = 0;
+        let totalQuestions = 0;
+        const exerciseContainer = document.getElementById(`exercise-${exerciseNumber}`);
+
+        // --- VALIDACIÓN DE INPUTS ---
+        const inputs = exerciseContainer.querySelectorAll('.interactive-input');
+        inputs.forEach(input => {
+            totalQuestions++;
+            const userValue = input.value.trim().toLowerCase();
+            const correctValues = answers[input.id];
+            
+            input.classList.remove('correct-input', 'incorrect-input');
+            if (correctValues && correctValues.includes(userValue)) {
+                input.classList.add('correct-input');
+                score++;
+            } else {
+                input.classList.add('incorrect-input');
+            }
+        });
+
+        // --- VALIDACIÓN DE RADIOS ---
+        // Obtenemos todos los grupos de radios únicos en el ejercicio
+        const radioGroups = new Set();
+        exerciseContainer.querySelectorAll('input[type="radio"]').forEach(radio => radioGroups.add(radio.name));
+
+        radioGroups.forEach(groupName => {
+            totalQuestions++;
+            const correctAnswer = answers[groupName];
+            const selectedRadio = exerciseContainer.querySelector(`input[name="${groupName}"]:checked`);
+            const allLabels = exerciseContainer.querySelectorAll(`input[name="${groupName}"]`);
+
+            allLabels.forEach(radio => {
+                const label = radio.parentElement;
+                label.classList.remove('correct-option', 'incorrect-option');
+                if (radio.value === correctAnswer) {
+                    label.classList.add('correct-option');
+                }
+            });
+
+            if (selectedRadio) {
+                if (selectedRadio.value === correctAnswer) {
+                    score++;
+                } else {
+                    const selectedLabel = selectedRadio.parentElement;
+                    selectedLabel.classList.remove('correct-option');
+                    selectedLabel.classList.add('incorrect-option');
+                }
+            }
+        });
+
+        // --- MOSTRAR RESULTADOS ---
+        const resultsContainer = document.getElementById(`results-${exerciseNumber}`);
+        const percentage = totalQuestions > 0 ? (score / totalQuestions) * 100 : 0;
+        resultsContainer.innerHTML = `<h3>Resultados Ejercicio ${exerciseNumber}</h3><p>Has acertado <strong>${score}</strong> de <strong>${totalQuestions}</strong>. (${percentage.toFixed(1)}%)</p>`;
+        resultsContainer.style.display = 'block';
+        resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+</script>
+
+</body>
+</html>

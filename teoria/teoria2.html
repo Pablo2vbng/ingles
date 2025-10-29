@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoría Interactiva Tema 2: Comparatives & Tenses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .content-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 25px 40px;
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        h1 {
+            color: #005f73;
+            text-align: center;
+            border-bottom: 2px solid #005f73;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #0077b6;
+            margin-top: 40px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+        h3 { color: #005f73; }
+        .explanation-box {
+            background-color: #e0f7fa;
+            border-left: 5px solid #0077b6;
+            padding: 15px; margin: 20px 0; border-radius: 5px;
+        }
+        .exercise-section {
+            background-color: #fffbe6;
+            border-left: 5px solid #ffc107;
+            padding: 20px; margin-top: 25px; border-radius: 5px;
+        }
+        .exercise-section ol { padding-left: 20px; }
+        .grammar-table {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+        }
+        .grammar-table th, .grammar-table td {
+            border: 1px solid #ddd; padding: 12px; text-align: left;
+        }
+        .grammar-table th { background-color: #0077b6; color: white; }
+        .check-button {
+            background-color: #0077b6; color: white; border: none;
+            padding: 10px 15px; border-radius: 5px; cursor: pointer;
+            margin-top: 15px; font-size: 16px;
+        }
+        .check-button:hover { background-color: #005f73; }
+        .feedback { font-size: 18px; font-weight: bold; margin-left: 10px; }
+        .correct { color: #4caf50; }
+        .incorrect { color: #f44336; }
+        
+        /* Estilos de inputs y selects */
+        .interactive-input, .interactive-select {
+            font-size: 1em; padding: 5px; border: 1px solid #ccc; border-radius: 4px;
+        }
+        .correct-input { border-color: #4caf50; background-color: #e8f5e9; }
+        .incorrect-input { border-color: #f44336; background-color: #ffebee; }
+        
+        /* Estilos para quizzes de opción múltiple */
+        .quiz-question { margin-bottom: 15px; }
+        .quiz-options label { display: block; margin-left: 5px; }
+        .quiz-result { font-weight: bold; margin-top: 15px; font-size: 1.2em; }
+        .choice-box { border: 1px solid #ccc; padding: 8px; margin-top: 10px; border-radius: 5px; }
+        .choice-span { cursor: pointer; padding: 5px; border-radius: 4px; margin: 0 5px; }
+        .choice-span:hover { background-color: #f0f0f0; }
+        .selected-correct { background-color: #a5d6a7; border: 1px solid #4caf50; }
+        .selected-incorrect { background-color: #ffcdd2; border: 1px solid #f44336; }
+    </style>
+</head>
+<body>
+
+<div class="content-container">
+    <h1>Teoría: Comparatives, Present Perfect & Past Simple</h1>
+
+    <!-- SECCIÓN 1: ADJETIVOS COMPARATIVOS -->
+    <h2>1. Comparative Adjectives</h2>
+    <div class="explanation-box">
+        <p>Usamos los adjetivos comparativos para comparar dos personas, lugares o cosas. Las reglas generales son:</p>
+        <ul>
+            <li><strong>Adjetivos cortos (1 sílaba):</strong> Añadir <strong>-er</strong> (e.g., old → older).</li>
+            <li><strong>Adjetivos largos (2+ sílabas):</strong> Usar <strong>more</strong> antes del adjetivo (e.g., important → more important).</li>
+            <li><strong>Adjetivos irregulares:</strong> Cambian completamente (e.g., good → better, bad → worse).</li>
+        </ul>
+    </div>
+
+    <div class="exercise-section">
+        <h3>Ejercicio 1.1: Escribe el opuesto en forma comparativa</h3>
+        <p>Completa cada frase con el comparativo del adjetivo opuesto de la lista: <br><i>bad, big, difficult, expensive, far, fat, happy, hot, old, short</i></p>
+        <ol>
+            <li>younger ⇒ <input type="text" id="op1" class="interactive-input"></li>
+            <li>colder ⇒ <input type="text" id="op2" class="interactive-input"></li>
+            <li>better ⇒ <input type="text" id="op3" class="interactive-input"></li>
+            <li>thinner ⇒ <input type="text" id="op4" class="interactive-input"></li>
+            <li>cheaper ⇒ <input type="text" id="op5" class="interactive-input"></li>
+            <li>nearer ⇒ <input type="text" id="op6" class="interactive-input"></li>
+            <li>sadder ⇒ <input type="text" id="op7" class="interactive-input"></li>
+            <li>smaller ⇒ <input type="text" id="op8" class="interactive-input"></li>
+            <li>easier ⇒ <input type="text" id="op9" class="interactive-input"></li>
+            <li>taller ⇒ <input type="text" id="op10" class="interactive-input"></li>
+        </ol>
+        <button class="check-button" onclick="checkOpposites()">Corregir</button>
+    </div>
+
+    <div class="exercise-section">
+        <h3>Ejercicio 1.2: Comparative Adjectives Quiz</h3>
+        <div id="comparativeQuiz">
+            <div class="quiz-question">1. Comparative adjectives are used when comparing _______ things, people or groups.</div>
+            <div class="quiz-options"><label><input type="radio" name="q1" value="correct"> two</label><label><input type="radio" name="q1" value="incorrect"> two or more</label><label><input type="radio" name="q1" value="incorrect"> three or more</label></div>
+
+            <div class="quiz-question">2. Which is correct? "My phone's expensive, but Joe's is _______ ."</div>
+            <div class="quiz-options"><label><input type="radio" name="q2" value="incorrect"> expensiver</label><label><input type="radio" name="q2" value="incorrect"> most expensive</label><label><input type="radio" name="q2" value="correct"> more expensive</label></div>
+
+            <div class="quiz-question">3. Which is correct? "Do you think Maria is _______ than Selena?"</div>
+            <div class="quiz-options"><label><input type="radio" name="q3" value="correct"> prettier</label><label><input type="radio" name="q3" value="incorrect"> more pretty</label><label><input type="radio" name="q3" value="incorrect"> more prettier</label></div>
+            
+            <div class="quiz-question">4. Which is correct? "This year the weather is ______ than last year."</div>
+            <div class="quiz-options"><label><input type="radio" name="q4" value="incorrect"> badder</label><label><input type="radio" name="q4" value="correct"> worse</label><label><input type="radio" name="q4" value="incorrect"> worser</label></div>
+
+            <div class="quiz-question">5. Which is comparative? "Whose English is _______? Mine or his?"</div>
+            <div class="quiz-options"><label><input type="radio" name="q5" value="incorrect"> good</label><label><input type="radio" name="q5" value="correct"> better</label><label><input type="radio" name="q5" value="incorrect"> best</label></div>
+        </div>
+        <button class="check-button" onclick="checkQuiz('comparativeQuiz', 5)">Ver Puntuación</button>
+        <div id="comparativeQuizResult" class="quiz-result"></div>
+    </div>
+    
+    <!-- SECCIÓN 2: PRESENT PERFECT VS PAST SIMPLE -->
+    <h2>2. Present Perfect vs. Past Simple</h2>
+    <div class="explanation-box">
+        <h3>Teoría Clave</h3>
+        <table class="grammar-table">
+            <thead><tr><th></th><th>PRESENT PERFECT (have/has + participio)</th><th>PAST SIMPLE (verbo en pasado)</th></tr></thead>
+            <tbody>
+                <tr>
+                    <td><strong>USO PRINCIPAL</strong></td>
+                    <td>Acciones pasadas con relevancia en el presente, o cuando el momento <strong>no es específico</strong>.</td>
+                    <td>Acciones pasadas que ocurrieron en un momento <strong>específico y terminado</strong>.</td>
+                </tr>
+                <tr>
+                    <td><strong>EJEMPLO</strong></td>
+                    <td><code>I <strong>have broken</strong> my leg.</code> (El resultado, la pierna rota, es importante ahora).</td>
+                    <td><code>I <strong>broke</strong> my leg <strong>last year</strong>.</code> (La acción terminó en un momento concreto del pasado).</td>
+                </tr>
+                 <tr>
+                    <td><strong>PALABRAS CLAVE</strong></td>
+                    <td><i>just, already, yet, ever, never, for, since</i></td>
+                    <td><i>yesterday, last week, ago, in 2010</i></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="exercise-section">
+        <h3>Ejercicio 2.1: Elige la opción correcta</h3>
+        <p>Haz clic en la forma verbal correcta para completar cada frase.</p>
+        <ol>
+            <li class="choice-box">I <span class="choice-span" onclick="checkTenseChoice(this, false)">didn't see</span> / <span class="choice-span" onclick="checkTenseChoice(this, true)">haven't seen</span> John in the office so far today.</li>
+            <li class="choice-box">I <span class="choice-span" onclick="checkTenseChoice(this, true)">cleaned</span> / <span class="choice-span" onclick="checkTenseChoice(this, false)">have cleaned</span> this room only half an hour ago!</li>
+            <li class="choice-box">I <span class="choice-span" onclick="checkTenseChoice(this, true)">worked</span> / <span class="choice-span" onclick="checkTenseChoice(this, false)">have worked</span> as an engineer for 3 years, but now I am a mechanic.</li>
+            <li class="choice-box">I <span class="choice-span" onclick="checkTenseChoice(this, false)">broke</span> / <span class="choice-span" onclick="checkTenseChoice(this, true)">have broken</span> the screen on my laptop. I can't use it.</li>
+            <li class="choice-box">The footballer Pelé <span class="choice-span" onclick="checkTenseChoice(this, true)">won</span> / <span class="choice-span" onclick="checkTenseChoice(this, false)">has won</span> 3 world cups in his career. (Pelé is retired).</li>
+            <li class="choice-box">Oh no! I <span class="choice-span" onclick="checkTenseChoice(this, false)">just stepped</span> / <span class="choice-span" onclick="checkTenseChoice(this, true)">have just stepped</span> in some mud!</li>
+            <li class="choice-box"><span class="choice-span" onclick="checkTenseChoice(this, false)">Did you see</span> / <span class="choice-span" onclick="checkTenseChoice(this, true)">Have you seen</span> John recently?</li>
+            <li class="choice-box">So far, we <span class="choice-span" onclick="checkTenseChoice(this, false)">only did</span> / <span class="choice-span" onclick="checkTenseChoice(this, true)">have only done</span> the introduction.</li>
+        </ol>
+    </div>
+</div>
+
+<script>
+    // --- SCRIPT PARA EJERCICIO 1.1 ---
+    function checkOpposites() {
+        const answers = { op1: "older", op2: "hotter", op3: "worse", op4: "fatter", op5: "more expensive", op6: "further", op7: "happier", op8: "bigger", op9: "more difficult", op10: "shorter" };
+        for (const id in answers) {
+            const input = document.getElementById(id);
+            input.classList.remove('correct-input', 'incorrect-input');
+            if (input.value.trim().toLowerCase() === answers[id]) {
+                input.classList.add('correct-input');
+            } else {
+                input.classList.add('incorrect-input');
+            }
+        }
+    }
+
+    // --- SCRIPT PARA EJERCICIO 1.2 ---
+    function checkQuiz(quizId, totalQuestions) {
+        const quizContainer = document.getElementById(quizId);
+        let score = 0;
+        for (let i = 1; i <= totalQuestions; i++) {
+            const radios = quizContainer.querySelectorAll(`input[name="q${i}"]`);
+            let answered = false;
+            for (const radio of radios) {
+                if (radio.checked) {
+                    answered = true;
+                    if (radio.value === 'correct') {
+                        score++;
+                    }
+                    break;
+                }
+            }
+        }
+        const resultContainer = document.getElementById(quizId + 'Result');
+        resultContainer.textContent = `Tu puntuación: ${score} de ${totalQuestions}`;
+        resultContainer.className = 'quiz-result ' + (score > totalQuestions / 2 ? 'correct' : 'incorrect');
+    }
+
+    // --- SCRIPT PARA EJERCICIO 2.1 ---
+    function checkTenseChoice(spanElement, isCorrect) {
+        const parent = spanElement.parentNode;
+        // Reset styles for siblings
+        Array.from(parent.children).forEach(child => {
+            child.classList.remove('selected-correct', 'selected-incorrect');
+        });
+        
+        if (isCorrect) {
+            spanElement.classList.add('selected-correct');
+        } else {
+            spanElement.classList.add('selected-incorrect');
+        }
+    }
+</script>
+
+</body>
+</html>

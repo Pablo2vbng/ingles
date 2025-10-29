@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Contenidos de Inglés</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .main-container {
+            width: 95%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #005f73;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+        
+        /* Contenedor de las tarjetas (Grid) */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px; /* Espacio entre tarjetas */
+        }
+
+        /* Estilo de cada tarjeta */
+        .card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+            display: flex; /* Para alinear el contenido verticalmente */
+            flex-direction: column; /* Apila los hijos verticalmente */
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .card h2 {
+            color: #005f73;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        
+        /* Contenedor de los enlaces dentro de cada tarjeta */
+        .card-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-grow: 1; /* Permite que la lista de enlaces crezca */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centra los enlaces verticalmente */
+        }
+        .card-links li {
+            margin-bottom: 10px;
+        }
+        .card-links a {
+            display: block;
+            color: #ffffff;
+            padding: 12px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .card-links a:hover {
+            transform: scale(1.03); /* Efecto de zoom ligero */
+        }
+        
+        /* Colores para cada tipo de enlace */
+        .link-vocab { background-color: #0077b6; }  /* Azul */
+        .link-theory { background-color: #ff8c00; } /* Naranja */
+        .link-quiz { background-color: #28a745; }   /* Verde */
+        .link-review { background-color: #8e44ad; } /* Morado (Nuevo) */
+        
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <h1>Contenidos de Inglés</h1>
+
+        <div class="menu-grid">
+            
+            <!-- Tarjeta Tema 1 -->
+            <div class="card">
+                <h2>Tema 1</h2>
+                <ul class="card-links">
+                    <li><a href="vocabulario/Tema1.html" class="link-vocab">Vocabulario Tema 1</a></li>
+                    <li><a href="teoria/teoria1.html" class="link-theory">Teoría Tema 1</a></li>
+                    <li><a href="cuestionario/cuestionario1.html" class="link-quiz">Cuestionario Tema 1</a></li>
+                    <li><a href="quiz/quizadicional1.html" class="link-review">Repaso Adicional</a></li>
+                </ul>
+            </div>
+
+            <!-- Tarjeta Tema 2 -->
+            <div class="card">
+                <h2>Tema 2</h2>
+                <ul class="card-links">
+                    <li><a href="vocabulario/Tema2.html" class="link-vocab">Vocabulario Tema 2</a></li>
+                    <li><a href="teoria/teoria2.html" class="link-theory">Teoría Tema 2</a></li>
+                    <li><a href="cuestionario/cuestionario2.html" class="link-quiz">Cuestionario Tema 2</a></li>
+                    <li><a href="quiz/quizadicional2.html" class="link-review">Repaso Adicional</a></li>
+                </ul>
+            </div>
+
+            <!-- Tarjeta Tema 3 -->
+            <div class="card">
+                <h2>Tema 3</h2>
+                <ul class="card-links">
+                    <li><a href="vocabulario/Tema3.html" class="link-vocab">Vocabulario Tema 3</a></li>
+                    <li><a href="teoria/teoria3.html" class="link-theory">Teoría Tema 3</a></li>
+                    <li><a href="cuestionario/cuestionario3.html" class="link-quiz">Cuestionario Tema 3</a></li>
+                    <li><a href="quiz/quizadicional3.html" class="link-review">Repaso Adicional</a></li>
+                </ul>
+            </div>
+
+            <!-- Tarjeta Tema 4 -->
+            <div class="card">
+                <h2>Tema 4</h2>
+                <ul class="card-links">
+                    <li><a href="vocabulario/Tema4.html" class="link-vocab">Vocabulario Tema 4</a></li>
+                    <li><a href="teoria/teoria4.html" class="link-theory">Teoría Tema 4</a></li>
+                    <li><a href="cuestionario/cuestionario4.html" class="link-quiz">Cuestionario Tema 4</a></li>
+                    <li><a href="quiz/quizadicional4.html" class="link-review">Repaso Adicional</a></li>
+                </ul>
+            </div>
+
+            <!-- Tarjeta Tema 5 -->
+            <div class="card">
+                <h2>Tema 5</h2>
+                <ul class="card-links">
+                    <li><a href="vocabulario/Tema5.html" class="link-vocab">Vocabulario Tema 5</a></li>
+                    <li><a href="teoria/teoria5.html" class="link-theory">Teoría Tema 5</a></li>
+                    <li><a href="cuestionario/cuestionario5.html" class="link-quiz">Cuestionario Tema 5</a></li>
+                    <li><a href="quiz/quizadicional5.html" class="link-review">Repaso Adicional</a></li>
+                </ul>
+            </div>
+
+            <!-- Tarjeta Tema 6 -->
+            <div class="card">
+                <h2>Tema 6</h2>
+                <ul class="card-links">
+                    <li><a href="vocabulario/Tema6.html" class="link-vocab">Vocabulario Tema 6</a></li>
+                    <li><a href="teoria/teoria6.html" class="link-theory">Teoría Tema 6</a></li>
+                    <li><a href="cuestionario/cuestionario6.html" class="link-quiz">Cuestionario Tema 6</a></li>
+                    <li><a href="quiz/quizadicional6.html" class="link-review">Repaso Adicional</a></li>
+                </ul>
+            </div>
+
+            <!-- Tarjeta Tema 7 -->
+            <div class="card">
+                <h2>Tema 7</h2>
+                <ul class="card-links">
+                    <li><a href="vocabulario/Tema7.html" class="link-vocab">Vocabulario Tema 7</a></li>
+                    <li><a href="teoria/teoria7.html" class="link-theory">Teoría Tema 7</a></li>
+                    <li><a href="cuestionario/cuestionario7.html" class="link-quiz">Cuestionario Tema 7</a></li>
+                    <li><a href="quiz/quizadicional7.html" class="link-review">Repaso Adicional</a></li>
+                </ul>
+            </div>
+
+            <!-- Tarjeta Tema 8 -->
+            <div class="card">
+                <h2>Tema 8</h2>
+                <ul class="card-links">
+                    <li><a href="vocabulario/Tema8.html" class="link-vocab">Vocabulario Tema 8</a></li>
+                    <li><a href="teoria/teoria8.html" class="link-theory">Teoría Tema 8</a></li>
+                    <li><a href="cuestionario/cuestionario8.html" class="link-quiz">Cuestionario Tema 8</a></li>
+                    <li><a href="quiz/quizadicional8.html" class="link-review">Repaso Adicional</a></li>
+                </ul>
+            </div>
+
+            <!-- Tarjeta Tema 9 -->
+            <div class="card">
+                <h2>Tema 9</h2>
+                <ul class="card-links">
+                    <li><a href="vocabulario/Tema9.html" class="link-vocab">Vocabulario Tema 9</a></li>
+                    <li><a href="teoria/teoria9.html" class="link-theory">Teoría Tema 9</a></li>
+                    <li><a href="cuestionario/cuestionario9.html" class="link-quiz">Cuestionario Tema 9</a></li>
+                    <li><a href="quiz/quizadicional9.html" class="link-review">Repaso Adicional</a></li>
+                </ul>
+            </div>
+
+            <!-- Tarjeta Tema 10 -->
+            <div class="card">
+                <h2>Tema 10</h2>
+                <ul class="card-links">
+                    <li><a href="vocabulario/Tema10.html" class="link-vocab">Vocabulario Tema 10</a></li>
+                    <li><a href="teoria/teoria10.html" class="link-theory">Teoría Tema 10</a></li>
+                    <li><a href="cuestionario/cuestionario10.html" class="link-quiz">Cuestionario Tema 10</a></li>
+                    <li><a href="quiz/quizadicional10.html" class="link-review">Repaso Adicional</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema: Habilidades Blandas en los Negocios (Interactivo)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Azul claro */
+            color: #333; /* Negro */
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff; /* Blanco */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 30px;
+            max-width: 800px;
+            margin: auto;
+        }
+        h1, h2, h3 {
+            color: #005f73; /* Azul oscuro */
+            text-align: center;
+        }
+        h2 {
+            border-top: 2px solid #ff8c00; /* Naranja */
+            padding-top: 20px;
+            margin-top: 40px;
+        }
+        p {
+            text-align: center;
+            color: #555;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+        .exercise-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+        .column {
+            width: 48%;
+            min-width: 300px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            padding: 12px;
+            border-radius: 5px;
+            border-left: 5px solid #ff8c00; /* Naranja */
+            display: flex;
+            align-items: center;
+        }
+        .fill-in-section li {
+            background-color: transparent;
+            border-left: none;
+            padding-left: 0;
+        }
+        /* Estilos para los inputs de los ejercicios */
+        .matching-input {
+            width: 30px;
+            height: 30px;
+            margin-left: 15px;
+            text-align: center;
+            font-size: 1em;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+        .fill-in-select {
+            font-size: 1em;
+            padding: 5px;
+            margin: 0 5px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            transition: border-color 0.3s;
+        }
+        .word-box {
+            background-color: #e9ecef;
+            border: 1px dashed #6c757d;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px auto;
+            text-align: center;
+            font-style: italic;
+            color: #495057;
+        }
+        /* Clases para la corrección */
+        .correct {
+            border-color: #28a745 !important; /* Verde */
+            background-color: #e9f7ef;
+        }
+        .incorrect {
+            border-color: #dc3545 !important; /* Rojo */
+            background-color: #fce8e6;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 1em;
+            font-weight: bold;
+            color: #ffffff; /* Blanco */
+            background-color: #0077b6; /* Azul */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #005f73;
+        }
+        button.reset {
+            background-color: #ff8c00; /* Naranja */
+        }
+        button.reset:hover {
+            background-color: #e67e00;
+        }
+        #results {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #005f73;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            padding: 12px 20px;
+            background-color: #6c757d;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Tema: Habilidades Blandas en los Negocios</h1>
+        
+        <div id="exercise1">
+            <h2>Ejercicio 1: Relacionar Términos</h2>
+            <p>Relaciona cada término con su definición correcta. Escribe la letra correspondiente en el recuadro.</p>
+            <div class="exercise-container">
+                <div class="column">
+                    <ul>
+                        <li>1. Empathy <input type="text" id="match1" class="matching-input" maxlength="1"></li>
+                        <li>2. Active Listening <input type="text" id="match2" class="matching-input" maxlength="1"></li>
+                        <li>3. Business Transparency <input type="text" id="match3" class="matching-input" maxlength="1"></li>
+                        <li>4. Social Responsibility <input type="text" id="match4" class="matching-input" maxlength="1"></li>
+                        <li>5. Inclusion <input type="text" id="match5" class="matching-input" maxlength="1"></li>
+                        <li>6. Personalisation <input type="text" id="match6" class="matching-input" maxlength="1"></li>
+                        <li>7. Professional Ethics <input type="text" id="match7" class="matching-input" maxlength="1"></li>
+                        <li>8. Compromise <input type="text" id="match8" class="matching-input" maxlength="1"></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <ul>
+                        <li>a. Making an effort to cater for individual needs in a business or commercial situation.</li>
+                        <li>b. The ability to understand and share the feelings and interests of another person or people.</li>
+                        <li>c. Business principle by which something that has been promised is delivered.</li>
+                        <li>d. Involves being open, honest and straight-forward about the company’s operations and transactions.</li>
+                        <li>e. Giving full attention to someone, showing genuine interest and seeking to understand their thoughts and feelings.</li>
+                        <li>f. Companies make an effort to operate in a way that positively and actively helps society and the world.</li>
+                        <li>g. Refers to the principles and ethics guiding the conduct of individuals at work and in general in their professional lives.</li>
+                        <li>h. Awareness of social and cultural diversity in a wide-ranging sense and in any professional context.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="exercise2">
+            <h2>Ejercicio 2: Completar los Espacios</h2>
+            <p>Completa los espacios con la palabra correcta de la caja.</p>
+            <div class="word-box">
+                compromise  &nbsp;&bull;&nbsp;  ethics  &nbsp;&bull;&nbsp;  inclusion  &nbsp;&bull;&nbsp;  listening  &nbsp;&bull;&nbsp;  responsibility  &nbsp;&bull;&nbsp;  transparency
+            </div>
+            <ul class="fill-in-section">
+                <li>a) Active 
+                    <select id="fill1" class="fill-in-select">
+                        <option value="">-- selecciona --</option>
+                        <option value="compromise">compromise</option>
+                        <option value="ethics">ethics</option>
+                        <option value="inclusion">inclusion</option>
+                        <option value="listening">listening</option>
+                        <option value="responsibility">responsibility</option>
+                        <option value="transparency">transparency</option>
+                    </select>
+                is very important to really understand customer’s needs.</li>
+                <li>b) When companies make decisions, they need to be subject to the 
+                    <select id="fill2" class="fill-in-select">
+                        <option value="">-- selecciona --</option>
+                        <option value="compromise">compromise</option>
+                        <option value="ethics">ethics</option>
+                        <option value="inclusion">inclusion</option>
+                        <option value="listening">listening</option>
+                        <option value="responsibility">responsibility</option>
+                        <option value="transparency">transparency</option>
+                    </select>
+                they have with their customers.</li>
+                <li>c) They hired people from all age groups, following company’s 
+                    <select id="fill3" class="fill-in-select">
+                        <option value="">-- selecciona --</option>
+                        <option value="compromise">compromise</option>
+                        <option value="ethics">ethics</option>
+                        <option value="inclusion">inclusion</option>
+                        <option value="listening">listening</option>
+                        <option value="responsibility">responsibility</option>
+                        <option value="transparency">transparency</option>
+                    </select>
+                programme.</li>
+                <li>d) The company published its annual results to comply with its business 
+                    <select id="fill4" class="fill-in-select">
+                        <option value="">-- selecciona --</option>
+                        <option value="compromise">compromise</option>
+                        <option value="ethics">ethics</option>
+                        <option value="inclusion">inclusion</option>
+                        <option value="listening">listening</option>
+                        <option value="responsibility">responsibility</option>
+                        <option value="transparency">transparency</option>
+                    </select>
+                policy.</li>
+                <li>e) Social 
+                    <select id="fill5" class="fill-in-select">
+                        <option value="">-- selecciona --</option>
+                        <option value="compromise">compromise</option>
+                        <option value="ethics">ethics</option>
+                        <option value="inclusion">inclusion</option>
+                        <option value="listening">listening</option>
+                        <option value="responsibility">responsibility</option>
+                        <option value="transparency">transparency</option>
+                    </select>
+                in business implies people and organisations acting with a special sensitivity towards social issues.</li>
+                <li>f) Professional 
+                    <select id="fill6" class="fill-in-select">
+                        <option value="">-- selecciona --</option>
+                        <option value="compromise">compromise</option>
+                        <option value="ethics">ethics</option>
+                        <option value="inclusion">inclusion</option>
+                        <option value="listening">listening</option>
+                        <option value="responsibility">responsibility</option>
+                        <option value="transparency">transparency</option>
+                    </select>
+                in business implies people and organisations behaving and conducting business ethically.</li>
+            </ul>
+        </div>
+        
+        <div class="button-container">
+            <button onclick="checkAnswers()">Corregir Ejercicios</button>
+            <button class="reset" onclick="resetQuiz()">Intentar de Nuevo</button>
+        </div>
+        <div id="results"></div>
+        
+        <a href="menu.html" class="back-link">Volver al Menú Principal</a>
+    </div>
+
+<script>
+    // --- RESPUESTAS CORRECTAS ---
+    const correctAnswers = {
+        // Ejercicio 1
+        match1: 'b', // Empathy
+        match2: 'e', // Active Listening
+        match3: 'd', // Business Transparency
+        match4: 'f', // Social Responsibility
+        match5: 'h', // Inclusion
+        match6: 'a', // Personalisation
+        match7: 'g', // Professional Ethics
+        match8: 'c', // Compromise
+        // Ejercicio 2
+        fill1: 'listening',
+        fill2: 'compromise',
+        fill3: 'inclusion',
+        fill4: 'transparency',
+        fill5: 'responsibility',
+        fill6: 'ethics'
+    };
+
+    function checkAnswers() {
+        let score = 0;
+        const totalQuestions = Object.keys(correctAnswers).length;
+
+        // Itera sobre todas las respuestas correctas para comprobar cada pregunta
+        for (const id in correctAnswers) {
+            const inputElement = document.getElementById(id);
+            const userAnswer = inputElement.value.trim().toLowerCase();
+            const correctAnswer = correctAnswers[id];
+            
+            // Limpia clases previas
+            inputElement.classList.remove('correct', 'incorrect');
+
+            if (userAnswer === correctAnswer) {
+                inputElement.classList.add('correct');
+                score++;
+            } else {
+                inputElement.classList.add('incorrect');
+            }
+        }
+        
+        // Muestra el resultado final
+        const resultsElement = document.getElementById('results');
+        resultsElement.innerHTML = `Has acertado ${score} de ${totalQuestions} preguntas.`;
+    }
+
+    function resetQuiz() {
+        // Itera sobre todas las preguntas para limpiar los valores y estilos
+        for (const id in correctAnswers) {
+            const inputElement = document.getElementById(id);
+            inputElement.classList.remove('correct', 'incorrect');
+            
+            // Diferencia entre input de texto y select
+            if (inputElement.tagName === 'SELECT') {
+                inputElement.selectedIndex = 0;
+            } else {
+                inputElement.value = '';
+            }
+        }
+        
+        // Limpia el mensaje de resultados
+        document.getElementById('results').innerHTML = '';
+    }
+</script>
+
+</body>
+</html>

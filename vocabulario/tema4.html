@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema: Vocabulario de Trabajo Remoto (Interactivo)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Azul claro */
+            color: #333; /* Negro */
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff; /* Blanco */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 30px;
+            max-width: 800px;
+            margin: auto;
+        }
+        h1, h2, h3 {
+            color: #005f73; /* Azul oscuro */
+            text-align: center;
+        }
+        h2 {
+            border-top: 2px solid #ff8c00; /* Naranja */
+            padding-top: 20px;
+            margin-top: 40px;
+        }
+        p {
+            text-align: center;
+            color: #555;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+        .exercise-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+        .column {
+            width: 48%;
+            min-width: 300px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            padding: 12px;
+            border-radius: 5px;
+            border-left: 5px solid #ff8c00; /* Naranja */
+            display: flex;
+            align-items: center;
+        }
+        .fill-in-section li {
+            background-color: transparent;
+            border-left: none;
+            padding-left: 0;
+        }
+        /* Estilos para los inputs de los ejercicios */
+        .matching-input {
+            width: 30px;
+            height: 30px;
+            margin-left: 15px;
+            text-align: center;
+            font-size: 1em;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+            text-transform: lowercase; /* Convertir a minúsculas para la entrada */
+        }
+        .fill-in-select {
+            font-size: 1em;
+            padding: 5px;
+            margin: 0 5px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            transition: border-color 0.3s;
+        }
+        .word-box {
+            background-color: #e9ecef;
+            border: 1px dashed #6c757d;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px auto;
+            text-align: center;
+            font-style: italic;
+            color: #495057;
+        }
+        /* Clases para la corrección */
+        .correct {
+            border-color: #28a745 !important; /* Verde */
+            background-color: #e9f7ef;
+        }
+        .incorrect {
+            border-color: #dc3545 !important; /* Rojo */
+            background-color: #fce8e6;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 1em;
+            font-weight: bold;
+            color: #ffffff; /* Blanco */
+            background-color: #0077b6; /* Azul */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #005f73;
+        }
+        button.reset {
+            background-color: #ff8c00; /* Naranja */
+        }
+        button.reset:hover {
+            background-color: #e67e00;
+        }
+        #results {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #005f73;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            padding: 12px 20px;
+            background-color: #6c757d;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Tema: Vocabulario de Trabajo Remoto</h1>
+        
+        <div id="exercise1">
+            <h2>Ejercicio 1: Relacionar Términos</h2>
+            <p>Relaciona cada término con su definición correcta. Escribe la letra correspondiente en el recuadro.</p>
+            <div class="exercise-container">
+                <div class="column">
+                    <ul>
+                        <li>1. Telecommuting <input type="text" id="match1" class="matching-input" maxlength="1"></li>
+                        <li>2. Virtual meetings <input type="text" id="match2" class="matching-input" maxlength="1"></li>
+                        <li>3. Freelancer <input type="text" id="match3" class="matching-input" maxlength="1"></li>
+                        <li>4. Cybersecurity <input type="text" id="match4" class="matching-input" maxlength="1"></li>
+                        <li>5. Remote collaboration <input type="text" id="match5" class="matching-input" maxlength="1"></li>
+                        <li>6. Cloud computing <input type="text" id="match6" class="matching-input" maxlength="1"></li>
+                        <li>7. Flexible hours <input type="text" id="match7" class="matching-input" maxlength="1"></li>
+                        <li>8. Digital nomad <input type="text" id="match8" class="matching-input" maxlength="1"></li>
+                        <li>9. Online platform <input type="text" id="match9" class="matching-input" maxlength="1"></li>
+                        <li>10. Webinar <input type="text" id="match10" class="matching-input" maxlength="1"></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <ul>
+                        <li>a. Working together on projects or tasks while physically distant, using online tools and platforms.</li>
+                        <li>b. Someone who works remotely and travels, often relying on technology to stay connected.</li>
+                        <li>c. Storing and accessing data and programs over the Internet instead of a computer’s hard drive.</li>
+                        <li>d. The ability to adjust working hours to suit one’s preferences or needs.</li>
+                        <li>e. An individual who works on a project basis for various clients, often as an independent contractor.</li>
+                        <li>f. The practice of working from a location other than the office, often from home, using technology to stay connected.</li>
+                        <li>g. Online gatherings where participants can communicate and collaborate using video conferencing tools.</li>
+                        <li>h. Measures and practices to protect computer systems, networks, and data from digital attacks or unauthorised access.</li>
+                        <li>i. A website or application that facilitates communication, collaboration, or the exchange of goods and services.</li>
+                        <li>j. A seminar or workshop conducted over the Internet, allowing participants to join remotely.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="exercise2">
+            <h2>Ejercicio 2: Completar los Espacios</h2>
+            <p>Completa los espacios con la palabra correcta de la caja.</p>
+            <div class="word-box">
+                Telecommuting &nbsp;&bull;&nbsp; Virtual meetings &nbsp;&bull;&nbsp; Freelancer &nbsp;&bull;&nbsp; Cybersecurity &nbsp;&bull;&nbsp; Remote collaboration &nbsp;&bull;&nbsp; Cloud computing &nbsp;&bull;&nbsp; Flexible hours &nbsp;&bull;&nbsp; Digital nomad &nbsp;&bull;&nbsp; Online platform &nbsp;&bull;&nbsp; Webinar
+            </div>
+            <ul class="fill-in-section">
+                <li>1. Maria works as a <select id="fill1" class="fill-in-select">
+                        <option value="">-- selecciona --</option>
+                        <option value="Telecommuting">Telecommuting</option>
+                        <option value="Virtual meetings">Virtual meetings</option>
+                        <option value="Freelancer">Freelancer</option>
+                        <option value="Cybersecurity">Cybersecurity</option>
+                        <option value="Remote collaboration">Remote collaboration</option>
+                        <option value="Cloud computing">Cloud computing</option>
+                        <option value="Flexible hours">Flexible hours</option>
+                        <option value="Digital nomad">Digital nomad</option>
+                        <option value="Online platform">Online platform</option>
+                        <option value="Webinar">Webinar</option>
+                    </select> for several companies, taking on different projects.</li>
+                <li>2. Our team uses an <select id="fill2" class="fill-in-select">
+                        <option value="">-- selecciona --</option>
+                        <option value="Telecommuting">Telecommuting</option>
+                        <option value="Virtual meetings">Virtual meetings</option>
+                        <option value="Freelancer">Freelancer</option>
+                        <option value="Cybersecurity">Cybersecurity</option>
+                        <option value="Remote collaboration">Remote collaboration</option>
+                        <option value="Cloud computing">Cloud computing</option>
+                        <option value="Flexible hours">Flexible hours</option>
+                        <option value="Digital nomad">Digital nomad</option>
+                        <option value="Online platform">Online platform</option>
+                        <option value="Webinar">Webinar</option>
+                    </select> to manage all our projects and communicate efficiently.</li>
+                <li>3. The company implemented strict <select id="fill3" class="fill-in-select">
+                        <option value="">-- selecciona --</option>
+                        <option value="Telecommuting">Telecommuting</option>
+                        <option value="Virtual meetings">Virtual meetings</option>
+                        <option value="Freelancer">Freelancer</option>
+                        <option value="Cybersecurity">Cybersecurity</option>
+                        <option value="Remote collaboration">Remote collaboration</option>
+                        <option value="Cloud computing">Cloud computing</option>
+                        <option value="Flexible hours">Flexible hours</option>
+                        <option value="Digital nomad">Digital nomad</option>
+                        <option value="Online platform">Online platform</option>
+                        <option value="Webinar">Webinar</option>
+                    </select> measures after a data breach scare.</li>
+                <li>4. Thanks to <select id="fill4" class="fill-in-select">
+                        <option value="">-- selecciona --</option>
+                        <option value="Telecommuting">Telecommuting</option>
+                        <option value="Virtual meetings">Virtual meetings</option>
+                        <option value="Freelancer">Freelancer</option>
+                        <option value="Cybersecurity">Cybersecurity</option>
+                        <option value="Remote collaboration">Remote collaboration</option>
+                        <option value="Cloud computing">Cloud computing</option>
+                        <option value="Flexible hours">Flexible hours</option>
+                        <option value="Digital nomad">Digital nomad</option>
+                        <option value="Online platform">Online platform</option>
+                        <option value="Webinar">Webinar</option>
+                    </select>, employees can work from anywhere with an internet connection.</li>
+                <li>5. We hold weekly <select id="fill5" class="fill-in-select">
+                        <option value="">-- selecciona --</option>
+                        <option value="Telecommuting">Telecommuting</option>
+                        <option value="Virtual meetings">Virtual meetings</option>
+                        <option value="Freelancer">Freelancer</option>
+                        <option value="Cybersecurity">Cybersecurity</option>
+                        <option value="Remote collaboration">Remote collaboration</option>
+                        <option value="Cloud computing">Cloud computing</option>
+                        <option value="Flexible hours">Flexible hours</option>
+                        <option value="Digital nomad">Digital nomad</option>
+                        <option value="Online platform">Online platform</option>
+                        <option value="Webinar">Webinar</option>
+                    </select> to keep all remote team members updated.</li>
+                <li>6. The new policy allows for <select id="fill6" class="fill-in-select">
+                        <option value="">-- selecciona --</option>
+                        <option value="Telecommuting">Telecommuting</option>
+                        <option value="Virtual meetings">Virtual meetings</option>
+                        <option value="Freelancer">Freelancer</option>
+                        <option value="Cybersecurity">Cybersecurity</option>
+                        <option value="Remote collaboration">Remote collaboration</option>
+                        <option value="Cloud computing">Cloud computing</option>
+                        <option value="Flexible hours">Flexible hours</option>
+                        <option value="Digital nomad">Digital nomad</option>
+                        <option value="Online platform">Online platform</option>
+                        <option value="Webinar">Webinar</option>
+                    </select>, which helps employees balance work and personal life.</li>
+                <li>7. Many companies are migrating their data to <select id="fill7" class="fill-in-select">
+                        <option value="">-- selecciona --</option>
+                        <option value="Telecommuting">Telecommuting</option>
+                        <option value="Virtual meetings">Virtual meetings</option>
+                        <option value="Freelancer">Freelancer</option>
+                        <option value="Cybersecurity">Cybersecurity</option>
+                        <option value="Remote collaboration">Remote collaboration</option>
+                        <option value="Cloud computing">Cloud computing</option>
+                        <option value="Flexible hours">Flexible hours</option>
+                        <option value="Digital nomad">Digital nomad</option>
+                        <option value="Online platform">Online platform</option>
+                        <option value="Webinar">Webinar</option>
+                    </select> for better accessibility and scalability.</li>
+                <li>8. As a <select id="fill8" class="fill-in-select">
+                        <option value="">-- selecciona --</option>
+                        <option value="Telecommuting">Telecommuting</option>
+                        <option value="Virtual meetings">Virtual meetings</option>
+                        <option value="Freelancer">Freelancer</option>
+                        <option value="Cybersecurity">Cybersecurity</option>
+                        <option value="Remote collaboration">Remote collaboration</option>
+                        <option value="Cloud computing">Cloud computing</option>
+                        <option value="Flexible hours">Flexible hours</option>
+                        <option value="Digital nomad">Digital nomad</option>
+                        <option value="Online platform">Online platform</option>
+                        <option value="Webinar">Webinar</option>
+                    </select>, she enjoys working from different countries throughout the year.</li>
+                <li>9. The project requires intense <select id="fill9" class="fill-in-select">
+                        <option value="">-- selecciona --</option>
+                        <option value="Telecommuting">Telecommuting</option>
+                        <option value="Virtual meetings">Virtual meetings</option>
+                        <option value="Freelancer">Freelancer</option>
+                        <option value="Cybersecurity">Cybersecurity</option>
+                        <option value="Remote collaboration">Remote collaboration</option>
+                        <option value="Cloud computing">Cloud computing</option>
+                        <option value="Flexible hours">Flexible hours</option>
+                        <option value="Digital nomad">Digital nomad</option>
+                        <option value="Online platform">Online platform</option>
+                        <option value="Webinar">Webinar</option>
+                    </select> among team members located in different cities.</li>
+                <li>10. Don't miss our upcoming <select id="fill10" class="fill-in-select">
+                        <option value="">-- selecciona --</option>
+                        <option value="Telecommuting">Telecommuting</option>
+                        <option value="Virtual meetings">Virtual meetings</option>
+                        <option value="Freelancer">Freelancer</option>
+                        <option value="Cybersecurity">Cybersecurity</option>
+                        <option value="Remote collaboration">Remote collaboration</option>
+                        <option value="Cloud computing">Cloud computing</option>
+                        <option value="Flexible hours">Flexible hours</option>
+                        <option value="Digital nomad">Digital nomad</option>
+                        <option value="Online platform">Online platform</option>
+                        <option value="Webinar">Webinar</option>
+                    </select> on the future of remote work.</li>
+            </ul>
+        </div>
+        
+        <div class="button-container">
+            <button onclick="checkAnswers()">Corregir Ejercicios</button>
+            <button class="reset" onclick="resetQuiz()">Intentar de Nuevo</button>
+        </div>
+        <div id="results"></div>
+        
+        <a href="menu.html" class="back-link">Volver al Menú Principal</a>
+    </div>
+
+<script>
+    // --- RESPUESTAS CORRECTAS ---
+    const correctAnswers = {
+        // Ejercicio 1: Matching
+        match1: 'f', // Telecommuting
+        match2: 'g', // Virtual meetings
+        match3: 'e', // Freelancer
+        match4: 'h', // Cybersecurity
+        match5: 'a', // Remote collaboration
+        match6: 'c', // Cloud computing
+        match7: 'd', // Flexible hours
+        match8: 'b', // Digital nomad
+        match9: 'i', // Online platform
+        match10: 'j', // Webinar
+        
+        // Ejercicio 2: Fill-in-the-blanks
+        fill1: 'Freelancer',
+        fill2: 'Online platform',
+        fill3: 'Cybersecurity',
+        fill4: 'Telecommuting',
+        fill5: 'Virtual meetings',
+        fill6: 'Flexible hours',
+        fill7: 'Cloud computing',
+        fill8: 'Digital nomad',
+        fill9: 'Remote collaboration',
+        fill10: 'Webinar'
+    };
+
+    function checkAnswers() {
+        let score = 0;
+        const totalQuestions = Object.keys(correctAnswers).length;
+
+        // Itera sobre todas las respuestas correctas para comprobar cada pregunta
+        for (const id in correctAnswers) {
+            const inputElement = document.getElementById(id);
+            // Asegúrate de que inputElement no sea nulo antes de acceder a sus propiedades
+            if (!inputElement) {
+                console.warn(`Element with ID '${id}' not found.`);
+                continue;
+            }
+
+            let userAnswer;
+            if (inputElement.tagName === 'SELECT') {
+                userAnswer = inputElement.value;
+            } else { // Asume input type="text"
+                userAnswer = inputElement.value.trim();
+            }
+            
+            const correctAnswer = correctAnswers[id];
+            
+            // Limpia clases previas
+            inputElement.classList.remove('correct', 'incorrect');
+
+            // La comparación debe ser sensible a mayúsculas/minúsculas para los selects,
+            // pero para los inputs de texto, la respuesta la normalizamos a minúsculas en el script
+            // y la mostramos con text-transform: lowercase en CSS si se desea.
+            // Para el matching-input, la comparación a minúsculas es buena.
+            if (inputElement.classList.contains('matching-input')) {
+                if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+                    inputElement.classList.add('correct');
+                    score++;
+                } else {
+                    inputElement.classList.add('incorrect');
+                }
+            } else { // Para selects, la comparación directa de los valores es más segura
+                if (userAnswer === correctAnswer) {
+                    inputElement.classList.add('correct');
+                    score++;
+                } else {
+                    inputElement.classList.add('incorrect');
+                }
+            }
+        }
+        
+        // Muestra el resultado final
+        const resultsElement = document.getElementById('results');
+        resultsElement.innerHTML = `Has acertado ${score} de ${totalQuestions} preguntas.`;
+    }
+
+    function resetQuiz() {
+        // Itera sobre todas las preguntas para limpiar los valores y estilos
+        for (const id in correctAnswers) {
+            const inputElement = document.getElementById(id);
+             if (!inputElement) continue; // Asegúrate de que el elemento exista
+
+            inputElement.classList.remove('correct', 'incorrect');
+            
+            // Diferencia entre input de texto y select
+            if (inputElement.tagName === 'SELECT') {
+                inputElement.selectedIndex = 0; // Restablece la opción por defecto
+            } else { // input de texto
+                inputElement.value = '';
+            }
+        }
+        
+        // Limpia el mensaje de resultados
+        document.getElementById('results').innerHTML = '';
+    }
+</script>
+
+</body>
+</html>

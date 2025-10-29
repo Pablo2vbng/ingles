@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoría y Práctica Interactiva: Tiempos Verbales y Artículos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .content-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 25px 40px;
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        h1 {
+            color: #005f73;
+            text-align: center;
+            border-bottom: 2px solid #005f73;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #0077b6;
+            margin-top: 40px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+        h3 { color: #005f73; }
+        .explanation-box {
+            background-color: #e0f7fa;
+            border-left: 5px solid #0077b6;
+            padding: 15px; margin: 20px 0; border-radius: 5px;
+        }
+        .exercise-section {
+            background-color: #fffbe6;
+            border-left: 5px solid #ffc107;
+            padding: 20px; margin-top: 25px; border-radius: 5px;
+        }
+        .exercise-section ol, .exercise-section ul { padding-left: 20px; list-style-position: inside; }
+        .grammar-table {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+        }
+        .grammar-table th, .grammar-table td {
+            border: 1px solid #ddd; padding: 12px; text-align: left;
+        }
+        .grammar-table th { background-color: #0077b6; color: white; }
+        .check-button {
+            background-color: #0077b6; color: white; border: none;
+            padding: 10px 15px; border-radius: 5px; cursor: pointer;
+            margin-top: 15px; font-size: 16px;
+        }
+        .check-button:hover { background-color: #005f73; }
+        
+        .interactive-input {
+            font-size: 1em; padding: 5px; border: 1px solid #ccc; border-radius: 4px; margin: 5px 0;
+        }
+        .large-input { width: 95%; }
+        .correct-input { border-color: #4caf50; background-color: #e8f5e9; }
+        .incorrect-input { border-color: #f44336; background-color: #ffebee; }
+        
+        .choice-span { cursor: pointer; padding: 5px; border-radius: 4px; margin: 0 5px; border: 1px solid transparent; }
+        .choice-span:hover { background-color: #f0f0f0; }
+        .selected-correct { background-color: #a5d6a7; border-color: #4caf50; }
+        .selected-incorrect { background-color: #ffcdd2; border-color: #f44336; }
+
+        .schedule, .email-text, .conference-website, .voicemail-text {
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        .conference-website .menu { font-weight: bold; color: #005f73; word-spacing: 15px; text-align: center; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="content-container">
+    <h1>Teoría y Práctica: Tiempos de Presente para el Futuro</h1>
+
+    <!-- SECCIÓN 1: TEORÍA DE TIEMPOS VERBALES -->
+    <h2>1. Usos de los Tiempos Presentes para el Futuro</h2>
+    <div class="explanation-box">
+        <p>En inglés, es común usar tiempos verbales del presente para hablar de acciones o eventos futuros. Cada tiempo verbal tiene un matiz de significado diferente.</p>
+        <table class="grammar-table">
+            <thead>
+                <tr>
+                    <th>Uso</th>
+                    <th>Estructura</th>
+                    <th>Ejemplo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Present Simple</strong><br>Para eventos futuros programados (horarios, calendarios).</td>
+                    <td>Verbo en presente</td>
+                    <td><code>We <strong>have</strong> a meeting next Monday at 5 p.m.</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Present Continuous</strong><br>Para planes o citas futuras ya confirmadas.</td>
+                    <td>am/is/are + verbo -ing</td>
+                    <td><code>We <strong>are travelling</strong> to Paris next month.</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Verbs + to + Infinitive</strong><br>Para planes, esperanzas o intenciones futuras.</td>
+                    <td>plan/hope/intend + to + verbo</td>
+                    <td><code>I <strong>hope to arrange</strong> another visit with our suppliers.</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Be + Adjective</strong><br>Para describir disponibilidad futura.</td>
+                    <td>am/is/are + adjetivo</td>
+                    <td><code>I’m afraid they <strong>are busy</strong> until next Monday.</code></td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>Nota sobre State Verbs:</strong> Verbos que describen estados (e.g., <i>understand, know, like, mean, need</i>) normalmente no se usan en Present Continuous, incluso si se refieren al futuro.</p>
+    </div>
+
+    <!-- SECCIÓN 2: EJERCICIOS DE TIEMPOS VERBALES -->
+    <h2>2. Practice</h2>
+
+    <div class="exercise-section">
+        <h3>Ejercicio 2.1: Analizando el Itinerario</h3>
+        <p>Lee el itinerario original y el email de Helen. Después, contesta las preguntas sobre los cambios.</p>
+        
+        <h4>Itinerario Original</h4>
+        <div class="schedule">
+            <strong>13th November, Monday</strong><br>
+            8:50-11:35  Flight VY5821 Madrid-Amsterdam<br>
+            14:00 Meeting at Unilever<br>
+            21:00 Dinner with Alfred Costa<br><br>
+            <strong>14th November, Tuesday</strong><br>
+            9:00 Leave hotel for meetings from 10:00<br>
+            19:25-22:05 Flight VY5827 Amsterdam-Madrid
+        </div>
+
+        <h4>Email de Helen</h4>
+        <div class="email-text">
+            <strong>Subject: Next week</strong><br>
+            Hi, Matt,<br>
+            I’m really sorry but there are some changes to the original schedule. We still <strong>leave</strong> early on Monday and <strong>come back</strong> on Tuesday, but the bad news is that on Monday we<strong>’re not meeting</strong> the people at Unilever until 18:00. I’m afraid they<strong>’re busy</strong> until then. Anyway, I <strong>hope to arrange</strong> another visit, so we aren’t waiting around all afternoon. Apart from that, everything is fine for the rest of the trip. By the way, our new agent in Amsterdam <strong>is joining</strong> us at 11:00 for the customers visits on Tuesday. His name is Alfred Costa.<br>
+            Helen
+        </div>
+        
+        <h4>Preguntas sobre los cambios:</h4>
+        <ol>
+            <li>What time is the new meeting at Unilever on Monday? <input type="text" id="change1" class="interactive-input" placeholder="e.g., 18:00"></li>
+            <li>What time is the new agent joining them on Tuesday? <input type="text" id="change2" class="interactive-input" placeholder="e.g., 11:00"></li>
+        </ol>
+        <button class="check-button" onclick="checkChanges()">Corregir Cambios</button>
+    </div>
+    
+    <div class="exercise-section">
+        <h3>Ejercicio 2.2: Clasifica los Verbos</h3>
+        <p>Clasifica los verbos en negrita del email de Helen según su uso gramatical.</p>
+        <ul>
+            <li><strong>a) Scheduled/Timetabled event (Present Simple):</strong><br>
+                <input type="text" id="cat_a1" class="interactive-input"> , <input type="text" id="cat_a2" class="interactive-input"></li>
+            <li><strong>b) Arrangement for the future (Present Continuous):</strong><br>
+                <input type="text" id="cat_b1" class="interactive-input"> , <input type="text" id="cat_b2" class="interactive-input"></li>
+            <li><strong>c) Future plans, hopes, expectations (Verb + to + Infinitive):</strong><br>
+                <input type="text" id="cat_c1" class="interactive-input"></li>
+             <li><strong>d) Future availability (Be + Adjective):</strong><br>
+                <input type="text" id="cat_d1" class="interactive-input"></li>
+        </ul>
+        <button class="check-button" onclick="checkVerbs()">Corregir Clasificación</button>
+    </div>
+
+    <div class="exercise-section">
+        <h3>Ejercicio 2.3: Elige la Opción Correcta</h3>
+        <p>Matt recibe un mensaje de voz de Alfred Costa. Haz clic en la forma verbal correcta para completar el mensaje.</p>
+        <div class="voicemail-text">
+            Hi, Helen. This is Alfred Costa. I’m sorry but I <span class="choice-span" onclick="checkTenseChoice(this, false)">be</span> / <span class="choice-span" onclick="checkTenseChoice(this, true)">’m busy</span> next Monday morning, so I can’t meet you personally at the airport. When your flight <span class="choice-span" onclick="checkTenseChoice(this, true)">arrives</span> / <span class="choice-span" onclick="checkTenseChoice(this, false)">is arriving</span>, a driver will meet you. Let’s <span class="choice-span" onclick="checkTenseChoice(this, true)">plan to meet</span> / <span class="choice-span" onclick="checkTenseChoice(this, false)">meeting</span> in your hotel reception on Tuesday morning at around eleven because we <span class="choice-span" onclick="checkTenseChoice(this, false)">meet</span> / <span class="choice-span" onclick="checkTenseChoice(this, true)">are meeting</span> the first client at eleven thirty instead of ten. By the way, do you <span class="choice-span" onclick="checkTenseChoice(this, true)">intend to check</span> / <span class="choice-span" onclick="checkTenseChoice(this, false)">checking</span> out in the morning or <span class="choice-span" onclick="checkTenseChoice(this, true)">are you staying</span> / <span class="choice-span" onclick="checkTenseChoice(this, false)">do you stay</span> another night in Amsterdam? I’m afraid I<span class="choice-span" onclick="checkTenseChoice(this, true)">’m not free</span> / <span class="choice-span" onclick="checkTenseChoice(this, false)">don’t free</span> in the evening, but I can book you an excellent restaurant near the hotel for dinner if you <span class="choice-span" onclick="checkTenseChoice(this, true)">are staying</span>. It <span class="choice-span" onclick="checkTenseChoice(this, true)">opens</span> / <span class="choice-span" onclick="checkTenseChoice(this, false)">is opening</span> around eight. Anyway, let me know your plans.
+        </div>
+    </div>
+    
+    <hr style="margin-top: 50px; border-top: 2px solid #005f73;">
+    
+    <h1>Teoría y Práctica: Artículos (a/an, the, no article)</h1>
+
+    <!-- SECCIÓN 3: EJERCICIO INTRODUCTORIO DE ARTÍCULOS -->
+    <h2>1. The Conference Website</h2>
+    <div class="exercise-section">
+        <h3>Ejercicio 1.1: Escribe los Títulos</h3>
+        <p>Lee las secciones de la web de la conferencia y escribe un título apropiado para las secciones 2, 3 y 4.</p>
+        <div class="conference-website">
+            <p class="menu">Home / Tickets / News / Partners / Contact</p>
+            <h3>AI conference</h3>
+            <p>Book in advance to get a discount</p>
+            
+            <h4>1. ABOUT THE CONFERENCE</h4>
+            <p>The AI conference attracts over 5,000 delegates from all over the world and is one of the biggest annual AI events in Europe.</p>
+            
+            <h4>2. <input type="text" id="heading2" class="interactive-input" placeholder="Escribe un título aquí"></h4>
+            <p>The venue offers over 100 stands to show new products, make contacts and recruit new talent. Reserve a stand by 1st October to guarantee your place.</p>
+            
+            <h4>3. <input type="text" id="heading3" class="interactive-input" placeholder="Escribe un título aquí"></h4>
+            <p>Delegates are advised to travel by public transport as parking is limited. An airport shuttle bus runs every day with stops at all major hotels. The bus is free for delegates.</p>
+            
+            <h4>4. <input type="text" id="heading4" class="interactive-input" placeholder="Escribe un título aquí"></h4>
+            <p>Delegates should go directly to the registration desk to collect a badge and for information on the day.</p>
+        </div>
+        <button class="check-button" onclick="checkHeadings()">Corregir Títulos</button>
+    </div>
+
+    <!-- SECCIÓN 4: TEORÍA DE ARTÍCULOS -->
+    <h2>2. Rules for Using Articles</h2>
+    <div class="explanation-box">
+        <h3>a/an (indefinite article)</h3>
+        <p>Use <strong>a</strong> before words starting with a consonant sound: <em>a badge, a desk</em>.</p>
+        <p>Use <strong>an</strong> before words starting with a vowel sound: <em>an airport, an economist</em>.</p>
+        <p>We use <strong>a/an</strong>:</p>
+        <ul>
+            <li>To talk about singular countable nouns in a general way (the person or thing could be one or many): <em>an airport bus, a badge</em>.</li>
+            <li>To talk about people’s jobs: <em>he’s a manager, she’s an architect</em>.</li>
+            <li>With singular, countable nouns: <em>a company, a cup of coffee</em>.</li>
+        </ul>
+    </div>
+    
+    <div class="explanation-box">
+        <h3>the (definite article)</h3>
+        <p>We use <strong>the</strong>:</p>
+        <ul>
+            <li>To talk about specific nouns (it’s clear to the listener which person or thing): <em>the registration desk</em>.</li>
+            <li>To talk about a noun for a second time: <em>it’s the job I told you about last week</em>.</li>
+            <li>With superlatives: <em>It’s the largest hotel chain in the world</em>.</li>
+            <li>With singular, plural, and uncountable nouns: <em>the company, the companies, the information</em>.</li>
+            <li>To say there is only one: <em>She’s the Human Resources Manager of our company</em>.</li>
+            <li>With natural places, regions: <em>the Amazon River, the Pacific Ocean</em>.</li>
+            <li>With groups of countries, states, and islands: <em>the United Kingdom, the United States, the Philippines</em>.</li>
+            <li>Periods of time: <em>the weekend, the eleventh century</em>.</li>
+        </ul>
+    </div>
+    
+    <div class="explanation-box">
+        <h3>no article</h3>
+        <p>We use <strong>no article</strong>:</p>
+        <ul>
+            <li>To talk about plural nouns and uncountable nouns in a general way: <em>they hate delays, I like coffee</em>.</li>
+            <li>With many proper nouns (e.g., single countries, continents, cities, languages, etc.): <em>France, New York</em>.</li>
+            <li>With work or home: <em>He’s always at work by ten. He’s at home today</em>.</li>
+            <li>With transportation: <em>by taxi, by plane, by car, on foot</em>.</li>
+            <li>With days of the week: <em>Monday, Tuesday, Wednesday…</em></li>
+        </ul>
+    </div>
+
+    <!-- SECCIÓN 5: EJERCICIOS DE ARTÍCULOS -->
+    <h2>3. Practice</h2>
+    <div class="exercise-section">
+        <h3>Ejercicio 3.1: Corrige los Errores</h3>
+        <p>Estudia las preguntas de los asistentes. Corrige los errores con los artículos escribiendo la frase completa. <strong>Recuerda: dos frases no tienen errores.</strong></p>
+        <ol type="a">
+            <li>
+                <p><em>Original:</em> Which day is Elon Musk giving talk?</p>
+                <input type="text" id="correction_a" class="large-input interactive-input" placeholder="Escribe aquí la frase corregida">
+            </li>
+            <li>
+                <p><em>Original:</em> Can you tell me the way to main auditorium?</p>
+                <input type="text" id="correction_b" class="large-input interactive-input" placeholder="Escribe aquí la frase corregida">
+            </li>
+            <li>
+                <p><em>Original:</em> There’s a presentation about Chat GPT today. What time does presentation start?</p>
+                <input type="text" id="correction_c" class="large-input interactive-input" placeholder="Escribe aquí la frase corregida">
+            </li>
+            <li>
+                <p><em>Original:</em> Are there any sightseeing tours for delegates?</p>
+                <input type="text" id="correction_d" class="large-input interactive-input" placeholder="Escribe aquí la frase corregida">
+            </li>
+            <li>
+                <p><em>Original:</em> Is quickest way to the airport by bus or by taxi?</p>
+                <input type="text" id="correction_e" class="large-input interactive-input" placeholder="Escribe aquí la frase corregida">
+            </li>
+            <li>
+                <p><em>Original:</em> Do you have excursion with a guided tour of the old city?</p>
+                <input type="text" id="correction_f" class="large-input interactive-input" placeholder="Escribe aquí la frase corregida">
+            </li>
+            <li>
+                <p><em>Original:</em> Can I have an accommodation as close to exhibition hall as possible?</p>
+                <input type="text" id="correction_g" class="large-input interactive-input" placeholder="Escribe aquí la frase corregida">
+            </li>
+            <li>
+                <p><em>Original:</em> Is the conference in London next year?</p>
+                <input type="text" id="correction_h" class="large-input interactive-input" placeholder="Escribe aquí la frase corregida">
+            </li>
+            <li>
+                <p><em>Original:</em> Is it possible to get taxi to the city centre, please?</p>
+                <input type="text" id="correction_i" class="large-input interactive-input" placeholder="Escribe aquí la frase corregida">
+            </li>
+        </ol>
+        <button class="check-button" onclick="checkCorrections()">Corregir Frases</button>
+    </div>
+
+    <div class="explanation-box">
+        <h3>THE + COUNTRY</h3>
+        <p>Some countries need «the» before their name because they are groups of:</p>
+        <ul>
+            <li>Countries (e.g. the United Kingdom).</li>
+            <li>States (e.g. the United States).</li>
+            <li>Islands (e.g. the Philippines).</li>
+        </ul>
+    </div>
+    
+</div>
+
+<script>
+    // --- FUNCIÓN GENERAL DE VALIDACIÓN ---
+    function validateInput(input, correctAnswer) {
+        const userValue = input.value.trim().toLowerCase().replace(/'/g, '');
+        const correctValue = correctAnswer.toLowerCase().replace(/'/g, '');
+        input.classList.remove('correct-input', 'incorrect-input');
+        if (userValue === correctValue) {
+            input.classList.add('correct-input');
+        } else {
+            input.classList.add('incorrect-input');
+        }
+    }
+
+    // --- SCRIPTS PARA EJERCICIOS DE TIEMPOS VERBALES ---
+    function checkChanges() {
+        validateInput(document.getElementById('change1'), "18:00");
+        validateInput(document.getElementById('change2'), "11:00");
+    }
+
+    function checkVerbs() {
+        const a_answers = [document.getElementById('cat_a1').value.trim().toLowerCase(), document.getElementById('cat_a2').value.trim().toLowerCase()].sort();
+        const b_answers = [document.getElementById('cat_b1').value.trim().toLowerCase().replace(/'/g, ''), document.getElementById('cat_b2').value.trim().toLowerCase().replace(/'/g, '')].sort();
+        
+        if (a_answers.includes('leave') && a_answers.includes('come back')) {
+            document.getElementById('cat_a1').classList.add('correct-input');
+            document.getElementById('cat_a2').classList.add('correct-input');
+        } else {
+            document.getElementById('cat_a1').classList.add('incorrect-input');
+            document.getElementById('cat_a2').classList.add('incorrect-input');
+        }
+
+        if (b_answers.includes('are not meeting') && b_answers.includes('is joining')) {
+            document.getElementById('cat_b1').classList.add('correct-input');
+            document.getElementById('cat_b2').classList.add('correct-input');
+        } else {
+            document.getElementById('cat_b1').classList.add('incorrect-input');
+            document.getElementById('cat_b2').classList.add('incorrect-input');
+        }
+        
+        validateInput(document.getElementById('cat_c1'), "hope to arrange");
+        validateInput(document.getElementById('cat_d1'), "’re busy");
+    }
+
+    function checkTenseChoice(spanElement, isCorrect) {
+        const siblings = spanElement.parentElement.querySelectorAll('.choice-span');
+        siblings.forEach(child => child.classList.remove('selected-correct', 'selected-incorrect'));
+        spanElement.classList.add(isCorrect ? 'selected-correct' : 'selected-incorrect');
+    }
+
+    // --- SCRIPTS PARA EJERCICIOS DE ARTÍCULOS ---
+    
+    // Validador flexible para títulos (acepta varias respuestas correctas)
+    function validateInputWithOptions(input, correctAnswersArray) {
+        const userValue = input.value.trim().toLowerCase();
+        input.classList.remove('correct-input', 'incorrect-input');
+        if (correctAnswersArray.map(a => a.toLowerCase()).includes(userValue)) {
+            input.classList.add('correct-input');
+        } else {
+            input.classList.add('incorrect-input');
+        }
+    }
+    
+    // Validador de frases (ignora mayúsculas/minúsculas y puntuación final)
+    function validateSentence(input, correctSentence) {
+        const normalize = (str) => str.trim().toLowerCase().replace(/[.?,!]$/, '').replace(/’/g, "'");
+        const userValue = normalize(input.value);
+        const correctValue = normalize(correctSentence);
+        input.classList.remove('correct-input', 'incorrect-input');
+        if (userValue === correctValue) {
+            input.classList.add('correct-input');
+        } else {
+            input.classList.add('incorrect-input');
+        }
+    }
+
+    function checkHeadings() {
+        validateInputWithOptions(document.getElementById('heading2'), ['Exhibition', 'Exhibitors', 'Stands']);
+        validateInputWithOptions(document.getElementById('heading3'), ['Transport', 'Location', 'Venue', 'Getting there']);
+        validateInputWithOptions(document.getElementById('heading4'), ['Registration', 'Information', 'Delegates']);
+    }
+
+    function checkCorrections() {
+        validateSentence(document.getElementById('correction_a'), 'Which day is Elon Musk giving a talk?');
+        validateSentence(document.getElementById('correction_b'), 'Can you tell me the way to the main auditorium?');
+        validateSentence(document.getElementById('correction_c'), 'There’s a presentation about Chat GPT today. What time does the presentation start?');
+        validateSentence(document.getElementById('correction_d'), 'Are there any sightseeing tours for delegates?');
+        validateSentence(document.getElementById('correction_e'), 'Is the quickest way to the airport by bus or by taxi?');
+        validateSentence(document.getElementById('correction_f'), 'Do you have an excursion with a guided tour of the old city?');
+        validateSentence(document.getElementById('correction_g'), 'Can I have accommodation as close to the exhibition hall as possible?');
+        validateSentence(document.getElementById('correction_h'), 'Is the conference in London next year?');
+        validateSentence(document.getElementById('correction_i'), 'Is it possible to get a taxi to the city centre, please?');
+    }
+</script>
+
+</body>
+</html>

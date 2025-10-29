@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoría Interactiva Tema 1: Vocabulario de Trabajo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .content-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 25px 40px;
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        h1 {
+            color: #005f73;
+            text-align: center;
+            border-bottom: 2px solid #005f73;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #0077b6;
+            margin-top: 40px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #005f73;
+        }
+        .explanation-box {
+            background-color: #e0f7fa;
+            border-left: 5px solid #0077b6;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .exercise-section {
+            background-color: #fffbe6;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 5px;
+        }
+        .exercise-section ol, .exercise-section ul {
+            padding-left: 20px;
+        }
+        .grammar-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .grammar-table th, .grammar-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .grammar-table th {
+            background-color: #0077b6;
+            color: white;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .key-terms {
+            font-weight: bold;
+            color: #d81b60;
+        }
+        /* Estilos interactivos */
+        .check-button {
+            background-color: #0077b6;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+        .check-button:hover {
+            background-color: #005f73;
+        }
+        .feedback {
+            font-size: 20px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .correct { color: #4caf50; }
+        .incorrect { color: #f44336; }
+        
+        select.dialogue-choice {
+            font-size: 1em;
+            padding: 5px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+        select.correct-choice { border-color: #4caf50; background-color: #e8f5e9; }
+        select.incorrect-choice { border-color: #f44336; background-color: #ffebee; }
+
+        input.grammar-input {
+            font-size: 1em;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 150px;
+        }
+        .syllable {
+            cursor: pointer;
+            padding: 2px;
+            border-radius: 3px;
+            transition: background-color 0.2s;
+        }
+        .syllable:hover { background-color: #f0f0f0; }
+        .stressed { background-color: #a5d6a7; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="content-container">
+        <h1>Teoría Interactiva: Vocabulario de Trabajo</h1>
+
+        <!-- SECCIÓN 1: CÓMO MOSTRAR INTERÉS -->
+        <h2>1. How to Show Interest in a Conversation</h2>
+        <div class="explanation-box">
+            <p>En el entorno profesional, mostrar interés durante una conversación es clave. A esto se le llama <span class="key-terms">"active listening"</span>.</p>
+            <h3>Frases útiles para mostrar interés:</h3>
+            <ul>
+                <li><strong>Reaccionar:</strong> <code>That's interesting!</code>, <code>Really?</code>, <code>Oh, cool!</code></li>
+                <li><strong>Acordar:</strong> <code>Right.</code>, <code>I see.</code>, <code>Sounds good.</code></li>
+                <li><strong>Reaccionar a buenas noticias:</strong> <code>That sounds great!</code>, <code>That's fantastic!</code></li>
+            </ul>
+        </div>
+
+        <div class="exercise-section">
+            <h3>Ejercicio 1: Completa el diálogo</h3>
+            <p>Elige la mejor opción del menú desplegable para completar la conversación.</p>
+            <p><strong>Mark:</strong> I'm organizing our next big product launch. It's for a new app.</p>
+            <p><strong>Anna (1):</strong> 
+                <select class="dialogue-choice" onchange="checkDialogue(this, 'correct')">
+                    <option value="">...</option>
+                    <option value="correct">That's interesting!</option>
+                    <option value="incorrect">I don't know.</option>
+                </select> I work in app development.
+            </p>
+            <p><strong>Mark:</strong> We are planning to launch it in Europe next month.</p>
+            <p><strong>Anna (2):</strong> 
+                <select class="dialogue-choice" onchange="checkDialogue(this, 'correct')">
+                    <option value="">...</option>
+                    <option value="incorrect">Maybe.</option>
+                    <option value="correct">Sounds good.</option>
+                </select> What does the app do exactly?
+            </p>
+            <p><strong>Mark:</strong> It helps people learn new languages. We are getting very positive feedback.</p>
+            <p><strong>Anna (3):</strong> 
+                <select class="dialogue-choice" onchange="checkDialogue(this, 'correct')">
+                    <option value="">...</option>
+                    <option value="correct">That's fantastic!</option>
+                    <option value="incorrect">It is what it is.</option>
+                </select> Maybe we can collaborate sometime.
+            </p>
+        </div>
+
+        <!-- SECCIÓN 2: GRAMÁTICA -->
+        <h2>2. Grammar: Present Simple vs. Present Continuous</h2>
+        <div class="explanation-box">
+            <p>El <span class="key-terms">Present Simple</span> se usa para rutinas y hechos. El <span class="key-terms">Present Continuous</span> se usa para acciones en progreso o situaciones temporales.</p>
+        </div>
+        
+        <div class="exercise-section">
+            <h3>Ejercicio 2: Elige la forma correcta</h3>
+            <p>Escribe la forma correcta del verbo (Present Simple o Continuous). Después, pulsa el botón para corregir.</p>
+            <ol>
+                <li>She normally <input type="text" id="g1a" class="grammar-input"> (work) in the office, but this week she <input type="text" id="g1b" class="grammar-input"> (work) from home. <span class="feedback" id="f1"></span></li>
+                <li>My team <input type="text" id="g2" class="grammar-input"> (usually / hold) meetings on Mondays.<span class="feedback" id="f2"></span></li>
+                <li>Please be quiet, I <input type="text" id="g3" class="grammar-input"> (talk) to a client on the phone.<span class="feedback" id="f3"></span></li>
+                <li>The company <input type="text" id="g4" class="grammar-input"> (want) to expand its services to Asia.<span class="feedback" id="f4"></span></li>
+                <li>Right now, the marketing team <input type="text" id="g5" class="grammar-input"> (develop) a new strategy.<span class="feedback" id="f5"></span></li>
+            </ol>
+            <button class="check-button" onclick="checkGrammar()">Corregir Ejercicio</button>
+        </div>
+
+        <!-- SECCIÓN 3: PRONUNCIACIÓN -->
+        <h2>3. Pronunciation: Word Stress</h2>
+        <div class="explanation-box">
+            <p>El <span class="key-terms">"word stress"</span> es la sílaba que se pronuncia con más fuerza en una palabra. Acertar con el "word stress" es clave para que te entiendan bien.</p>
+        </div>
+
+        <div class="exercise-section">
+            <h3>Ejercicio 3: Haz clic en la sílaba tónica</h3>
+            <p>Haz clic en la sílaba que crees que lleva el acento en cada palabra.</p>
+            <ul>
+                <li id="word1">
+                    marketing: 
+                    <span class="syllable" onclick="checkStress('word1', 0)">mar</span>-
+                    <span class="syllable" onclick="checkStress('word1', 1)">ket</span>-
+                    <span class="syllable" onclick="checkStress('word1', 2)">ing</span>
+                </li>
+                <li id="word2">
+                    computer: 
+                    <span class="syllable" onclick="checkStress('word2', 0)">com</span>-
+                    <span class="syllable" onclick="checkStress('word2', 1)">pu</span>-
+                    <span class="syllable" onclick="checkStress('word2', 2)">ter</span>
+                </li>
+                <li id="word3">
+                    information: 
+                    <span class="syllable" onclick="checkStress('word3', 0)">in</span>-
+                    <span class="syllable" onclick="checkStress('word3', 1)">for</span>-
+                    <span class="syllable" onclick="checkStress('word3', 2)">ma</span>-
+                    <span class="syllable" onclick="checkStress('word3', 3)">tion</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // --- SCRIPT PARA EJERCICIO 1 ---
+        function checkDialogue(selectElement, correctValue) {
+            selectElement.classList.remove('correct-choice', 'incorrect-choice');
+            if (selectElement.value === correctValue) {
+                selectElement.classList.add('correct-choice');
+            } else if (selectElement.value !== "") {
+                selectElement.classList.add('incorrect-choice');
+            }
+        }
+
+        // --- SCRIPT PARA EJERCICIO 2 ---
+        function checkGrammar() {
+            const answers = {
+                g1a: "works",
+                g1b: "is working",
+                g2: "usually holds",
+                g3: "am talking",
+                g4: "wants",
+                g5: "is developing"
+            };
+
+            const check = (id, correctAns) => {
+                const input = document.getElementById(id);
+                const feedback = document.getElementById(id.replace('g', 'f'));
+                const userAnswer = input.value.trim().toLowerCase();
+                if (userAnswer === correctAns) {
+                    feedback.textContent = '✔️';
+                    feedback.className = 'feedback correct';
+                } else {
+                    feedback.textContent = '❌';
+                    feedback.className = 'feedback incorrect';
+                }
+            };
+            
+            check('g1a', answers.g1a);
+            check('g1b', answers.g1b);
+            check('g2', answers.g2);
+            check('g3', answers.g3);
+            check('g4', answers.g4);
+            check('g5', answers.g5);
+        }
+
+        // --- SCRIPT PARA EJERCICIO 3 ---
+        function checkStress(wordId, correctSyllableIndex) {
+            const wordContainer = document.getElementById(wordId);
+            const syllables = wordContainer.getElementsByClassName('syllable');
+            
+            for (let i = 0; i < syllables.length; i++) {
+                syllables[i].classList.remove('stressed');
+            }
+            
+            syllables[correctSyllableIndex].classList.add('stressed');
+        }
+    </script>
+
+</body>
+</html>

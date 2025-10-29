@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Grammar Quiz</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f9;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            padding: 25px 40px;
+        }
+        h1 {
+            color: #005f73;
+            text-align: center;
+            border-bottom: 2px solid #005f73;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #0077b6;
+            margin-top: 40px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+        .exercise-section {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px dashed #ccc;
+        }
+        .exercise-section:last-child {
+            border-bottom: none;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .question ol, .question ul { padding-left: 25px; margin: 0; }
+        .question li { margin-bottom: 15px; }
+        .theory-box {
+            background-color: #e0f7fa;
+            border-left: 4px solid #0077b6;
+            padding: 1px 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .interactive-input, .interactive-select {
+            font-size: 1em;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin: 0 5px;
+            transition: border-color 0.3s;
+        }
+        .interactive-select { min-width: 150px; }
+        .interactive-input:focus, .interactive-select:focus { outline: none; border-color: #0077b6; }
+        
+        .options { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+        .options label { display: inline-block; background-color: #e9ecef; padding: 8px 15px; border-radius: 20px; cursor: pointer; transition: background-color 0.3s; border: 1px solid transparent; }
+        .options input[type="radio"] { display: none; }
+        .options input[type="radio"]:checked + span { font-weight: bold; background-color: #0077b6; color: white; border-color: #0077b6; }
+        .options input[type="radio"]:hover + span { background-color: #d0d5db; }
+        
+        .correct-input, .correct-select { border-color: #28a745; background-color: #e8f5e9; }
+        .incorrect-input, .incorrect-select { border-color: #dc3545; background-color: #ffebee; }
+        .correct-option { background-color: #d4edda !important; border-color: #28a745 !important; color: #155724; }
+        .incorrect-option { background-color: #f8d7da !important; border-color: #dc3545 !important; color: #721c24; }
+
+        .check-button { display: block; width: 100%; background-color: #0077b6; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; margin-top: 20px; font-size: 16px; font-weight: bold; transition: background-color 0.3s; }
+        .check-button:hover { background-color: #005f73; }
+        
+        .results-container { text-align: center; margin-top: 20px; padding: 15px; border-radius: 8px; background-color: #e0f7fa; border: 2px solid #0077b6; font-size: 1.1em; display: none; }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>English Grammar Practice</h1>
+
+        <div class="theory-box">
+            <p><strong>Have to, must, should: Obligation, prohibition, necessity, advice</strong></p>
+            <ul>
+                <li><strong>Must:</strong> Expresses strong obligation or prohibition (often from the speaker).</li>
+                <li><strong>Have to:</strong> Expresses external obligation (rules, laws, circumstances).</li>
+                <li><strong>Should:</strong> Expresses advice or recommendation.</li>
+                <li><strong>Don't have to:</strong> Expresses lack of necessity.</li>
+                <li><strong>Mustn't:</strong> Expresses strong prohibition.</li>
+                <li><strong>Can:</strong> Expresses ability or permission.</li>
+                <li><strong>Can't:</strong> Expresses inability or prohibition.</li>
+                <li><strong>Could:</strong> Expresses possibility or polite request.</li>
+            </ul>
+        </div>
+
+        <div class="exercise-section">
+            <h2>Ejercicio 1</h2>
+            <p>Choose the correct option to complete the sentences below.</p>
+            <form id="exercise1-form">
+                <div class="question">
+                    <p>1. When we were at school we <select name="q1" class="interactive-select">
+                        <option value="">--Select--</option>
+                        <option value="must">must</option>
+                        <option value="had to">had to</option>
+                        <option value="should">should</option>
+                    </select> wear a uniform.</p>
+                </div>
+                <div class="question">
+                    <p>2. You <select name="q2" class="interactive-select">
+                        <option value="">--Select--</option>
+                        <option value="must">must</option>
+                        <option value="should">should</option>
+                        <option value="don't have to">don't have to</option>
+                    </select> be an expert to use the basic functions of program.</p>
+                </div>
+                <div class="question">
+                    <p>3. You <select name="q3" class="interactive-select">
+                        <option value="">--Select--</option>
+                        <option value="should">should</option>
+                        <option value="must">must</option>
+                        <option value="have">have</option>
+                    </select> to tell her that you are sorry.</p>
+                </div>
+                <div class="question">
+                    <p>4. We <select name="q4" class="interactive-select">
+                        <option value="">--Select--</option>
+                        <option value="should have">should have</option>
+                        <option value="must">must</option>
+                        <option value="had to">had to</option>
+                    </select> go to the meeting. Why didn't you go?</p>
+                </div>
+                <div class="question">
+                    <p>5. I <select name="q5" class="interactive-select">
+                        <option value="">--Select--</option>
+                        <option value="mustn't">mustn't</option>
+                        <option value="don't have to">don't have to</option>
+                        <option value="shouldn't">shouldn't</option>
+                    </select> wear glasses, I still can see perfectly well.</p>
+                </div>
+                <div class="question">
+                    <p>6. We went to bed right after dinner because we <select name="q6" class="interactive-select">
+                        <option value="">--Select--</option>
+                        <option value="had to">had to</option>
+                        <option value="should">should</option>
+                        <option value="must">must</option>
+                    </select> get up early the following day.</p>
+                </div>
+                <div class="question">
+                    <p>7. We <select name="q7" class="interactive-select">
+                        <option value="">--Select--</option>
+                        <option value="should">should</option>
+                        <option value="must">must</option>
+                        <option value="have to">have to</option>
+                    </select> go for a drink one day.</p>
+                </div>
+                <div class="question">
+                    <p>8. You <select name="q8" class="interactive-select">
+                        <option value="">--Select--</option>
+                        <option value="didn't have to">didn't have to</option>
+                        <option value="mustn't">mustn't</option>
+                        <option value="shouldn't">shouldn't</option>
+                    </select> take any money. It wasn't necessary.</p>
+                </div>
+                <div class="question">
+                    <p>9. What are you doing? You <select name="q9" class="interactive-select">
+                        <option value="">--Select--</option>
+                        <option value="mustn't">mustn't</option>
+                        <option value="shouldn't">shouldn's</option>
+                        <option value="can't">can't</option>
+                    </select> be here!</p>
+                </div>
+                <div class="question">
+                    <p>10. We <select name="q10" class="interactive-select">
+                        <option value="">--Select--</option>
+                        <option value="mustn't">mustn't</option>
+                        <option value="didn't have to">didn't have to</option>
+                        <option value="couldn't">couldn't</option>
+                    </select> talk to each other because it was an exam.</p>
+                </div>
+                <button type="button" class="check-button" onclick="checkExercise1()">Check Exercise 1</button>
+                <div id="results1" class="results-container"></div>
+            </form>
+        </div>
+
+        <div class="exercise-section">
+            <h2>Ejercicio 2</h2>
+            <p>Now choose the correct verb for these sentences:</p>
+            <form id="exercise2-form">
+                <div class="question">
+                    <p>1. You ___ come to the meeting but it would help us all if you’re there.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1_ex2" value="don't have to"> <span>don't have to</span></label>
+                        <label><input type="radio" name="q1_ex2" value="mustn't"> <span>mustn't</span></label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>2. I can’t get a connection on my phone. ___ I borrow yours?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2_ex2" value="have to"> <span>have to</span></label>
+                        <label><input type="radio" name="q2_ex2" value="can"> <span>can</span></label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>3. The rules say that you ___ only invite one guest to the club.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q3_ex2" value="can"> <span>can</span></label>
+                        <label><input type="radio" name="q3_ex2" value="have to"> <span>have to</span></label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>4. I ___ stay on for a few hours because I’d rather work late today than over the weekend.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q4_ex2" value="must"> <span>must</span></label>
+                        <label><input type="radio" name="q4_ex2" value="have to"> <span>have to</span></label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>5. There’s a lot of noise coming from outside. ___ I close the window?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q5_ex2" value="Could"> <span>Could</span></label>
+                        <label><input type="radio" name="q5_ex2" value="Must"> <span>Must</span></label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>6. You ___ start saving money if you want to retire early.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6_ex2" value="have to"> <span>have to</span></label>
+                        <label><input type="radio" name="q6_ex2" value="can"> <span>can</span></label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>7. Did they tell you that you ___ come into this area. It’s restricted to staff only.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q7_ex2" value="don't have to"> <span>don't have to</span></label>
+                        <label><input type="radio" name="q7_ex2" value="can't"> <span>can't</span></label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>8. We ___ be there fifteen minutes before the concert starts.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q8_ex2" value="have to"> <span>have to</span></label>
+                        <label><input type="radio" name="q8_ex2" value="can"> <span>can</span></label>
+                    </div>
+                </div>
+                <button type="button" class="check-button" onclick="checkExercise2()">Check Exercise 2</button>
+                <div id="results2" class="results-container"></div>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        const answers1 = {
+            q1: "had to",
+            q2: "don't have to",
+            q3: "have", // Note: The original question has "You to tell her...", which is grammatically incorrect. "You have to tell her" or "You should tell her" would be correct. I'm assuming "have" to complete "have to".
+            q4: "should have",
+            q5: "don't have to",
+            q6: "had to",
+            q7: "should",
+            q8: "didn't have to",
+            q9: "mustn't", // or "can't" depending on context, but "mustn't" implies a stronger prohibition. Given the options, "mustn't" fits the tone of "What are you doing? You..."
+            q10: "couldn't" // "Couldn't talk" because it was physically restricted (exam rules). "Mustn't talk" would be a strong prohibition.
+        };
+
+        const answers2 = {
+            q1_ex2: "don't have to",
+            q2_ex2: "can",
+            q3_ex2: "can",
+            q4_ex2: "must", // Personal strong desire/decision
+            q5_ex2: "Could",
+            q6_ex2: "have to",
+            q7_ex2: "can't",
+            q8_ex2: "have to"
+        };
+
+        function checkExercise1() {
+            const form = document.getElementById('exercise1-form');
+            let correctCount = 0;
+            const totalQuestions = Object.keys(answers1).length;
+
+            for (const [qName, correctAnswer] of Object.entries(answers1)) {
+                const selectElement = form.elements[qName];
+                const selectedValue = selectElement.value;
+
+                selectElement.classList.remove('correct-select', 'incorrect-select');
+
+                if (selectedValue === correctAnswer) {
+                    selectElement.classList.add('correct-select');
+                    correctCount++;
+                } else {
+                    selectElement.classList.add('incorrect-select');
+                }
+            }
+
+            const resultsDiv = document.getElementById('results1');
+            resultsDiv.innerHTML = `You got ${correctCount} out of ${totalQuestions} correct!`;
+            resultsDiv.style.display = 'block';
+        }
+
+        function checkExercise2() {
+            const form = document.getElementById('exercise2-form');
+            let correctCount = 0;
+            const totalQuestions = Object.keys(answers2).length;
+
+            for (const [qName, correctAnswer] of Object.entries(answers2)) {
+                const radioButtons = form.elements[qName];
+                let selectedValue = '';
+                let questionCorrect = false;
+
+                // Reset styles
+                Array.from(radioButtons).forEach(radio => {
+                    const label = radio.closest('label');
+                    if (label) {
+                        label.classList.remove('correct-option', 'incorrect-option');
+                    }
+                });
+
+                Array.from(radioButtons).forEach(radio => {
+                    if (radio.checked) {
+                        selectedValue = radio.value;
+                    }
+                });
+
+                Array.from(radioButtons).forEach(radio => {
+                    const label = radio.closest('label');
+                    if (radio.value === correctAnswer) {
+                        // Mark correct answer
+                        label.classList.add('correct-option');
+                    }
+
+                    if (radio.checked) {
+                        if (radio.value === correctAnswer) {
+                            correctCount++;
+                            questionCorrect = true;
+                        } else {
+                            label.classList.add('incorrect-option'); // Mark incorrect chosen option
+                        }
+                    }
+                });
+            }
+
+            const resultsDiv = document.getElementById('results2');
+            resultsDiv.innerHTML = `You got ${correctCount} out of ${totalQuestions} correct!`;
+            resultsDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

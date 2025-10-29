@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Interactivo de Inglés</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f9;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            padding: 25px 40px;
+        }
+        h1 {
+            color: #005f73;
+            text-align: center;
+            border-bottom: 2px solid #005f73;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #0077b6;
+            margin-top: 40px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+        .exercise-section {
+            margin-bottom: 40px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #0077b6;
+        }
+        .question ol, .question ul {
+            padding-left: 25px;
+            margin: 0;
+        }
+        .question li {
+            margin-bottom: 15px;
+        }
+        .interactive-input {
+            font-size: 1em;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin: 0 5px;
+            width: 150px;
+            transition: border-color 0.3s;
+        }
+        .interactive-input:focus {
+            outline: none;
+            border-color: #0077b6;
+        }
+
+        /* --- Estilos de Radio Buttons --- */
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .options label {
+            display: inline-block;
+            background-color: #e9ecef;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border: 1px solid transparent;
+        }
+        .options input[type="radio"] {
+            display: none;
+        }
+        .options input[type="radio"]:checked + span {
+            font-weight: bold;
+        }
+        
+        /* --- Estilos de Feedback --- */
+        .correct-input, .correct-select {
+            border-color: #28a745;
+            background-color: #e8f5e9;
+        }
+        .incorrect-input, .incorrect-select {
+            border-color: #dc3545;
+            background-color: #ffebee;
+        }
+        .correct-option {
+            background-color: #d4edda !important;
+            border-color: #28a745 !important;
+            color: #155724;
+        }
+        .incorrect-option {
+            background-color: #f8d7da !important;
+            border-color: #dc3545 !important;
+            color: #721c24;
+        }
+
+        .check-button {
+            display: block;
+            width: 100%;
+            background-color: #0077b6;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .check-button:hover {
+            background-color: #005f73;
+        }
+
+        #results-container {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #e0f7fa;
+            border: 2px solid #0077b6;
+            font-size: 1.2em;
+            display: none; /* Oculto por defecto */
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h1>Quiz Interactivo de Inglés</h1>
+
+    <!-- EJERCICIO 1 -->
+    <div class="exercise-section">
+        <h2>Ejercicio 1: Completa los huecos</h2>
+        <div class="question">
+            <ol>
+                <li>In Johannesburg most people <input type="text" id="q1_1" class="interactive-input"> at least five languages.</li>
+                <li>Languages <input type="text" id="q1_2" class="interactive-input"> very fast. Half of world's languages will disappear by 2100.</li>
+                <li>You can't see Tim now; he <input type="text" id="q1_3" class="interactive-input"> a bath.</li>
+                <li>Please keep quiet, I <input type="text" id="q1_4a" class="interactive-input"> to the radio. You know I <input type="text" id="q1_4b" class="interactive-input"> to the news in the mornings.</li>
+                <li>What time <input type="text" id="q1_5" class="interactive-input"> the first train leave?</li>
+                <li>I usually <input type="text" id="q1_6a" class="interactive-input"> a scarf, but today I <input type="text" id="q1_6b" class="interactive-input"> one because it's unusually cold.</li>
+                <li>I finished watching the series you recommended. Now I <input type="text" id="q1_7" class="interactive-input"> another one.</li>
+                <li>What <input type="text" id="q1_8" class="interactive-input"> tonight? Would you like to come and watch the game?</li>
+                <li>Nobody <input type="text" id="q1_9" class="interactive-input"> they will win the match.</li>
+                <li>You look worried. What <input type="text" id="q1_10" class="interactive-input"> about?</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- EJERCICIO 2 -->
+    <div class="exercise-section">
+        <h2>Ejercicio 2: Elige la opción correcta</h2>
+        <div class="question">
+            <ol>
+                <li id="q2_1">I...
+                    <div class="options">
+                        <label><input type="radio" name="q2_1" value="drink"> <span>drink orange juice.</span></label>
+                        <label><input type="radio" name="q2_1" value="drinks"> <span>drinks orange juice.</span></label>
+                        <label><input type="radio" name="q2_1" value="am drinking"> <span>am drinking orange juice.</span></label>
+                    </div>
+                </li>
+                <li id="q2_2">Andy and Lucy...
+                    <div class="options">
+                        <label><input type="radio" name="q2_2" value="stay"> <span>stay with us at the moment.</span></label>
+                        <label><input type="radio" name="q2_2" value="are staying"> <span>are staying with us at the moment.</span></label>
+                        <label><input type="radio" name="q2_2" value="stays"> <span>stays with us at the moment.</span></label>
+                    </div>
+                </li>
+                <li id="q2_3">We...
+                    <div class="options">
+                        <label><input type="radio" name="q2_3" value="walk"> <span>walk to school every day.</span></label>
+                        <label><input type="radio" name="q2_3" value="are walking"> <span>are walking to school every day.</span></label>
+                    </div>
+                </li>
+                 <li id="q2_4">What ...? ~ I'm listening to my new MP3 player.
+                    <div class="options">
+                        <label><input type="radio" name="q2_4" value="do you do"> <span>do you do</span></label>
+                        <label><input type="radio" name="q2_4" value="are you doing"> <span>are you doing</span></label>
+                    </div>
+                </li>
+                <li id="q2_5">I ... my friends in the café after school on Fridays.
+                    <div class="options">
+                        <label><input type="radio" name="q2_5" value="meet"> <span>meet</span></label>
+                        <label><input type="radio" name="q2_5" value="am meeting"> <span>am meeting</span></label>
+                    </div>
+                </li>
+                 <li id="q2_6">Look! Sidney ... his school uniform!
+                    <div class="options">
+                        <label><input type="radio" name="q2_6" value="wears"> <span>wears</span></label>
+                        <label><input type="radio" name="q2_6" value="is wearing"> <span>is wearing</span></label>
+                    </div>
+                </li>
+                 <li id="q2_7">Do you want to play football? ~ Not now. I ... dinner.
+                    <div class="options">
+                        <label><input type="radio" name="q2_7" value="have"> <span>have</span></label>
+                        <label><input type="radio" name="q2_7" value="am having"> <span>am having</span></label>
+                    </div>
+                </li>
+                 <li id="q2_8">What ... for breakfast?
+                    <div class="options">
+                        <label><input type="radio" name="q2_8" value="do you usually have"> <span>do you usually have</span></label>
+                        <label><input type="radio" name="q2_8" value="are you usually having"> <span>are you usually having</span></label>
+                    </div>
+                </li>
+                 <li id="q2_9">Have you got any ice cream? ...
+                    <div class="options">
+                        <label><input type="radio" name="q2_9" value="I don't know"> <span>I don't know</span></label>
+                        <label><input type="radio" name="q2_9" value="I'm not knowing"> <span>I'm not knowing</span></label>
+                    </div>
+                </li>
+                 <li id="q2_10">... Jamie Chandler?
+                    <div class="options">
+                        <label><input type="radio" name="q2_10" value="Do you know"> <span>Do you know</span></label>
+                        <label><input type="radio" name="q2_10" value="Are you knowing"> <span>Are you knowing</span></label>
+                    </div>
+                </li>
+                <li id="q2_11">I ... for a present but I can't find anything good.
+                    <div class="options">
+                        <label><input type="radio" name="q2_11" value="look"> <span>look</span></label>
+                        <label><input type="radio" name="q2_11" value="am looking"> <span>am looking</span></label>
+                    </div>
+                </li>
+                <li id="q2_12">Is football your favourite sport? ~ Yes, but I ... basketball too.
+                    <div class="options">
+                        <label><input type="radio" name="q2_12" value="like"> <span>like</span></label>
+                        <label><input type="radio" name="q2_12" value="am liking"> <span>am liking</span></label>
+                    </div>
+                </li>
+                <li id="q2_13">My brother and I ... early at the weekend.
+                    <div class="options">
+                        <label><input type="radio" name="q2_13" value="don't get up"> <span>don't get up</span></label>
+                        <label><input type="radio" name="q2_13" value="aren't getting up"> <span>aren't getting up</span></label>
+                    </div>
+                </li>
+                <li id="q2_14">Are your parents working at the moment? ~ No, they ...
+                    <div class="options">
+                        <label><input type="radio" name="q2_14" value="don't"> <span>don't</span></label>
+                        <label><input type="radio" name="q2_14" value="aren't"> <span>aren't</span></label>
+                    </div>
+                </li>
+                 <li id="q2_15">My baby sister ... all the time.
+                    <div class="options">
+                        <label><input type="radio" name="q2_15" value="cries"> <span>cries</span></label>
+                        <label><input type="radio" name="q2_15" value="is crying"> <span>is crying</span></label>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+    
+    <!-- EJERCICIO 3 -->
+    <div class="exercise-section">
+        <h2>Ejercicio 3: Elige la opción correcta</h2>
+        <div class="question">
+            <ol>
+                 <li id="q3_1">I ___________ tennis every Sunday.
+                    <div class="options">
+                        <label><input type="radio" name="q3_1" value="play"> <span>play</span></label>
+                        <label><input type="radio" name="q3_1" value="am playing"> <span>am playing</span></label>
+                    </div>
+                </li>
+                 <li id="q3_2">I'm sorry, I can't speak to you now because I ___________ in a meeting.
+                    <div class="options">
+                        <label><input type="radio" name="q3_2" value="sit"> <span>sit</span></label>
+                        <label><input type="radio" name="q3_2" value="am sitting"> <span>am sitting</span></label>
+                    </div>
+                </li>
+                <li id="q3_3">The team ___________ really well at the moment, they have won their last 3 games!
+                    <div class="options">
+                        <label><input type="radio" name="q3_3" value="play"> <span>play</span></label>
+                        <label><input type="radio" name="q3_3" value="are playing"> <span>are playing</span></label>
+                    </div>
+                </li>
+                <li id="q3_4">I ___________ to the gym 3 times per week, because I want to look good for my holiday next month!
+                    <div class="options">
+                        <label><input type="radio" name="q3_4" value="go"> <span>go</span></label>
+                        <label><input type="radio" name="q3_4" value="am going"> <span>am going</span></label>
+                    </div>
+                </li>
+                 <li id="q3_5">My family ___________ in India. It has always been their home.
+                    <div class="options">
+                        <label><input type="radio" name="q3_5" value="live"> <span>live</span></label>
+                        <label><input type="radio" name="q3_5" value="are living"> <span>are living</span></label>
+                    </div>
+                </li>
+                 <li id="q3_6">The weather ___________ colder and colder now that we are in December!
+                    <div class="options">
+                        <label><input type="radio" name="q3_6" value="gets"> <span>gets</span></label>
+                        <label><input type="radio" name="q3_6" value="is getting"> <span>is getting</span></label>
+                    </div>
+                </li>
+                 <li id="q3_7">I ___________ as a waitress for some extra money during this Summer.
+                    <div class="options">
+                        <label><input type="radio" name="q3_7" value="work"> <span>work</span></label>
+                        <label><input type="radio" name="q3_7" value="am working"> <span>am working</span></label>
+                    </div>
+                </li>
+                 <li id="q3_8">I don't know what I ___________ on this project!
+                    <div class="options">
+                        <label><input type="radio" name="q3_8" value="do"> <span>do</span></label>
+                        <label><input type="radio" name="q3_8" value="am doing"> <span>am doing</span></label>
+                    </div>
+                </li>
+                 <li id="q3_9">My dad ___________ about the weather whenever the sun isn't out.
+                    <div class="options">
+                        <label><input type="radio" name="q3_9" value="complains"> <span>complains</span></label>
+                        <label><input type="radio" name="q3_9" value="is complaining"> <span>is complaining</span></label>
+                    </div>
+                </li>
+                 <li id="q3_10">The political situation ___________ quite dramatically as a result of the fighting in the city.
+                    <div class="options">
+                        <label><input type="radio" name="q3_10" value="changes"> <span>changes</span></label>
+                        <label><input type="radio" name="q3_10" value="is changing"> <span>is changing</span></label>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- EJERCICIO 4 -->
+    <div class="exercise-section">
+        <h2>Ejercicio 4: Gerundio o Infinitivo</h2>
+        <div class="question">
+            <ol>
+                <li id="q4_1">___________ used to be my favourite hobby at your age.
+                    <div class="options">
+                        <label><input type="radio" name="q4_1" value="to read"> <span>To read</span></label>
+                        <label><input type="radio" name="q4_1" value="reading"> <span>Reading</span></label>
+                    </div>
+                </li>
+                <li id="q4_2">We talked about ___________ together next summer.
+                    <div class="options">
+                        <label><input type="radio" name="q4_2" value="to go on holiday"> <span>to go on holiday</span></label>
+                        <label><input type="radio" name="q4_2" value="going on holiday"> <span>going on holiday</span></label>
+                    </div>
+                </li>
+                <li id="q4_3">I remember ___________ here when I was a child.
+                    <div class="options">
+                        <label><input type="radio" name="q4_3" value="to play"> <span>to play</span></label>
+                        <label><input type="radio" name="q4_3" value="playing"> <span>playing</span></label>
+                    </div>
+                </li>
+                <li id="q4_4">I think I didn't remember ___________ the door when we left.
+                    <div class="options">
+                        <label><input type="radio" name="q4_4" value="to lock"> <span>to lock</span></label>
+                        <label><input type="radio" name="q4_4" value="locking"> <span>locking</span></label>
+                    </div>
+                </li>
+                 <li id="q4_5">If she doesn't answer, try ___________ her mobile.
+                    <div class="options">
+                        <label><input type="radio" name="q4_5" value="to call"> <span>to call</span></label>
+                        <label><input type="radio" name="q4_5" value="calling"> <span>calling</span></label>
+                    </div>
+                </li>
+                 <li id="q4_6">I tried ___________ my eyes open, but I eventually fell asleep.
+                    <div class="options">
+                        <label><input type="radio" name="q4_6" value="to keep"> <span>to keep</span></label>
+                        <label><input type="radio" name="q4_6" value="keeping"> <span>keeping</span></label>
+                    </div>
+                </li>
+                 <li id="q4_7">My mum doesn't let me ___________ with you.
+                    <div class="options">
+                        <label><input type="radio" name="q4_7" value="to play"> <span>to play</span></label>
+                        <label><input type="radio" name="q4_7" value="play"> <span>play</span></label>
+                    </div>
+                </li>
+                 <li id="q4_8">Your hair needs ___________. It's too long.
+                    <div class="options">
+                        <label><input type="radio" name="q4_8" value="to cut"> <span>to cut</span></label>
+                        <label><input type="radio" name="q4_8" value="cutting"> <span>cutting</span></label>
+                    </div>
+                </li>
+                 <li id="q4_9">I'd prefer ___________ my own car if you don't mind.
+                    <div class="options">
+                        <label><input type="radio" name="q4_9" value="to use"> <span>to use</span></label>
+                        <label><input type="radio" name="q4_9" value="using"> <span>using</span></label>
+                    </div>
+                </li>
+                 <li id="q4_10">They had trouble ___________ our house.
+                    <div class="options">
+                        <label><input type="radio" name="q4_10" value="to find"> <span>to find</span></label>
+                        <label><input type="radio" name="q4_10" value="finding"> <span>finding</span></label>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+    
+     <!-- EJERCICIO 5 -->
+    <div class="exercise-section">
+        <h2>Ejercicio 5: Gerundio o Infinitivo</h2>
+        <div class="question">
+            <ol>
+                <li id="q5_1">She offered ___________ me.
+                    <div class="options">
+                        <label><input type="radio" name="q5_1" value="to help"> <span>to help</span></label>
+                        <label><input type="radio" name="q5_1" value="helping"> <span>helping</span></label>
+                    </div>
+                </li>
+                <li id="q5_2">We've decided ___________ soon.
+                    <div class="options">
+                        <label><input type="radio" name="q5_2" value="to move"> <span>to move</span></label>
+                        <label><input type="radio" name="q5_2" value="moving"> <span>moving</span></label>
+                    </div>
+                </li>
+                <li id="q5_3">I stopped ___________ football when I got married.
+                    <div class="options">
+                        <label><input type="radio" name="q5_3" value="to play"> <span>to play</span></label>
+                        <label><input type="radio" name="q5_3" value="playing"> <span>playing</span></label>
+                    </div>
+                </li>
+                <li id="q5_4">We should ___________ very early in the morning.
+                    <div class="options">
+                        <label><input type="radio" name="q5_4" value="leave"> <span>leave</span></label>
+                        <label><input type="radio" name="q5_4" value="to leave"> <span>to leave</span></label>
+                    </div>
+                </li>
+                <li id="q5_5">I'm not very good at ___________ sports.
+                    <div class="options">
+                        <label><input type="radio" name="q5_5" value="to play"> <span>to play</span></label>
+                        <label><input type="radio" name="q5_5" value="playing"> <span>playing</span></label>
+                    </div>
+                </li>
+                <li id="q5_6">You promised ___________ the children to the cinema.
+                    <div class="options">
+                        <label><input type="radio" name="q5_6" value="to take"> <span>to take</span></label>
+                        <label><input type="radio" name="q5_6" value="taking"> <span>taking</span></label>
+                    </div>
+                </li>
+                 <li id="q5_7">Have you finished ___________ the house?
+                    <div class="options">
+                        <label><input type="radio" name="q5_7" value="to clean"> <span>to clean</span></label>
+                        <label><input type="radio" name="q5_7" value="cleaning"> <span>cleaning</span></label>
+                    </div>
+                </li>
+                 <li id="q5_8">You should avoid ___________ to strangers.
+                    <div class="options">
+                        <label><input type="radio" name="q5_8" value="to talk"> <span>to talk</span></label>
+                        <label><input type="radio" name="q5_8" value="talking"> <span>talking</span></label>
+                    </div>
+                </li>
+                 <li id="q5_9">___________ around the world has always been my dream.
+                    <div class="options">
+                        <label><input type="radio" name="q5_9" value="To travel"> <span>To travel</span></label>
+                        <label><input type="radio" name="q5_9" value="Travelling"> <span>Travelling</span></label>
+                    </div>
+                </li>
+                 <li id="q5_10">I couldn't ___________ you because I didn't have my phone.
+                    <div class="options">
+                        <label><input type="radio" name="q5_10" value="call"> <span>call</span></label>
+                        <label><input type="radio" name="q5_10" value="calling"> <span>calling</span></label>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+
+    <button class="check-button" onclick="checkAnswers()">Corregir Todo</button>
+    <div id="results-container"></div>
+</div>
+
+<script>
+    const answers = {
+        // Ejercicio 1
+        q1_1: ["speak"], q1_2: ["are disappearing", "are changing"], q1_3: ["is having", "is taking"], q1_4a: ["am listening"], q1_4b: ["listen"], q1_5: ["does"],
+        q1_6a: ["wear"], q1_6b: ["am wearing"], q1_7: ["am watching", "am reading"], q1_8: ["are you doing"], q1_9: ["thinks", "believes"], q1_10: ["are you thinking"],
+        // Ejercicio 2
+        q2_1: "drink", q2_2: "are staying", q2_3: "walk", q2_4: "are you doing", q2_5: "meet", q2_6: "is wearing", q2_7: "am having", q2_8: "do you usually have", q2_9: "I don't know", q2_10: "Do you know", q2_11: "am looking", q2_12: "like", q2_13: "don't get up", q2_14: "aren't", q2_15: "cries",
+        // Ejercicio 3
+        q3_1: "play", q3_2: "am sitting", q3_3: "are playing", q3_4: "go", q3_5: "live", q3_6: "is getting", q3_7: "am working", q3_8: "am doing", q3_9: "complains", q3_10: "is changing",
+        // Ejercicio 4
+        q4_1: "reading", q4_2: "going on holiday", q4_3: "playing", q4_4: "to lock", q4_5: "calling", q4_6: "to keep", q4_7: "play", q4_8: "cutting", q4_9: "to use", q4_10: "finding",
+        // Ejercicio 5
+        q5_1: "to help", q5_2: "to move", q5_3: "playing", q5_4: "leave", q5_5: "playing", q5_6: "to take", q5_7: "cleaning", q5_8: "talking", q5_9: "Travelling", q5_10: "call"
+    };
+
+    function checkAnswers() {
+        let score = 0;
+        let totalQuestions = 0;
+
+        // Limpiar estilos previos
+        document.querySelectorAll('.interactive-input, .options label').forEach(el => {
+            el.classList.remove('correct-input', 'incorrect-input', 'correct-option', 'incorrect-option');
+        });
+
+        // --- VALIDACIÓN EJERCICIO 1: INPUTS ---
+        for (let i = 1; i <= 10; i++) {
+            if (i === 4 || i === 6) { // Preguntas con dos inputs
+                totalQuestions += 2;
+                ['a', 'b'].forEach(part => {
+                    const questionId = `q1_${i}${part}`;
+                    const inputElement = document.getElementById(questionId);
+                    const userValue = inputElement.value.trim().toLowerCase();
+                    const correctValues = answers[questionId];
+                    if (correctValues.includes(userValue)) {
+                        inputElement.classList.add('correct-input');
+                        score++;
+                    } else {
+                        inputElement.classList.add('incorrect-input');
+                    }
+                });
+            } else {
+                totalQuestions++;
+                const questionId = `q1_${i}`;
+                const inputElement = document.getElementById(questionId);
+                 if (inputElement) {
+                    const userValue = inputElement.value.trim().toLowerCase();
+                    const correctValues = answers[questionId];
+                    if (correctValues.includes(userValue)) {
+                        inputElement.classList.add('correct-input');
+                        score++;
+                    } else {
+                        inputElement.classList.add('incorrect-input');
+                    }
+                 }
+            }
+        }
+        
+        // --- VALIDACIÓN EJERCICIOS 2, 3, 4, 5: RADIO BUTTONS ---
+        for (let ex = 2; ex <= 5; ex++) {
+            for (let q = 1; q <= (ex === 2 ? 15 : 10); q++) {
+                totalQuestions++;
+                const questionId = `q${ex}_${q}`;
+                const correctAnswer = answers[questionId];
+                const selectedRadio = document.querySelector(`input[name="${questionId}"]:checked`);
+                const allLabels = document.querySelectorAll(`#${questionId} .options label`);
+
+                allLabels.forEach(label => {
+                    const radio = label.querySelector('input');
+                    if (radio.value === correctAnswer) {
+                        label.classList.add('correct-option'); // Siempre mostrar la correcta
+                    }
+                });
+
+                if (selectedRadio) {
+                    if (selectedRadio.value === correctAnswer) {
+                        score++;
+                    } else {
+                        const selectedLabel = selectedRadio.parentElement;
+                        selectedLabel.classList.remove('correct-option');
+                        selectedLabel.classList.add('incorrect-option');
+                    }
+                }
+            }
+        }
+
+
+        // --- MOSTRAR RESULTADOS ---
+        const resultsContainer = document.getElementById('results-container');
+        const percentage = (score / totalQuestions) * 100;
+        resultsContainer.innerHTML = `<h2>Resultados</h2><p>Has acertado <strong>${score}</strong> de <strong>${totalQuestions}</strong> preguntas. (${percentage.toFixed(1)}%)</p>`;
+        resultsContainer.style.display = 'block';
+        resultsContainer.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>

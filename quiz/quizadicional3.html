@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Interactivo de Inglés</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f9;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            padding: 25px 40px;
+        }
+        h1 {
+            color: #005f73;
+            text-align: center;
+            border-bottom: 2px solid #005f73;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #0077b6;
+            margin-top: 40px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+        .exercise-section {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px dashed #ccc;
+        }
+        .exercise-section:last-child {
+            border-bottom: none;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .question ol, .question ul { padding-left: 25px; margin: 0; }
+        .question li { margin-bottom: 15px; }
+        .theory-box {
+            background-color: #e0f7fa;
+            border-left: 4px solid #0077b6;
+            padding: 1px 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .interactive-input, .interactive-select {
+            font-size: 1em;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin: 0 5px;
+            transition: border-color 0.3s;
+        }
+        .interactive-select { min-width: 150px; }
+        .interactive-input:focus, .interactive-select:focus { outline: none; border-color: #0077b6; }
+        
+        .options { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+        .options label { display: inline-block; background-color: #e9ecef; padding: 8px 15px; border-radius: 20px; cursor: pointer; transition: background-color 0.3s; border: 1px solid transparent; }
+        .options input[type="radio"] { display: none; }
+        .options input[type="radio"]:checked + span { font-weight: bold; }
+        
+        .correct-input, .correct-select { border-color: #28a745; background-color: #e8f5e9; }
+        .incorrect-input, .incorrect-select { border-color: #dc3545; background-color: #ffebee; }
+        .correct-option { background-color: #d4edda !important; border-color: #28a745 !important; color: #155724; }
+        .incorrect-option { background-color: #f8d7da !important; border-color: #dc3545 !important; color: #721c24; }
+
+        .check-button { display: block; width: 100%; background-color: #0077b6; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; margin-top: 20px; font-size: 16px; font-weight: bold; transition: background-color 0.3s; }
+        .check-button:hover { background-color: #005f73; }
+        
+        .results-container { text-align: center; margin-top: 20px; padding: 15px; border-radius: 8px; background-color: #e0f7fa; border: 2px solid #0077b6; font-size: 1.1em; display: none; }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h1>Quiz: Future Tenses & Articles</h1>
+
+    <!-- EJERCICIO 1 -->
+    <div class="exercise-section" id="exercise-1">
+        <h2>Ejercicio 1: Present Simple vs Present Continuous for Future</h2>
+        <div class="theory-box">
+            <h3>Work it Out</h3>
+            <p>Podemos usar el presente simple y el presente continuo para hablar del futuro. Observa estas frases para entender las reglas:</p>
+            <ul>
+                <li>The train <b>leaves</b> at 9:00. <i>(Horario fijo, evento programado)</i></li>
+                <li>I'm <b>staying</b> in this evening. <i>(Plan personal, arreglo)</i></li>
+                <li>What time <b>do you finish</b> college tonight? <i>(Horario fijo)</i></li>
+                <li>When <b>are you taking</b> your holiday this summer? <i>(Plan personal)</i></li>
+            </ul>
+        </div>
+        <div class="question">
+            <p>Completa cada frase eligiendo la forma futura más probable.</p>
+            <ol>
+                <li>
+                    <select id="q1_1" class="interactive-select">
+                        <option value="">Choose...</option>
+                        <option value="are you doing">Are you doing</option>
+                        <option value="do you do">Do you do</option>
+                    </select>
+                    anything later? I thought we could go out.
+                </li>
+                <li>The lesson
+                    <select id="q1_2" class="interactive-select">
+                        <option value="">Choose...</option>
+                        <option value="starts">starts</option>
+                        <option value="is starting">is starting</option>
+                    </select>
+                    soon so we need to get back to college.
+                </li>
+                <li>Susan
+                    <select id="q1_3" class="interactive-select">
+                        <option value="">Choose...</option>
+                        <option value="meets">meets</option>
+                        <option value="is meeting">is meeting</option>
+                    </select>
+                    me for lunch later.
+                </li>
+                <li>The match
+                    <select id="q1_4" class="interactive-select">
+                        <option value="">Choose...</option>
+                        <option value="kicks off">kicks off</option>
+                        <option value="is kicking off">is kicking off</option>
+                    </select>
+                    at 3.00.
+                </li>
+                <li>What time
+                    <select id="q1_5" class="interactive-select">
+                        <option value="">Choose...</option>
+                        <option value="are you leaving">are you leaving</option>
+                        <option value="do you leave">do you leave</option>
+                    </select>
+                    later?
+                </li>
+                <li>I
+                    <select id="q1_6" class="interactive-select">
+                        <option value="">Choose...</option>
+                        <option value="visit">visit</option>
+                        <option value="am visiting">am visiting</option>
+                    </select>
+                    my Nan next Sunday.
+                </li>
+                 <li>I
+                    <select id="q1_7" class="interactive-select">
+                        <option value="">Choose...</option>
+                        <option value="leave">leave</option>
+                        <option value="am leaving">am leaving</option>
+                    </select>
+                    work early today as I have an appointment at the dentist.
+                </li>
+                 <li>I've just phoned the centre and the doors
+                    <select id="q1_8" class="interactive-select">
+                        <option value="">Choose...</option>
+                        <option value="open">open</option>
+                        <option value="are opening">are opening</option>
+                    </select>
+                    at 1.00.
+                </li>
+            </ol>
+        </div>
+        <button class="check-button" onclick="checkExercise(1)">Corregir Ejercicio 1</button>
+        <div class="results-container" id="results-1"></div>
+    </div>
+
+    <!-- EJERCICIO 2 -->
+    <div class="exercise-section" id="exercise-2">
+        <h2>Ejercicio 2: Rellena los huecos</h2>
+        <div class="question">
+            <p>Completa las frases con la forma verbal correcta (Present Simple o Continuous). Usa contracciones para las negaciones (ej: <i>isn't</i>).</p>
+            <ol>
+                <li>This is a terrible film Tony! When <input type="text" id="q2_1" class="interactive-input" placeholder="it/finish">?</li>
+                <li>She <input type="text" id="q2_2" class="interactive-input" placeholder="not/see"> Tim tonight or ever again. They broke up last week.</li>
+                <li>The library <input type="text" id="q2_3" class="interactive-input" placeholder="close"> in five minutes!</li>
+                <li>After this lesson, I <input type="text" id="q2_4" class="interactive-input" placeholder="see"> a friend at McDonald's.</li>
+                <li><input type="text" id="q2_5" class="interactive-input" placeholder="you/use"> your motorbike tonight? I want to borrow it.</li>
+                <li>I'm going to be late! What time <input type="text" id="q2_6" class="interactive-input" placeholder="this train/arrive"> in Chicago?</li>
+                <li>The taxi <input type="text" id="q2_7" class="interactive-input" placeholder="arrive"> at 7am to take us to the airport.</li>
+                <li>And the plane <input type="text" id="q2_8" class="interactive-input" placeholder="leave"> at 10am.</li>
+                <li>I can't see you tonight Jan. I <input type="text" id="q2_9" class="interactive-input" placeholder="go"> to the theatre with Mike.</li>
+                <li>And the play <input type="text" id="q2_10" class="interactive-input" placeholder="finish"> very late. Sorry!</li>
+                <li>I <input type="text" id="q2_11" class="interactive-input" placeholder="give"> the dog a bath tonight.</li>
+                <li>The Rembrandt exhibition <input type="text" id="q2_12" class="interactive-input" placeholder="start"> tomorrow morning.</li>
+            </ol>
+        </div>
+        <button class="check-button" onclick="checkExercise(2)">Corregir Ejercicio 2</button>
+        <div class="results-container" id="results-2"></div>
+    </div>
+    
+    <!-- EJERCICIO 3 -->
+    <div class="exercise-section" id="exercise-3">
+        <h2>Ejercicio 3: Artículos (a/an, the, no article)</h2>
+        <div class="question">
+            <p>Elige <i>a/an, the</i> o <i>-</i> (sin artículo) para completar las frases.</p>
+            <ol>
+                <li>We bought some cheese and ham.
+                    <select id="q3_1" class="interactive-select"><option value="">...</option><option value="the">the</option><option value="a">a</option><option value="-">-</option></select>
+                    cheese was delicious.
+                </li>
+                <li>It's
+                    <select id="q3_2" class="interactive-select"><option value="">...</option><option value="an">an</option><option value="a">a</option><option value="the">the</option></select>
+                    interesting book.
+                </li>
+                <li>There was
+                    <select id="q3_3" class="interactive-select"><option value="">...</option><option value="a">a</option><option value="an">an</option><option value="the">the</option></select>
+                    document on the table.
+                </li>
+                <li>Experts say that
+                    <select id="q3_4" class="interactive-select"><option value="">...</option><option value="-">-</option><option value="the">the</option><option value="a">a</option></select>
+                    coffee can be good for your health.
+                </li>
+                <li>I don't have
+                    <select id="q3_5" class="interactive-select"><option value="">...</option><option value="a">a</option><option value="the">the</option><option value="-">-</option></select>
+                    car.
+                </li>
+                <li>Can you pass me
+                    <select id="q3_6" class="interactive-select"><option value="">...</option><option value="the">the</option><option value="a">a</option><option value="-">-</option></select>
+                    water?
+                </li>
+                <li><select id="q3_7" class="interactive-select"><option value="">...</option><option value="The">The</option><option value="A">A</option><option value="-">-</option></select>
+                    president visited our school.
+                </li>
+                <li>My father is
+                    <select id="q3_8" class="interactive-select"><option value="">...</option><option value="a">a</option><option value="an">an</option><option value="the">the</option></select>
+                    police officer.
+                </li>
+                <li>Everybody knows that
+                    <select id="q3_9" class="interactive-select"><option value="">...</option><option value="-">-</option><option value="the">the</option><option value="a">a</option></select>
+                    cats are very independent animals.
+                </li>
+                <li>She picked me up at
+                    <select id="q3_10" class="interactive-select"><option value="">...</option><option value="the">the</option><option value="an">an</option><option value="-">-</option></select>
+                    airport.
+                </li>
+            </ol>
+        </div>
+        <button class="check-button" onclick="checkExercise(3)">Corregir Ejercicio 3</button>
+        <div class="results-container" id="results-3"></div>
+    </div>
+    
+    <!-- EJERCICIO 4 -->
+    <div class="exercise-section" id="exercise-4">
+        <h2>Ejercicio 4: Práctica con Artículos</h2>
+        <div class="question">
+            <ol>
+                <li id="q4_1"> Don't play in my classroom. Go to _____ sports hall.
+                    <div class="options">
+                        <label><input type="radio" name="q4_1" value="a"><span>a</span></label>
+                        <label><input type="radio" name="q4_1" value="the"><span>the</span></label>
+                        <label><input type="radio" name="q4_1" value="-"><span>-</span></label>
+                    </div>
+                </li>
+                <li id="q4_2"> Please close _____ window. It's cold in here.
+                    <div class="options">
+                        <label><input type="radio" name="q4_2" value="a"><span>a</span></label>
+                        <label><input type="radio" name="q4_2" value="the"><span>the</span></label>
+                        <label><input type="radio" name="q4_2" value="-"><span>-</span></label>
+                    </div>
+                </li>
+                 <li id="q4_3"> I know _____ girl who won the snowboarding competition.
+                    <div class="options">
+                        <label><input type="radio" name="q4_3" value="a"><span>a</span></label>
+                        <label><input type="radio" name="q4_3" value="the"><span>the</span></label>
+                        <label><input type="radio" name="q4_3" value="-"><span>-</span></label>
+                    </div>
+                </li>
+                <li id="q4_4"> Where are _____ scissors? - Sorry, I haven't seen them.
+                    <div class="options">
+                        <label><input type="radio" name="q4_4" value="a"><span>a</span></label>
+                        <label><input type="radio" name="q4_4" value="the"><span>the</span></label>
+                        <label><input type="radio" name="q4_4" value="-"><span>-</span></label>
+                    </div>
+                </li>
+                <li id="q4_5"> Someone's knocking on _____ door. Can you hear them?
+                    <div class="options">
+                        <label><input type="radio" name="q4_5" value="a"><span>a</span></label>
+                        <label><input type="radio" name="q4_5" value="the"><span>the</span></label>
+                        <label><input type="radio" name="q4_5" value="-"><span>-</span></label>
+                    </div>
+                </li>
+                <li id="q4_6"> I need _____ new calculator. This one is broken.
+                    <div class="options">
+                        <label><input type="radio" name="q4_6" value="a"><span>a</span></label>
+                        <label><input type="radio" name="q4_6" value="an"><span>an</span></label>
+                        <label><input type="radio" name="q4_6" value="the"><span>the</span></label>
+                    </div>
+                </li>
+                 <li id="q4_7"> You have now reached _____ last question in this quiz.
+                    <div class="options">
+                        <label><input type="radio" name="q4_7" value="a"><span>a</span></label>
+                        <label><input type="radio" name="q4_7" value="the"><span>the</span></label>
+                        <label><input type="radio" name="q4_7" value="-"><span>-</span></label>
+                    </div>
+                </li>
+                 <li id="q4_8"> I hate _____ dogs that live in the next house. They bark all night.
+                    <div class="options">
+                        <label><input type="radio" name="q4_8" value="a"><span>a</span></label>
+                        <label><input type="radio" name="q4_8" value="the"><span>the</span></label>
+                        <label><input type="radio" name="q4_8" value="-"><span>-</span></label>
+                    </div>
+                </li>
+                <li id="q4_9"> My father had _____ accident on the way to work.
+                    <div class="options">
+                        <label><input type="radio" name="q4_9" value="a"><span>a</span></label>
+                        <label><input type="radio" name="q4_9" value="an"><span>an</span></label>
+                        <label><input type="radio" name="q4_9" value="the"><span>the</span></label>
+                    </div>
+                </li>
+                 <li id="q4_10"> To build a doll's house you will need nails, wood and _____ hammer.
+                    <div class="options">
+                        <label><input type="radio" name="q4_10" value="a"><span>a</span></label>
+                        <label><input type="radio" name="q4_10" value="an"><span>an</span></label>
+                        <label><input type="radio" name="q4_10" value="the"><span>the</span></label>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <button class="check-button" onclick="checkExercise(4)">Corregir Ejercicio 4 (muestra)</button>
+        <div class="results-container" id="results-4"></div>
+    </div>
+</div>
+
+<script>
+    const answers = {
+        // Exercise 1
+        q1_1: "are you doing", q1_2: "starts", q1_3: "is meeting", q1_4: "kicks off",
+        q1_5: "are you leaving", q1_6: "am visiting", q1_7: "am leaving", q1_8: "open",
+        // Exercise 2
+        q2_1: ["does it finish"], q2_2: ["isn't seeing", "is not seeing"], q2_3: ["closes"],
+        q2_4: ["am seeing", "i'm seeing"], q2_5: ["are you using"], q2_6: ["does this train arrive"],
+        q2_7: ["arrives"], q2_8: ["leaves"], q2_9: ["am going", "i'm going"],
+        q2_10: ["finishes"], q2_11: ["am giving", "i'm giving"], q2_12: ["starts"],
+        // Exercise 3
+        q3_1: "the", q3_2: "an", q3_3: "a", q3_4: "-", q3_5: "a",
+        q3_6: "the", q3_7: "The", q3_8: "a", q3_9: "-", q3_10: "the",
+        // Exercise 4 (muestra)
+        q4_1: "the", q4_2: "the", q4_3: "the", q4_4: "the", q4_5: "the",
+        q4_6: "a", q4_7: "the", q4_8: "the", q4_9: "an", q4_10: "a"
+    };
+
+    function checkExercise(exerciseNumber) {
+        let score = 0;
+        let totalQuestions = 0;
+        const exerciseContainer = document.getElementById(`exercise-${exerciseNumber}`);
+
+        // VALIDACIÓN DE INPUTS DE TEXTO
+        const inputs = exerciseContainer.querySelectorAll('.interactive-input');
+        inputs.forEach(input => {
+            totalQuestions++;
+            const userValue = input.value.trim().toLowerCase().replace(/’/g, "'");
+            const correctValues = answers[input.id];
+            input.classList.remove('correct-input', 'incorrect-input');
+            if (correctValues && correctValues.includes(userValue)) {
+                input.classList.add('correct-input');
+                score++;
+            } else {
+                input.classList.add('incorrect-input');
+            }
+        });
+
+        // VALIDACIÓN DE SELECTS
+        const selects = exerciseContainer.querySelectorAll('.interactive-select');
+        selects.forEach(select => {
+            totalQuestions++;
+            const userValue = select.value;
+            const correctAnswer = answers[select.id];
+            select.classList.remove('correct-select', 'incorrect-select');
+            if (userValue === correctAnswer) {
+                select.classList.add('correct-select');
+                score++;
+            } else {
+                select.classList.add('incorrect-select');
+            }
+        });
+
+        // VALIDACIÓN DE RADIOS
+        const radioGroups = new Set();
+        exerciseContainer.querySelectorAll('input[type="radio"]').forEach(radio => radioGroups.add(radio.name));
+        radioGroups.forEach(groupName => {
+            totalQuestions++;
+            const correctAnswer = answers[groupName];
+            const selectedRadio = exerciseContainer.querySelector(`input[name="${groupName}"]:checked`);
+            const allLabelsInGroup = exerciseContainer.querySelectorAll(`input[name="${groupName}"]`);
+
+            allLabelsInGroup.forEach(radio => {
+                const label = radio.closest('label');
+                label.classList.remove('correct-option', 'incorrect-option');
+                if (radio.value === correctAnswer) {
+                    label.classList.add('correct-option');
+                }
+            });
+
+            if (selectedRadio) {
+                if (selectedRadio.value === correctAnswer) {
+                    score++;
+                } else {
+                    const selectedLabel = selectedRadio.closest('label');
+                    selectedLabel.classList.remove('correct-option');
+                    selectedLabel.classList.add('incorrect-option');
+                }
+            }
+        });
+
+        // MOSTRAR RESULTADOS
+        const resultsContainer = document.getElementById(`results-${exerciseNumber}`);
+        const percentage = totalQuestions > 0 ? (score / totalQuestions) * 100 : 0;
+        resultsContainer.innerHTML = `<h3>Resultados Ejercicio ${exerciseNumber}</h3><p>Has acertado <strong>${score}</strong> de <strong>${totalQuestions}</strong>. (${percentage.toFixed(1)}%)</p>`;
+        resultsContainer.style.display = 'block';
+        resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+</script>
+
+</body>
+</html>

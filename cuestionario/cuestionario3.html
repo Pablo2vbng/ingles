@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario Completo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Azul claro */
+            color: #333; /* Negro */
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff; /* Blanco */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 30px;
+            max-width: 800px;
+            margin: auto;
+        }
+        h1 {
+            color: #005f73; /* Azul oscuro */
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .quiz-form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px; /* Espacio entre preguntas */
+        }
+        .question-block {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #0077b6; /* Azul */
+            transition: border-left 0.3s;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #333;
+            margin: 0 0 15px 0;
+        }
+        .options-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .options-list li {
+            margin-bottom: 10px;
+        }
+        .options-list li:last-child {
+            margin-bottom: 0;
+        }
+        .options-list label {
+            display: block;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .options-list label:hover {
+            background-color: #e9ecef;
+        }
+        .options-list input[type="radio"] {
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        
+        /* Clases para la corrección */
+        .correct-answer {
+            background-color: #e9f7ef;
+            border-color: #28a745;
+            font-weight: bold;
+        }
+        .incorrect-answer {
+            background-color: #fce8e6;
+            border-color: #dc3545;
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+        .question-block.correct-border {
+             border-left: 5px solid #28a745 !important; /* Verde */
+        }
+        .question-block.incorrect-border {
+             border-left: 5px solid #dc3545 !important; /* Rojo */
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 1em;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #0077b6; /* Azul */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #005f73;
+        }
+        button.reset {
+            background-color: #ff8c00; /* Naranja */
+        }
+        button.reset:hover {
+            background-color: #e67e00;
+        }
+        #results {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #005f73;
+        }
+        .back-link {
+            display: inline-block;
+            text-align: center;
+            margin-top: 20px;
+            padding: 12px 20px;
+            background-color: #6c757d;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .back-link:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Cuestionario Interactivo</h1>
+        <form id="quizForm" class="quiz-form" onsubmit="return false;">
+
+            <!-- Pregunta 1 -->
+            <div class="question-block" id="q1_block">
+                <p class="question-text">1. The call centre representative quickly ... (solve) the issue.</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q1" value="a"> a. Solving.</label></li>
+                    <li><label><input type="radio" name="q1" value="b"> b. Solves.</label></li>
+                    <li><label><input type="radio" name="q1" value="c"> c. Solve.</label></li>
+                    <li><label><input type="radio" name="q1" value="d"> d. Will solve.</label></li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 2 -->
+            <div class="question-block" id="q2_block">
+                <p class="question-text">2. When ... the new product launch?</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q2" value="a"> a. Are.</label></li>
+                    <li><label><input type="radio" name="q2" value="b"> b. Do.</label></li>
+                    <li><label><input type="radio" name="q2" value="c"> c. Is.</label></li>
+                    <li><label><input type="radio" name="q2" value="d"> d. Does.</label></li>
+                </ul>
+            </div>
+            
+            <!-- Pregunta 3 -->
+            <div class="question-block" id="q3_block">
+                <p class="question-text">3. Choose the correct sentence.</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q3" value="a"> a. The satisfaction of resolving customers' problems is important.</label></li>
+                    <li><label><input type="radio" name="q3" value="b"> b. The satisfaction of resolving customer problems is important.</label></li>
+                    <li><label><input type="radio" name="q3" value="c"> c. The satisfaction of resolved customer problems is important.</label></li>
+                    <li><label><input type="radio" name="q3" value="d"> d. The satisfactions of resolving customer problems are important.</label></li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 4 -->
+            <div class="question-block" id="q4_block">
+                <p class="question-text">4. The company implemented a ... to reward loyal customers.</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q4" value="a"> a. Refund.</label></li>
+                    <li><label><input type="radio" name="q4" value="b"> b. Assistance.</label></li>
+                    <li><label><input type="radio" name="q4" value="c"> c. Courtesy.</label></li>
+                    <li><label><input type="radio" name="q4" value="d"> d. Loyalty program.</label></li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 5 -->
+            <div class="question-block" id="q5_block">
+                <p class="question-text">5. What time is ... flight to New York?</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q5" value="a"> a. -</label></li>
+                    <li><label><input type="radio" name="q5" value="b"> b. The.</label></li>
+                    <li><label><input type="radio" name="q5" value="c"> c. A.</label></li>
+                    <li><label><input type="radio" name="q5" value="d"> d. An.</label></li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 6 -->
+            <div class="question-block" id="q6_block">
+                <p class="question-text">6. I am looking for a unique outfit, so I might check out the sells ... clothing.</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q6" value="a"> a. Thrifted.</label></li>
+                    <li><label><input type="radio" name="q6" value="b"> b. Sustainable fashion.</label></li>
+                    <li><label><input type="radio" name="q6" value="c"> c. Vintage.</label></li>
+                    <li><label><input type="radio" name="q6" value="d"> d. Resale.</label></li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 7 -->
+            <div class="question-block" id="q7_block">
+                <p class="question-text">7. Select the correct sentence.</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q7" value="a"> a. Companies should listen to complaints, even if it doesn't concern them directly.</label></li>
+                    <li><label><input type="radio" name="q7" value="b"> b. Companies should listen to a complaints, even if it doesn't concern them directly.</label></li>
+                    <li><label><input type="radio" name="q7" value="c"> c. Companies should listening to complaints, even if it doesn't concern them directly.</label></li>
+                    <li><label><input type="radio" name="q7" value="d"> d. Companies should listens to complaints, even if it doesn´t concern them directly.</label></li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 8 -->
+            <div class="question-block" id="q8_block">
+                <p class="question-text">8. Choose the grammatically correct sentence.</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q8" value="a"> a. A response time of a customer service team is crucial.</label></li>
+                    <li><label><input type="radio" name="q8" value="b"> b. The response time of a customer service team are crucial.</label></li>
+                    <li><label><input type="radio" name="q8" value="c"> c. The response time of the customer service team is crucial.</label></li>
+                    <li><label><input type="radio" name="q8" value="d"> d. The response times of a customer service team are crucial.</label></li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 9 -->
+            <div class="question-block" id="q9_block">
+                <p class="question-text">9. How ... we handle customer feedback in the upcoming survey?</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q9" value="a"> a. Does.</label></li>
+                    <li><label><input type="radio" name="q9" value="b"> b. Do.</label></li>
+                    <li><label><input type="radio" name="q9" value="c"> c. Are.</label></li>
+                    <li><label><input type="radio" name="q9" value="d"> d. Is.</label></li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 10 -->
+            <div class="question-block" id="q10_block">
+                <p class="question-text">10. The local market is a ... full of vendors selling all sorts of interesting things.</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q10" value="a"> a. Bustling bazaar.</label></li>
+                    <li><label><input type="radio" name="q10" value="b"> b. Retail store.</label></li>
+                    <li><label><input type="radio" name="q10" value="c"> c. Haggle.</label></li>
+                    <li><label><input type="radio" name="q10" value="d"> d. Flea market.</label></li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 11 -->
+            <div class="question-block" id="q11_block">
+                <p class="question-text">11. The ... provided by the customer service team greatly influences customer satisfaction.</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q11" value="a"> a. Complaint.</label></li>
+                    <li><label><input type="radio" name="q11" value="b"> b. Courtesy.</label></li>
+                    <li><label><input type="radio" name="q11" value="c"> c. Feedback.</label></li>
+                    <li><label><input type="radio" name="q11" value="d"> d. Issue.</label></li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 12 -->
+            <div class="question-block" id="q12_block">
+                <p class="question-text">12. The concept of ... is becoming more important, as people look for ways to reduce clothing waste.</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q12" value="a"> a. Resale.</label></li>
+                    <li><label><input type="radio" name="q12" value="b"> b. Thrifted.</label></li>
+                    <li><label><input type="radio" name="q12" value="c"> c. Sustainable fashion.</label></li>
+                    <li><label><input type="radio" name="q12" value="d"> d. Vintage.</label></li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 13 -->
+            <div class="question-block" id="q13_block">
+                <p class="question-text">13. She bought ... refund policy.</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q13" value="a"> a. -</label></li>
+                    <li><label><input type="radio" name="q13" value="b"> b. The.</label></li>
+                    <li><label><input type="radio" name="q13" value="c"> c. An.</label></li>
+                    <li><label><input type="radio" name="q13" value="d"> d. A.</label></li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 14 -->
+            <div class="question-block" id="q14_block">
+                <p class="question-text">14. The ... industry is constantly evolving, and new technologies are emerging all the time.</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q14" value="a"> a. Infinite possibilities.</label></li>
+                    <li><label><input type="radio" name="q14" value="b"> b. Fashion future.</label></li>
+                    <li><label><input type="radio" name="q14" value="c"> c. Digital fashion.</label></li>
+                    <li><label><input type="radio" name="q14" value="d"> d. Self-expression.</label></li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 15 -->
+            <div class="question-block" id="q15_block">
+                <p class="question-text">15. At the mall, you have found a new pair of jeans you like, but you are not sure about the ...</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q15" value="a"> a. Bargain.</label></li>
+                    <li><label><input type="radio" name="q15" value="b"> b. Pricing.</label></li>
+                    <li><label><input type="radio" name="q15" value="c"> c. Haggle.</label></li>
+                    <li><label><input type="radio" name="q15" value="d"> d. Flea market.</label></li>
+                </ul>
+            </div>
+        </form>
+
+        <div class="button-container">
+            <button onclick="checkAnswers()">Corregir Cuestionario</button>
+            <button class="reset" onclick="resetQuiz()">Intentar de Nuevo</button>
+        </div>
+        <div id="results"></div>
+        <div class="button-container">
+             <a href="menu.html" class="back-link">Volver al Menú Principal</a>
+        </div>
+    </div>
+
+<script>
+    const correctAnswers = {
+        q1: 'b', q2: 'c', q3: 'b', q4: 'd', q5: 'b',
+        q6: 'c', q7: 'a', q8: 'c', q9: 'b', q10: 'a',
+        q11: 'b', q12: 'c', q13: 'b', q14: 'c', q15: 'b'
+    };
+
+    function checkAnswers() {
+        resetQuizStyles(); // Limpia estilos previos antes de corregir
+        let score = 0;
+        const totalQuestions = Object.keys(correctAnswers).length;
+
+        for (let i = 1; i <= totalQuestions; i++) {
+            const questionId = 'q' + i;
+            const correctAnswerValue = correctAnswers[questionId];
+            const questionBlock = document.getElementById(questionId + '_block');
+            const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+            
+            // Encuentra la etiqueta de la respuesta correcta para marcarla siempre
+            const correctLabel = document.querySelector(`input[name="${questionId}"][value="${correctAnswerValue}"]`).parentElement;
+            correctLabel.classList.add('correct-answer');
+
+            if (selectedOption) {
+                if (selectedOption.value === correctAnswerValue) {
+                    score++;
+                    questionBlock.classList.add('correct-border');
+                } else {
+                    // Si la seleccionada es incorrecta, la marcamos como tal
+                    selectedOption.parentElement.classList.add('incorrect-answer');
+                    questionBlock.classList.add('incorrect-border');
+                }
+            } else {
+                // Si no se seleccionó ninguna, marcar el bloque como incorrecto
+                questionBlock.classList.add('incorrect-border');
+            }
+        }
+
+        const resultsElement = document.getElementById('results');
+        resultsElement.innerHTML = `Tu puntuación es: ${score} de ${totalQuestions}`;
+    }
+    
+    function resetQuizStyles() {
+        // Limpiar estilos de las etiquetas
+        const allLabels = document.querySelectorAll('#quizForm label');
+        allLabels.forEach(label => {
+            label.classList.remove('correct-answer', 'incorrect-answer');
+        });
+        
+        // Limpiar estilos de los bloques de preguntas
+        const allQuestionBlocks = document.querySelectorAll('.question-block');
+        allQuestionBlocks.forEach(block => {
+            block.classList.remove('correct-border', 'incorrect-border');
+        });
+    }
+
+    function resetQuiz() {
+        resetQuizStyles();
+        document.getElementById('quizForm').reset();
+        document.getElementById('results').innerHTML = '';
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Vuelve al inicio de la página con animación
+    }
+</script>
+
+</body>
+</html>
