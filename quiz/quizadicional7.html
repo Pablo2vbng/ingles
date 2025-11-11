@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario de Gramática Inglesa</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            padding: 30px 40px;
+            max-width: 800px;
+            width: 100%;
+            margin: auto;
+        }
+        h1 {
+            color: #005f73;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        h2 {
+            color: #0077b6;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .quiz-form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .question-block {
+            background-color: #fdfdfd;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #0077b6;
+            transition: border-left 0.3s, box-shadow 0.3s;
+        }
+        .question-block:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .question-text {
+            font-weight: 600;
+            font-size: 1.1em;
+            color: #212529;
+            margin: 0 0 15px 0;
+            line-height: 1.5;
+        }
+        .options-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .options-list li {
+            margin-bottom: 10px;
+        }
+        .options-list li:last-child {
+            margin-bottom: 0;
+        }
+        .options-list label {
+            display: block;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        .options-list label:hover {
+            background-color: #f8f9fa;
+            border-color: #0077b6;
+        }
+        .options-list input[type="radio"] {
+            margin-right: 12px;
+            vertical-align: middle;
+            transform: scale(1.1);
+        }
+        
+        /* Clases para la corrección */
+        .correct-answer {
+            background-color: #e9f7ef !important;
+            border-color: #28a745 !important;
+            font-weight: bold;
+        }
+        .incorrect-answer {
+            background-color: #fce8e6 !important;
+            border-color: #dc3545 !important;
+            text-decoration: line-through;
+            opacity: 0.8;
+        }
+        .question-block.correct-border {
+             border-left: 5px solid #28a745 !important;
+        }
+        .question-block.incorrect-border {
+             border-left: 5px solid #dc3545 !important;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 1em;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #0077b6;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px 10px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background-color: #005f73;
+            transform: translateY(-2px);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        button.reset {
+            background-color: #6c757d;
+        }
+        button.reset:hover {
+            background-color: #5a6268;
+        }
+        #results {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #005f73;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Cuestionario de Gramática</h1>
+        <form id="quizForm" class="quiz-form" onsubmit="return false;">
+
+            <h2>Ejercicio 1: First & Second Conditionals</h2>
+            <div class="question-block" id="q1_block"><p class="question-text">1. If you ___ free tonight, we might go out for a drink, or to the cinema.</p><ul class="options-list"><li><label><input type="radio" name="q1" value="a"> are</label></li><li><label><input type="radio" name="q1" value="b"> were</label></li><li><label><input type="radio" name="q1" value="c"> would be</label></li></ul></div>
+            <div class="question-block" id="q2_block"><p class="question-text">2. He ___ depressed if he fails the exam.</p><ul class="options-list"><li><label><input type="radio" name="q2" value="a"> would be</label></li><li><label><input type="radio" name="q2" value="b"> will be</label></li><li><label><input type="radio" name="q2" value="c"> is</label></li></ul></div>
+            <div class="question-block" id="q3_block"><p class="question-text">3. If I didn't know you, I ___ you were crazy.</p><ul class="options-list"><li><label><input type="radio" name="q3" value="a"> will think</label></li><li><label><input type="radio" name="q3" value="b"> think</label></li><li><label><input type="radio" name="q3" value="c"> would think</label></li></ul></div>
+            <div class="question-block" id="q4_block"><p class="question-text">4. Tell me the truth if you ___.</p><ul class="options-list"><li><label><input type="radio" name="q4" value="a"> want</label></li><li><label><input type="radio" name="q4" value="b"> wanted</label></li><li><label><input type="radio" name="q4" value="c"> would want</label></li></ul></div>
+            <div class="question-block" id="q5_block"><p class="question-text">5. If you had a bigger salary, you ___ more unnecessary things.</p><ul class="options-list"><li><label><input type="radio" name="q5" value="a"> will buy</label></li><li><label><input type="radio" name="q5" value="b"> would buy</label></li><li><label><input type="radio" name="q5" value="c"> buy</label></li></ul></div>
+            <div class="question-block" id="q6_block"><p class="question-text">6. If it ___ for Tom, I wouldn't be here.</p><ul class="options-list"><li><label><input type="radio" name="q6" value="a"> isn't</label></li><li><label><input type="radio" name="q6" value="b"> wouldn't be</label></li><li><label><input type="radio" name="q6" value="c"> wasn't</label></li></ul></div>
+            <div class="question-block" id="q7_block"><p class="question-text">7. You should call me if you ___ anything unusual.</p><ul class="options-list"><li><label><input type="radio" name="q7" value="a"> saw</label></li><li><label><input type="radio" name="q7" value="b"> see</label></li><li><label><input type="radio" name="q7" value="c"> would see</label></li></ul></div>
+            <div class="question-block" id="q8_block"><p class="question-text">8. If they had this player, they ___ a single match.</p><ul class="options-list"><li><label><input type="radio" name="q8" value="a"> wouldn't lose</label></li><li><label><input type="radio" name="q8" value="b"> won't lose</label></li><li><label><input type="radio" name="q8" value="c"> don't lose</label></li></ul></div>
+            <div class="question-block" id="q9_block"><p class="question-text">9. Our lives would be much easier if you ___ closer to home.</p><ul class="options-list"><li><label><input type="radio" name="q9" value="a"> live</label></li><li><label><input type="radio" name="q9" value="b"> lived</label></li><li><label><input type="radio" name="q9" value="c"> would live</label></li></ul></div>
+            <div class="question-block" id="q10_block"><p class="question-text">10. If I got a job in France, we ___ crêpes every day.</p><ul class="options-list"><li><label><input type="radio" name="q10" value="a"> can eat</label></li><li><label><input type="radio" name="q10" value="b"> eat</label></li><li><label><input type="radio" name="q10" value="c"> could eat</label></li></ul></div>
+            
+            <h2>Ejercicio 2: Conditionals - Fill in the gaps</h2>
+            <div class="question-block" id="q11_block"><p class="question-text">11. If I were you, I ___ (start) now.</p><ul class="options-list"><li><label><input type="radio" name="q11" value="a"> will start</label></li><li><label><input type="radio" name="q11" value="b"> would start</label></li><li><label><input type="radio" name="q11" value="c"> start</label></li></ul></div>
+            <div class="question-block" id="q12_block"><p class="question-text">12. If Charles ___ (ask) me, I would lend him my tools.</p><ul class="options-list"><li><label><input type="radio" name="q12" value="a"> asks</label></li><li><label><input type="radio" name="q12" value="b"> would ask</label></li><li><label><input type="radio" name="q12" value="c"> asked</label></li></ul></div>
+            <div class="question-block" id="q13_block"><p class="question-text">13. If I ___ (be) at home, I will study the new words.</p><ul class="options-list"><li><label><input type="radio" name="q13" value="a"> am</label></li><li><label><input type="radio" name="q13" value="b"> were</label></li><li><label><input type="radio" name="q13" value="c"> would be</label></li></ul></div>
+            <div class="question-block" id="q14_block"><p class="question-text">14. If Sam has a hammer, he ___ (lend) it to me.</p><ul class="options-list"><li><label><input type="radio" name="q14" value="a"> lends</label></li><li><label><input type="radio" name="q14" value="b"> would lend</label></li><li><label><input type="radio" name="q14" value="c"> will lend</label></li></ul></div>
+            <div class="question-block" id="q15_block"><p class="question-text">15. If Mary helped in the kitchen, she ___ (get) more pocket money.</p><ul class="options-list"><li><label><input type="radio" name="q15" value="a"> would get</label></li><li><label><input type="radio" name="q15" value="b"> will get</label></li><li><label><input type="radio" name="q15" value="c"> gets</label></li></ul></div>
+            <div class="question-block" id="q16_block"><p class="question-text">16. If you ___ (come), you would see her.</p><ul class="options-list"><li><label><input type="radio" name="q16" value="a"> came</label></li><li><label><input type="radio" name="q16" value="b"> come</label></li><li><label><input type="radio" name="q16" value="c"> will come</label></li></ul></div>
+            <div class="question-block" id="q17_block"><p class="question-text">17. If we go to London, we ___ (see) the Tower.</p><ul class="options-list"><li><label><input type="radio" name="q17" value="a"> saw</label></li><li><label><input type="radio" name="q17" value="b"> would see</label></li><li><label><input type="radio" name="q17" value="c"> will see</label></li></ul></div>
+            <div class="question-block" id="q18_block"><p class="question-text">18. Susan will help you if she ___ (get) more pocket money.</p><ul class="options-list"><li><label><input type="radio" name="q18" value="a"> gets</label></li><li><label><input type="radio" name="q18" value="b"> got</label></li><li><label><input type="radio" name="q18" value="c"> would get</label></li></ul></div>
+            <div class="question-block" id="q19_block"><p class="question-text">19. I ___ (tell) you if you asked me.</p><ul class="options-list"><li><label><input type="radio" name="q19" value="a"> will tell</label></li><li><label><input type="radio" name="q19" value="b"> would tell</label></li><li><label><input type="radio" name="q19" value="c"> tell</label></li></ul></div>
+            <div class="question-block" id="q20_block"><p class="question-text">20. He ___ (wash) his hands if you give him some soap.</p><ul class="options-list"><li><label><input type="radio" name="q20" value="a"> will wash</label></li><li><label><input type="radio" name="q20" value="b"> would wash</label></li><li><label><input type="radio" name="q20" value="c"> washes</label></li></ul></div>
+            
+            <h2>Ejercicio 3: Adjective Order</h2>
+            <div class="question-block" id="q21_block"><p class="question-text">21. Andrea had a ________ in her hair yesterday.</p><ul class="options-list"><li><label><input type="radio" name="q21" value="a"> nice yellow bow</label></li><li><label><input type="radio" name="q21" value="b"> yellow nice bow</label></li><li><label><input type="radio" name="q21" value="c"> bow nice yellow</label></li></ul></div>
+            <div class="question-block" id="q22_block"><p class="question-text">22. She lost a ________ .</p><ul class="options-list"><li><label><input type="radio" name="q22" value="a"> small white cat</label></li><li><label><input type="radio" name="q22" value="b"> cat small white</label></li><li><label><input type="radio" name="q22" value="c"> white small cat</label></li></ul></div>
+            <div class="question-block" id="q23_block"><p class="question-text">23. I bought ________ oranges.</p><ul class="options-list"><li><label><input type="radio" name="q23" value="a"> great some big</label></li><li><label><input type="radio" name="q23" value="b"> big great some</label></li><li><label><input type="radio" name="q23" value="c"> some great big</label></li></ul></div>
+            <div class="question-block" id="q24_block"><p class="question-text">24. We met ________ people at the conference.</p><ul class="options-list"><li><label><input type="radio" name="q24" value="a"> very smart two</label></li><li><label><input type="radio" name="q24" value="b"> two very smart</label></li><li><label><input type="radio" name="q24" value="c"> very two smart</label></li></ul></div>
+            <div class="question-block" id="q25_block"><p class="question-text">25. The clown was wearing a ________ hat.</p><ul class="options-list"><li><label><input type="radio" name="q25" value="a"> big green-yellow</label></li><li><label><input type="radio" name="q25" value="b"> big green and yellow</label></li><li><label><input type="radio" name="q25" value="c"> yellow and green big</label></li></ul></div>
+            <div class="question-block" id="q26_block"><p class="question-text">26. The cookies that you ________ .</p><ul class="options-list"><li><label><input type="radio" name="q26" value="a"> smell delicious baked</label></li><li><label><input type="radio" name="q26" value="b"> baked smell delicious</label></li><li><label><input type="radio" name="q26" value="c"> baked smell delicious</label></li></ul></div>
+            <div class="question-block" id="q27_block"><p class="question-text">27. My uncle wore a ________ to the wedding.</p><ul class="options-list"><li><label><input type="radio" name="q27" value="a"> silk blue tie</label></li><li><label><input type="radio" name="q27" value="b"> tie blue silk</label></li><li><label><input type="radio" name="q27" value="c"> blue silk tie</label></li></ul></div>
+            <div class="question-block" id="q28_block"><p class="question-text">28. Have you met that ________ next door?</p><ul class="options-list"><li><label><input type="radio" name="q28" value="a"> cute boy new</label></li><li><label><input type="radio" name="q28" value="b"> cute new boy</label></li><li><label><input type="radio" name="q28" value="c"> new boy cute</label></li></ul></div>
+        </form>
+
+        <div class="button-container">
+            <button onclick="checkAnswers()">Corregir Cuestionario</button>
+            <button class="reset" onclick="resetQuiz()">Intentar de Nuevo</button>
+        </div>
+        <div id="results"></div>
+    </div>
+
+<script>
+    const correctAnswers = {
+        q1: 'a', q2: 'b', q3: 'c', q4: 'a', q5: 'b', q6: 'c', q7: 'b', q8: 'a', q9: 'b', q10: 'c',
+        q11: 'b', q12: 'c', q13: 'a', q14: 'c', q15: 'a', q16: 'a', q17: 'c', q18: 'a', q19: 'b', q20: 'a',
+        q21: 'a', q22: 'a', q23: 'c', q24: 'b', q25: 'b', q26: 'b', q27: 'c', q28: 'b'
+    };
+
+    function checkAnswers() {
+        resetQuizStyles();
+        let score = 0;
+        const totalQuestions = Object.keys(correctAnswers).length;
+        const resultsElement = document.getElementById('results');
+        const submitButton = document.querySelector('button[onclick="checkAnswers()"]');
+
+        for (let i = 1; i <= totalQuestions; i++) {
+            const questionId = 'q' + i;
+            if (!correctAnswers[questionId]) continue; // Skip if a question doesn't exist in the answers object
+            
+            const correctAnswerValue = correctAnswers[questionId];
+            const questionBlock = document.getElementById(questionId + '_block');
+            const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+            
+            const correctLabel = document.querySelector(`input[name="${questionId}"][value="${correctAnswerValue}"]`).parentElement;
+            correctLabel.classList.add('correct-answer');
+
+            if (selectedOption) {
+                if (selectedOption.value === correctAnswerValue) {
+                    score++;
+                    questionBlock.classList.add('correct-border');
+                } else {
+                    selectedOption.parentElement.classList.add('incorrect-answer');
+                    questionBlock.classList.add('incorrect-border');
+                }
+            } else {
+                questionBlock.classList.add('incorrect-border');
+            }
+        }
+        
+        resultsElement.innerHTML = `Tu puntuación es: ${score} de ${totalQuestions}`;
+        submitButton.disabled = true;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function resetQuizStyles() {
+        const allLabels = document.querySelectorAll('#quizForm label');
+        allLabels.forEach(label => {
+            label.classList.remove('correct-answer', 'incorrect-answer');
+        });
+        
+        const allQuestionBlocks = document.querySelectorAll('.question-block');
+        allQuestionBlocks.forEach(block => {
+            block.classList.remove('correct-border', 'incorrect-border');
+        });
+    }
+
+    function resetQuiz() {
+        const submitButton = document.querySelector('button[onclick="checkAnswers()"]');
+        resetQuizStyles();
+        document.getElementById('quizForm').reset();
+        document.getElementById('results').innerHTML = '';
+        submitButton.disabled = false;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>

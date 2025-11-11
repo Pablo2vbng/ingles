@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gramática Interactiva: Condicionales</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f9;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            padding: 25px 40px;
+        }
+        h1 {
+            color: #005f73;
+            text-align: center;
+            border-bottom: 2px solid #005f73;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #0077b6;
+            margin-top: 40px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #005f73;
+            margin-top: 30px;
+        }
+        .theory-box {
+            background-color: #e0f7fa;
+            border-left: 4px solid #0077b6;
+            padding: 5px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .exercise-section {
+            background-color: #fffbe6;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 5px;
+        }
+        .exercise-section ol { padding-left: 25px; }
+        .exercise-section li { margin-bottom: 15px; }
+        .interactive-input {
+            font-size: 1em;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin: 0 5px;
+            width: 80px; /* Ancho ajustado para una sola palabra */
+            text-align: center;
+            transition: border-color 0.3s;
+        }
+        .interactive-input:focus { outline: none; border-color: #0077b6; }
+        
+        .correct-input { border-color: #28a745; background-color: #e8f5e9; }
+        .incorrect-input { border-color: #dc3545; background-color: #ffebee; }
+
+        .button-container { text-align: center; margin-top: 30px; }
+        .check-button { background-color: #0077b6; color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold; transition: background-color 0.3s; }
+        .check-button:hover { background-color: #005f73; }
+        
+        #results { text-align: center; margin-top: 20px; font-size: 1.2em; font-weight: bold; color: #005f73; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Grammar Practice: First & Second Conditionals</h1>
+
+    <div class="theory-box">
+        <h2>Teoría</h2>
+        <h3>First Conditional</h3>
+        <p><strong>Forma:</strong> If + Present Simple, <strong>will/can/may/might</strong> + Infinitivo</p>
+        <p><strong>Uso:</strong> Para hablar de situaciones futuras probables o posibles y sus resultados probables.</p>
+        <p><i>Ej: If we give the workers private offices, they <strong>will be</strong> less distracted.</i></p>
+
+        <h3>Second Conditional</h3>
+        <p><strong>Forma:</strong> If + Past Simple, <strong>would/could</strong> + Infinitivo</p>
+        <p><strong>Uso:</strong> Para hablar de situaciones improbables, imposibles o imaginarias y para dar consejos de manera formal.</p>
+        <p><i>Ej: If I <strong>were</strong> CEO, I <strong>would give</strong> everyone a private office.</i></p>
+
+        <h3>Unless, when, as soon as</h3>
+        <ul>
+            <li><strong>Unless:</strong> Significa "if not" o "except". (<i>They won’t let you into the office unless you’re wearing a suit.</i>)</li>
+            <li><strong>When/as soon as:</strong> Se usa en lugar de "if" para mostrar que algo seguramente sucederá. (<i>The receptionist will call me when the client arrives.</i>)</li>
+        </ul>
+    </div>
+
+    <div class="exercise-section">
+        <h3>PRACTICE 1: First Conditional</h3>
+        <p>Completa las oraciones con la palabra correcta. Usa el primer condicional.</p>
+        <ol type="a">
+            <li>If we use artificial intelligence, we <input type="text" id="fc1" class="interactive-input"> be able to automate tasks and free up employees for more strategic work.</li>
+            <li>If we use data analytics, we <input type="text" id="fc2" class="interactive-input"> be able to identify trends and make better decisions.</li>
+            <li>If we use chatbots, we <input type="text" id="fc3" class="interactive-input"> be able to provide customer service 24/7.</li>
+            <li>If we use virtual reality, we <input type="text" id="fc4" class="interactive-input"> be able to train employees without taking them out of the office.</li>
+            <li>If we use augmented reality, we <input type="text" id="fc5" class="interactive-input"> be able to enhance employee productivity and problem-solving.</li>
+        </ol>
+    </div>
+
+    <div class="exercise-section">
+        <h3>PRACTICE 2: Second Conditional</h3>
+        <p>Completa las oraciones con la palabra correcta. Usa el segundo condicional.</p>
+        <ol type="a">
+            <li>If we had adopted new technology earlier, we <input type="text" id="sc1" class="interactive-input"> have been able to save time and money.</li>
+            <li>If we had implemented a more efficient workflow, we <input type="text" id="sc2" class="interactive-input"> have been able to reduce errors and improve customer satisfaction.</li>
+            <li>If we had centralised our data management, we <input type="text" id="sc3" class="interactive-input"> have been able to access information more easily and make better decisions.</li>
+            <li>If we had invested in employee training, we <input type="text" id="sc4" class="interactive-input"> have been able to build a more skilled and knowledgeable workforce.</li>
+            <li>If we had collaborated more effectively with other departments, we <input type="text" id="sc5" class="interactive-input"> have been able to achieve more and avoid duplication of effort.</li>
+        </ol>
+    </div>
+
+    <div class="button-container">
+        <button class="check-button" onclick="checkAllAnswers()">Corregir Todos los Ejercicios</button>
+        <p id="results"></p>
+    </div>
+</div>
+
+<script>
+    function validateInput(elementId, correctAnswers) {
+        const inputElement = document.getElementById(elementId);
+        const userValue = inputElement.value.trim().toLowerCase();
+        
+        inputElement.classList.remove('correct-input', 'incorrect-input');
+        
+        if (correctAnswers.includes(userValue)) {
+            inputElement.classList.add('correct-input');
+            return true;
+        } else {
+            inputElement.classList.add('incorrect-input');
+            return false;
+        }
+    }
+
+    function checkAllAnswers() {
+        let correctCount = 0;
+        
+        const allAnswers = {
+            // First Conditional Answers (will, can, may, might are possible)
+            fc1: ['will', 'can', 'may', 'might'],
+            fc2: ['will', 'can', 'may', 'might'],
+            fc3: ['will', 'can', 'may', 'might'],
+            fc4: ['will', 'can', 'may', 'might'],
+            fc5: ['will', 'can', 'may', 'might'],
+
+            // Second Conditional Answers (would, could are possible)
+            sc1: ['would', 'could'],
+            sc2: ['would', 'could'],
+            sc3: ['would', 'could'],
+            sc4: ['would', 'could'],
+            sc5: ['would', 'could']
+        };
+        
+        let totalQuestions = Object.keys(allAnswers).length;
+
+        for (const id in allAnswers) {
+            if (validateInput(id, allAnswers[id])) {
+                correctCount++;
+            }
+        }
+
+        const resultsElement = document.getElementById('results');
+        resultsElement.innerHTML = `Has acertado ${correctCount} de ${totalQuestions} preguntas.`;
+    }
+</script>
+
+</body>
+</html>
