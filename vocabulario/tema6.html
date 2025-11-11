@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulario Interactivo: Conceptos de Publicidad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 30px;
+            max-width: 800px;
+            margin: auto;
+        }
+        h1, h2, h3 {
+            color: #005f73;
+            text-align: center;
+        }
+        h2 {
+            border-top: 2px solid #ff8c00;
+            padding-top: 20px;
+            margin-top: 40px;
+        }
+        p, li {
+            color: #555;
+            line-height: 1.6;
+        }
+        .exercise-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+        .column {
+            width: 48%;
+            min-width: 300px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            padding: 12px;
+            border-radius: 5px;
+            border-left: 5px solid #ff8c00;
+        }
+        .matching-input {
+            width: 30px;
+            height: 30px;
+            margin-left: 15px;
+            text-align: center;
+            font-size: 1em;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+        .fill-in-select {
+            font-size: 1em;
+            padding: 5px;
+            margin: 0 5px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            transition: border-color 0.3s;
+        }
+        .practice-section ol {
+            padding-left: 20px;
+        }
+        .practice-section ol li {
+            background-color: transparent;
+            border: none;
+            padding: 8px 0;
+        }
+        /* Clases para la corrección */
+        .correct {
+            border-color: #28a745 !important;
+            background-color: #e9f7ef;
+        }
+        .incorrect {
+            border-color: #dc3545 !important;
+            background-color: #fce8e6;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 1em;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #0077b6;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #005f73;
+        }
+        button.reset {
+            background-color: #ff8c00;
+        }
+        button.reset:hover {
+            background-color: #e67e00;
+        }
+        #results {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #005f73;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Vocabulary: The Art of Persuasion</h1>
+        
+        <div id="exercise1">
+            <h3>5.1. Advertising concepts</h3>
+            <p>Match each term (A) with its correct definition (B). Write the correct letter in the box.</p>
+            <div class="exercise-container">
+                <div class="column">
+                    <h4>A</h4>
+                    <ul>
+                        <li>1. Digital billboard <input type="text" id="match1" class="matching-input" maxlength="1"></li>
+                        <li>2. Product placement <input type="text" id="match2" class="matching-input" maxlength="1"></li>
+                        <li>3. Commercials <input type="text" id="match3" class="matching-input" maxlength="1"></li>
+                        <li>4. Target audience <input type="text" id="match4" class="matching-input" maxlength="1"></li>
+                        <li>5. E-Marketing <input type="text" id="match5" class="matching-input" maxlength="1"></li>
+                        <li>6. Flyer <input type="text" id="match6" class="matching-input" maxlength="1"></li>
+                        <li>7. Testimonials <input type="text" id="match7" class="matching-input" maxlength="1"></li>
+                        <li>8. Campaign <input type="text" id="match8" class="matching-input" maxlength="1"></li>
+                        <li>9. Word of mouth <input type="text" id="match9" class="matching-input" maxlength="1"></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h4>B</h4>
+                    <ul>
+                        <li>a) A short TV or radio advertisement, often from 30 to 60 seconds long.</li>
+                        <li>b) The group of people at whom an advertisement is aimed at.</li>
+                        <li>c) Large advertising screen that displays images that are changed by a computer every few seconds.</li>
+                        <li>d) Form of advertising in which a product appears or is mentioned as part of a film or television programme.</li>
+                        <li>e) Attempts to persuade the reader by using a credible person to promote a product or idea.</li>
+                        <li>f) When a consumer’s interest in a product or service appears in their daily conversations.</li>
+                        <li>g) Planned set of activities that companies and institutions carry out over a period of time to advertise a product or idea.</li>
+                        <li>h) refers to marketing on the internet, but also to marketing done via e-mail and wireless media.</li>
+                        <li>i) A small paper advertisement often given out to people directly by hand.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="practice-section" id="exercise2">
+            <h2>PRACTICE</h2>
+            <h3>1. Fill in the gaps with the correct word from the box.</h3>
+            <ol>
+                <li><select id="fill1" class="fill-in-select"><option value="">-- select term --</option></select> can be used by brands as advertising space to promote their products and amplify their reach.</li>
+                <li>Knowing your <select id="fill2" class="fill-in-select"><option value="">-- select term --</option></select> is another important element to consider in advertising.</li>
+                <li>Her nail art designs became popular through <select id="fill3" class="fill-in-select"><option value="">-- select term --</option></select>.</li>
+                <li>What makes this <select id="fill4" class="fill-in-select"><option value="">-- select term --</option></select> different from others of the same type?</li>
+                <li>In this TV series there were examples of <select id="fill5" class="fill-in-select"><option value="">-- select term --</option></select>, with clear references to specific brands.</li>
+                <li>The practice of using the internet to promote products or services is called <select id="fill6" class="fill-in-select"><option value="">-- select term --</option></select>.</li>
+                <li>I hate when people are given out <select id="fill7" class="fill-in-select"><option value="">-- select term --</option></select> and they throw them on the floor.</li>
+                <li>These examples of celebrities in adverts show the diverse forms <select id="fill8" class="fill-in-select"><option value="">-- select term --</option></select> can take.</li>
+                <li>We asked our readers to nominate their favourite <select id="fill9" class="fill-in-select"><option value="">-- select term --</option></select> ever.</li>
+            </ol>
+        </div>
+        
+        <div class="button-container">
+            <button onclick="checkAnswers()">Corregir Ejercicios</button>
+            <button class="reset" onclick="resetQuiz()">Intentar de Nuevo</button>
+        </div>
+        <div id="results"></div>
+    </div>
+
+<script>
+    const terms = ["Digital billboard", "Product placement", "Commercials", "Target audience", "E-Marketing", "Flyer", "Testimonials", "Campaign", "Word of mouth"];
+
+    function populateSelects() {
+        // Populate fill-in-the-gap selects
+        const fillSelects = document.querySelectorAll('#exercise2 .fill-in-select');
+        fillSelects.forEach(select => {
+            terms.forEach(term => {
+                const option = document.createElement('option');
+                option.value = term.toLowerCase();
+                option.textContent = term;
+                select.appendChild(option);
+            });
+        });
+    }
+
+    const correctAnswers = {
+        // Exercise 1: Matching
+        match1: 'c', match2: 'd', match3: 'a', match4: 'b', match5: 'h',
+        match6: 'i', match7: 'e', match8: 'g', match9: 'f',
+        // Exercise 2: Fill in the gaps
+        fill1: 'digital billboard',
+        fill2: 'target audience',
+        fill3: 'word of mouth',
+        fill4: 'campaign',
+        fill5: 'product placement',
+        fill6: 'e-marketing',
+        fill7: 'flyer',
+        fill8: 'testimonials',
+        fill9: 'commercials'
+    };
+
+    function checkAnswers() {
+        let score = 0;
+        const totalQuestions = Object.keys(correctAnswers).length;
+
+        for (const id in correctAnswers) {
+            const inputElement = document.getElementById(id);
+            const userAnswer = inputElement.value.trim().toLowerCase();
+            const correctAnswer = correctAnswers[id].toLowerCase();
+            
+            inputElement.classList.remove('correct', 'incorrect');
+
+            if (userAnswer === correctAnswer) {
+                inputElement.classList.add('correct');
+                score++;
+            } else {
+                inputElement.classList.add('incorrect');
+            }
+        }
+        
+        const resultsElement = document.getElementById('results');
+        resultsElement.innerHTML = `Has acertado ${score} de ${totalQuestions} preguntas.`;
+    }
+
+    function resetQuiz() {
+        for (const id in correctAnswers) {
+            const inputElement = document.getElementById(id);
+            inputElement.classList.remove('correct', 'incorrect');
+            
+            if (inputElement.tagName === 'SELECT') {
+                inputElement.selectedIndex = 0;
+            } else {
+                inputElement.value = '';
+            }
+        }
+        
+        document.getElementById('results').innerHTML = '';
+    }
+
+    // Populate dropdowns when the page loads
+    window.onload = populateSelects;
+</script>
+
+</body>
+</html>

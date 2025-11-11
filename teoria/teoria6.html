@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gramática Interactiva: Preguntas y Superlativos</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f9;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            padding: 25px 40px;
+        }
+        h1 {
+            color: #005f73;
+            text-align: center;
+            border-bottom: 2px solid #005f73;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #0077b6;
+            margin-top: 40px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #005f73;
+            margin-top: 30px;
+        }
+        .theory-box {
+            background-color: #e0f7fa;
+            border-left: 4px solid #0077b6;
+            padding: 5px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .exercise-section {
+            background-color: #fffbe6;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 5px;
+        }
+        .exercise-section ol { padding-left: 25px; }
+        .exercise-section li { margin-bottom: 15px; }
+        .interactive-input, .interactive-select {
+            font-size: 1em;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin: 5px 0;
+            width: 95%;
+            transition: border-color 0.3s;
+        }
+        .interactive-input:focus, .interactive-select:focus { outline: none; border-color: #0077b6; }
+        
+        .correct-input { border-color: #28a745; background-color: #e8f5e9; }
+        .incorrect-input { border-color: #dc3545; background-color: #ffebee; }
+
+        .button-container { text-align: center; margin-top: 30px; }
+        .check-button { background-color: #0077b6; color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold; transition: background-color 0.3s; }
+        .check-button:hover { background-color: #005f73; }
+        
+        #results { text-align: center; margin-top: 20px; font-size: 1.2em; font-weight: bold; color: #005f73; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Grammar Practice: Questions & Superlatives</h1>
+
+    <!-- SECCIÓN DE PREGUNTAS -->
+    <h2>Direct and Indirect Questions</h2>
+    <div class="theory-box">
+        <h3>Teoría</h3>
+        <p><strong>Preguntas Directas:</strong> Usan la estructura: <i>Question Word + Auxiliary + Subject + Verb</i>. (Ej: <i>How does persuasion influence advertising?</i>). Para respuestas de sí/no, empiezan con un auxiliar (Ej: <i>Does this advert connect with the public?</i>).</p>
+        <p><strong>Preguntas Indirectas:</strong> Son más formales y educadas. Se introducen con frases como:</p>
+        <ul>
+            <li>I’d like to know…</li>
+            <li>Can you tell me…?</li>
+            <li>Do you know…?</li>
+            <li>I was wondering…</li>
+        </ul>
+        <p>Después de la frase introductoria, se usa el orden de una oración afirmativa (Sujeto + Verbo) y no se usa el auxiliar <i>do/does/did</i>. Para preguntas de sí/no, se añade <strong>if</strong> o <strong>whether</strong>.</p>
+        <ul>
+            <li>Directa: <i>How often does this advert appear?</i></li>
+            <li>Indirecta: <i>Do you know <strong>how often this advert appears</strong>?</i></li>
+            <li>Directa: <i>Is this campaign funded?</i></li>
+            <li>Indirecta: <i>I was wondering <strong>if this campaign is funded</strong>.</i></li>
+        </ul>
+    </div>
+
+    <div class="exercise-section">
+        <h3>Practice: Indirect Questions</h3>
+        <p><strong>1. Reescribe las siguientes preguntas directas como preguntas indirectas usando la frase de inicio.</strong></p>
+        <ol type="a">
+            <li>"Why has the digital revolution transformed advertising?"<br>
+                She asked <input type="text" id="iq1" class="interactive-input" placeholder="Escribe la pregunta indirecta..."></li>
+            <li>"Does this advert connect with the public?"<br>
+                Do you know <input type="text" id="iq2" class="interactive-input" placeholder="Escribe la pregunta indirecta..."></li>
+            <li>"Did the advent of radio transform advertising?"<br>
+                I’d like to know <input type="text" id="iq3" class="interactive-input" placeholder="Escribe la pregunta indirecta..."></li>
+            <li>"Are you interested in artificial intelligence?"<br>
+                I was wondering <input type="text" id="iq4" class="interactive-input" placeholder="Escribe la pregunta indirecta..."></li>
+        </ol>
+
+        <p><strong>2. Combina los elementos para crear preguntas indirectas completas.</strong></p>
+        <ol type="a">
+            <li>Can you / tell me / if / the Summer dresses / have / a 10% discount<br>
+                <input type="text" id="iq5" class="interactive-input" placeholder="Crea la pregunta indirecta..."></li>
+            <li>Do you know / if / you have the shoes / you advertised<br>
+                <input type="text" id="iq6" class="interactive-input" placeholder="Crea la pregunta indirecta..."></li>
+            <li>Would you mind / telling me / where / the toilets / are<br>
+                <input type="text" id="iq7" class="interactive-input" placeholder="Crea la pregunta indirecta..."></li>
+        </ol>
+    </div>
+
+    <!-- SECCIÓN DE SUPERLATIVOS -->
+    <h2>Superlative Forms</h2>
+    <div class="theory-box">
+        <h3>Teoría</h3>
+        <p>Los superlativos se usan para describir el máximo o mínimo de un rango.</p>
+        <ul>
+            <li>Añade <strong>-est</strong> a adjetivos cortos (<i>tall -> tallest</i>).</li>
+            <li>Usa <strong>most</strong> con adjetivos largos (<i>accurate -> most accurate</i>).</li>
+            <li>Algunos son irregulares (<i>good -> best, bad -> worst</i>).</li>
+            <li>Normalmente se usa <strong>the</strong> antes del superlativo (<i>This is <strong>the fastest</strong> car</i>).</li>
+        </ul>
+    </div>
+
+    <div class="exercise-section">
+        <h3>Practice: Superlatives</h3>
+        <p><strong>1. Completa los huecos con la forma superlativa correcta del adjetivo.</strong></p>
+        <ol type="a">
+            <li>The new iPhone is the <input type="text" id="s1" class="interactive-input" placeholder="(expensive)"> smartphone on the market.</li>
+            <li>This is the <input type="text" id="s2" class="interactive-input" placeholder="(delicious)"> pizza I have ever eaten.</li>
+            <li>The Eiffel Tower is the <input type="text" id="s3" class="interactive-input" placeholder="(tall)"> building in Paris.</li>
+        </ol>
+        
+        <p><strong>2. Corrige los errores en el uso de los superlativos en estas oraciones.</strong></p>
+        <ol type="a">
+            <li>Our product is the goodest in the market. <br>
+                <input type="text" id="s4" class="interactive-input" placeholder="Escribe la oración corregida..."></li>
+            <li>This laptop is the bestest choice for professionals. <br>
+                <input type="text" id="s5" class="interactive-input" placeholder="Escribe la oración corregida..."></li>
+            <li>This car model is fastest in the whole dealership. <br>
+                <input type="text" id="s6" class="interactive-input" placeholder="Escribe la oración corregida..."></li>
+        </ol>
+
+        <p><strong>3. Completa el artículo con las palabras dadas o sus formas superlativas.</strong></p>
+        <p>
+            In the world of travel, everyone dreams of having the 
+            <select id="s7" class="interactive-input"><option value="">(1)</option><option value="most">most</option><option value="best">best</option></select> 
+            extraordinary adventure. Picture yourself experiencing the 
+            <select id="s8" class="interactive-input"><option value="">(2)</option><option value="good">good</option><option value="best">best</option></select> 
+            moments of your life. However, embarking on this adventure requires careful planning to ensure you get the 
+            <select id="s9" class="interactive-input"><option value="">(3)</option><option value="much">much</option><option value="most">most</option></select> 
+            out of your journey. Choosing the right destination is key. Opt for a place that offers not only the 
+            <select id="s10" class="interactive-input"><option value="">(4)</option><option value="beautiful">beautiful</option><option value="most beautiful">most beautiful</option></select> 
+            attractions but also a unique cultural experience. In such destinations, you’ll find 
+            <select id="s11" class="interactive-input"><option value="">(5)</option><option value="few">few</option><option value="fewer">fewer</option></select> 
+            tourists. When it comes to accommodations, seek out places that offer the 
+            <select id="s12" class="interactive-input"><option value="">(6)</option><option value="best">best</option><option value="good">good</option></select> 
+            views. After all, a cozy retreat can make a significant difference in transforming a 
+            <select id="s13" class="interactive-input"><option value="">(7)</option><option value="bad">bad</option><option value="worst">worst</option></select> 
+            trip into an unforgettable one.
+        </p>
+    </div>
+
+    <div class="button-container">
+        <button class="check-button" onclick="checkAllAnswers()">Corregir Todos los Ejercicios</button>
+        <p id="results"></p>
+    </div>
+</div>
+
+<script>
+    function validateInput(elementId, correctAnswers) {
+        const inputElement = document.getElementById(elementId);
+        // Normaliza la respuesta del usuario: elimina espacios extra, puntuación final y convierte a minúsculas
+        const userValue = inputElement.value.trim().toLowerCase().replace(/\?|\.$/, '');
+
+        inputElement.classList.remove('correct-input', 'incorrect-input');
+        
+        // Comprueba si la respuesta del usuario está en el array de respuestas correctas
+        if (correctAnswers.includes(userValue)) {
+            inputElement.classList.add('correct-input');
+            return true;
+        } else {
+            inputElement.classList.add('incorrect-input');
+            return false;
+        }
+    }
+
+    function checkAllAnswers() {
+        let correctCount = 0;
+        
+        // Respuestas de Preguntas Indirectas
+        const answers_iq = {
+            iq1: ['why the digital revolution has transformed advertising'],
+            iq2: ['if this advert connects with the public'],
+            iq3: ['if the advent of radio transformed advertising'],
+            iq4: ['if you are interested in artificial intelligence'],
+            iq5: ['can you tell me if the summer dresses have a 10% discount'],
+            iq6: ['do you know if you have the shoes you advertised'],
+            iq7: ['would you mind telling me where the toilets are']
+        };
+
+        // Respuestas de Superlativos
+        const answers_s = {
+            s1: ['most expensive'],
+            s2: ['most delicious'],
+            s3: ['tallest'],
+            s4: ['our product is the best in the market'],
+            s5: ['this laptop is the best choice for professionals'],
+            s6: ['this car model is the fastest in the whole dealership'],
+            s7: ['most'],
+            s8: ['best'],
+            s9: ['most'],
+            s10: ['most beautiful'],
+            s11: ['fewer'], // Grammatically 'fewer' is more accurate for countable nouns (tourists)
+            s12: ['best'],
+            s13: ['bad']
+        };
+        
+        // Unir todos los objetos de respuestas
+        const allAnswers = { ...answers_iq, ...answers_s };
+        
+        let totalQuestions = Object.keys(allAnswers).length;
+
+        for (const id in allAnswers) {
+            if (validateInput(id, allAnswers[id])) {
+                correctCount++;
+            }
+        }
+
+        const resultsElement = document.getElementById('results');
+        resultsElement.innerHTML = `Has acertado ${correctCount} de ${totalQuestions} preguntas.`;
+    }
+</script>
+
+</body>
+</html>

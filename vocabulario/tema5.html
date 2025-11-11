@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulario Interactivo: Sectores de Negocio y ODS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 30px;
+            max-width: 800px;
+            margin: auto;
+        }
+        h1, h2, h3 {
+            color: #005f73;
+            text-align: center;
+        }
+        h2 {
+            border-top: 2px solid #ff8c00;
+            padding-top: 20px;
+            margin-top: 40px;
+        }
+        p, li {
+            color: #555;
+            line-height: 1.6;
+        }
+        .exercise-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+        .column {
+            width: 48%;
+            min-width: 300px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            padding: 12px;
+            border-radius: 5px;
+            border-left: 5px solid #ff8c00;
+        }
+        .matching-input {
+            width: 30px;
+            height: 30px;
+            margin-left: 15px;
+            text-align: center;
+            font-size: 1em;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+        .fill-in-select {
+            font-size: 1em;
+            padding: 5px;
+            margin: 0 5px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            transition: border-color 0.3s;
+        }
+        .practice-section ol {
+            padding-left: 20px;
+        }
+        .practice-section ol li {
+            background-color: transparent;
+            border: none;
+            padding: 8px 0;
+        }
+        /* Clases para la corrección */
+        .correct {
+            border-color: #28a745 !important;
+            background-color: #e9f7ef;
+        }
+        .incorrect {
+            border-color: #dc3545 !important;
+            background-color: #fce8e6;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 1em;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #0077b6;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #005f73;
+        }
+        button.reset {
+            background-color: #ff8c00;
+        }
+        button.reset:hover {
+            background-color: #e67e00;
+        }
+        #results {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #005f73;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Vocabulary: Business and Sectors</h1>
+        
+        <div id="exercise1">
+            <h3>5.1. Match the words with their definitions</h3>
+            <p>Relaciona cada sector (A) con su definición (B). Escribe la letra correcta en el recuadro.</p>
+            <div class="exercise-container">
+                <div class="column">
+                    <h4>A</h4>
+                    <ul>
+                        <li>1. Automotive <input type="text" id="match1" class="matching-input" maxlength="1"></li>
+                        <li>2. Technology <input type="text" id="match2" class="matching-input" maxlength="1"></li>
+                        <li>3. Healthcare <input type="text" id="match3" class="matching-input" maxlength="1"></li>
+                        <li>4. Hospitality <input type="text" id="match4" class="matching-input" maxlength="1"></li>
+                        <li>5. Finance <input type="text" id="match5" class="matching-input" maxlength="1"></li>
+                        <li>6. Agriculture <input type="text" id="match6" class="matching-input" maxlength="1"></li>
+                        <li>7. Manufacturing <input type="text" id="match7" class="matching-input" maxlength="1"></li>
+                        <li>8. Retail <input type="text" id="match8" class="matching-input" maxlength="1"></li>
+                        <li>9. Energy <input type="text" id="match9" class="matching-input" maxlength="1"></li>
+                        <li>10. Telecommunications <input type="text" id="match10" class="matching-input" maxlength="1"></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h4>B</h4>
+                    <ul>
+                        <li>a. The field related to communication over long distances.</li>
+                        <li>b. The sector involving the production and distribution of power.</li>
+                        <li>c. The business of selling goods directly to consumers.</li>
+                        <li>d. The sector that deals with cars, trucks, and other vehicles.</li>
+                        <li>e. The industry related to computers, software, and electronic devices.</li>
+                        <li>f. The field focused on providing medical services and products.</li>
+                        <li>g. The sector that encompasses hotels, restaurants, and tourism.</li>
+                        <li>h. The industry involved in managing money, banking, and investments.</li>
+                        <li>i. The cultivation of the land and the production of food and crops.</li>
+                        <li>j. The process of making goods or products on a large scale.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="practice-section" id="exercise2">
+            <h2>PRACTICE</h2>
+            <h3>1. Fill in the gaps with the correct word.</h3>
+            <ol type="a">
+                <li><select id="fill1" class="fill-in-select"><option value="">-- select sector --</option></select> is a vast and diverse sector encompassing everything from electric grids to renewable energy sources.</li>
+                <li><select id="fill2" class="fill-in-select"><option value="">-- select sector --</option></select> is the backbone of the economy, transforming raw materials into finished goods.</li>
+                <li><select id="fill3" class="fill-in-select"><option value="">-- select sector --</option></select> directly impacts consumers by providing them with goods and services through physical stores and online platforms.</li>
+                <li><select id="fill4" class="fill-in-select"><option value="">-- select sector --</option></select> has revolutionised communication and information access, driving innovation across various industries.</li>
+                <li><select id="fill5" class="fill-in-select"><option value="">-- select sector --</option></select> plays a crucial role in managing financial assets, investments, and economic systems.</li>
+                <li><select id="fill6" class="fill-in-select"><option value="">-- select sector --</option></select> provides essential services to travellers and tourists, encompassing hotels, restaurants, and entertainment venues.</li>
+                <li><select id="fill7" class="fill-in-select"><option value="">-- select sector --</option></select> focuses on designing, manufacturing, and selling vehicles, a vital sector for transportation and logistics.</li>
+                <li><select id="fill8" class="fill-in-select"><option value="">-- select sector --</option></select> connects individuals and businesses through mobile networks and internet infrastructure.</li>
+                <li><select id="fill9" class="fill-in-select"><option value="">-- select sector --</option></select> is the foundation of food production and sustainability, ensuring the supply of food for the global population.</li>
+                <li><select id="fill10" class="fill-in-select"><option value="">-- select sector --</option></select> delivers preventive, curative, and rehabilitative care, addressing the health needs of individuals and communities.</li>
+            </ol>
+        </div>
+        
+        <div id="exercise3">
+            <h3>2. SDG Match</h3>
+            <p>Match the business activities with the relevant Sustainable Development Goal (SDG).</p>
+            <ul>
+                <li>1. A manufacturing company uses recycled materials in its products. 
+                    <select id="sdg1" class="fill-in-select"><option value="">-- select SDG --</option></select>
+                </li>
+                <li>2. A tech company develops software that helps farmers optimize water usage. 
+                    <select id="sdg2" class="fill-in-select"><option value="">-- select SDG --</option></select>
+                </li>
+                <li>3. A retail chain invests in renewable energy sources for its stores. 
+                    <select id="sdg3" class="fill-in-select"><option value="">-- select SDG --</option></select>
+                </li>
+                <li>4. A financial institution offers loans with lower interest rates for green businesses. 
+                    <select id="sdg4" class="fill-in-select"><option value="">-- select SDG --</option></select>
+                </li>
+                <li>5. A hospitality company implements eco-friendly practices in its hotels. 
+                    <select id="sdg5" class="fill-in-select"><option value="">-- select SDG --</option></select>
+                </li>
+                <li>6. An automotive company focuses on developing electric and hybrid vehicles. 
+                    <select id="sdg6" class="fill-in-select"><option value="">-- select SDG --</option></select>
+                </li>
+                <li>7. A telecommunications company promotes digital literacy and inclusion programs. 
+                    <select id="sdg7" class="fill-in-select"><option value="">-- select SDG --</option></select>
+                </li>
+                <li>8. An agricultural company adopts sustainable farming practices to protect soil health. 
+                    <select id="sdg8" class="fill-in-select"><option value="">-- select SDG --</option></select>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="button-container">
+            <button onclick="checkAnswers()">Corregir Ejercicios</button>
+            <button class="reset" onclick="resetQuiz()">Intentar de Nuevo</button>
+        </div>
+        <div id="results"></div>
+    </div>
+
+<script>
+    const sectors = ["Automotive", "Technology", "Healthcare", "Hospitality", "Finance", "Agriculture", "Manufacturing", "Retail", "Energy", "Telecommunications"];
+    const sdgs = ["SDG 2: Zero hunger", "SDG 4: Quality education", "SDG 8: Decent work and economic growth", "SDG 9: industry, innovation, and infrastructure", "SDG 11: sustainable cities and communities", "SDG 12: responsible consumption and production", "SDG 13: Climate action", "SDG 15: Life on land"];
+
+    function populateSelects() {
+        // Populate fill-in-the-gap selects
+        const fillSelects = document.querySelectorAll('#exercise2 .fill-in-select');
+        fillSelects.forEach(select => {
+            sectors.forEach(sector => {
+                const option = document.createElement('option');
+                option.value = sector.toLowerCase();
+                option.textContent = sector;
+                select.appendChild(option);
+            });
+        });
+
+        // Populate SDG selects
+        const sdgSelects = document.querySelectorAll('#exercise3 .fill-in-select');
+        sdgSelects.forEach(select => {
+            sdgs.forEach(sdg => {
+                const option = document.createElement('option');
+                option.value = sdg;
+                option.textContent = sdg;
+                select.appendChild(option);
+            });
+        });
+    }
+
+    const correctAnswers = {
+        // Exercise 1
+        match1: 'd', match2: 'e', match3: 'f', match4: 'g', match5: 'h',
+        match6: 'i', match7: 'j', match8: 'c', match9: 'b', match10: 'a',
+        // Exercise 2
+        fill1: 'energy', fill2: 'manufacturing', fill3: 'retail', fill4: 'technology',
+        fill5: 'finance', fill6: 'hospitality', fill7: 'automotive', fill8: 'telecommunications',
+        fill9: 'agriculture', fill10: 'healthcare',
+        // Exercise 3
+        sdg1: "SDG 12: responsible consumption and production",
+        sdg2: "SDG 2: Zero hunger",
+        sdg3: "SDG 13: Climate action",
+        sdg4: "SDG 8: Decent work and economic growth",
+        sdg5: "SDG 11: sustainable cities and communities",
+        sdg6: "SDG 9: industry, innovation, and infrastructure",
+        sdg7: "SDG 4: Quality education",
+        sdg8: "SDG 15: Life on land"
+    };
+
+    function checkAnswers() {
+        let score = 0;
+        const totalQuestions = Object.keys(correctAnswers).length;
+
+        for (const id in correctAnswers) {
+            const inputElement = document.getElementById(id);
+            const userAnswer = inputElement.value.trim().toLowerCase();
+            const correctAnswer = correctAnswers[id].toLowerCase();
+            
+            inputElement.classList.remove('correct', 'incorrect');
+
+            if (userAnswer === correctAnswer) {
+                inputElement.classList.add('correct');
+                score++;
+            } else {
+                inputElement.classList.add('incorrect');
+            }
+        }
+        
+        const resultsElement = document.getElementById('results');
+        resultsElement.innerHTML = `Has acertado ${score} de ${totalQuestions} preguntas.`;
+    }
+
+    function resetQuiz() {
+        for (const id in correctAnswers) {
+            const inputElement = document.getElementById(id);
+            inputElement.classList.remove('correct', 'incorrect');
+            
+            if (inputElement.tagName === 'SELECT') {
+                inputElement.selectedIndex = 0;
+            } else {
+                inputElement.value = '';
+            }
+        }
+        
+        document.getElementById('results').innerHTML = '';
+    }
+
+    // Populate dropdowns when the page loads
+    window.onload = populateSelects;
+</script>
+
+</body>
+</html>

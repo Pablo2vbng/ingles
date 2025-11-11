@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Past Tenses Quiz</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f9;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            padding: 25px 40px;
+        }
+        h1 {
+            color: #005f73;
+            text-align: center;
+            border-bottom: 2px solid #005f73;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #0077b6;
+            margin-top: 40px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+        .exercise-section {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px dashed #ccc;
+        }
+        .exercise-section:last-child {
+            border-bottom: none;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .theory-box {
+            background-color: #e0f7fa;
+            border-left: 4px solid #0077b6;
+            padding: 1px 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .interactive-select {
+            font-size: 1em;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin: 0 5px;
+            transition: border-color 0.3s;
+        }
+        .interactive-select:focus { outline: none; border-color: #0077b6; }
+        
+        .options { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+        .options label { display: inline-block; background-color: #e9ecef; padding: 8px 15px; border-radius: 20px; cursor: pointer; transition: background-color 0.3s, border-color 0.3s; border: 1px solid #e9ecef; }
+        .options input[type="radio"] { display: none; }
+        .options input[type="radio"]:checked + span { font-weight: bold; background-color: #0077b6; color: white; border-color: #0077b6; }
+        
+        .correct-select { border-color: #28a745; background-color: #e8f5e9; }
+        .incorrect-select { border-color: #dc3545; background-color: #ffebee; }
+        .correct-option { background-color: #d4edda !important; border: 1px solid #28a745 !important; color: #155724; }
+        .incorrect-option { background-color: #f8d7da !important; border: 1px solid #dc3545 !important; color: #721c24; }
+
+        .check-button { display: block; width: 100%; background-color: #0077b6; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; margin-top: 20px; font-size: 16px; font-weight: bold; transition: background-color 0.3s; }
+        .check-button:hover { background-color: #005f73; }
+        
+        .results-container { text-align: center; margin-top: 20px; padding: 15px; border-radius: 8px; background-color: #e0f7fa; border: 2px solid #0077b6; font-size: 1.1em; display: none; }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Past Tenses Quiz</h1>
+
+        <div class="theory-box">
+            <p><strong>Recordatorio de Tiempos Verbales:</strong></p>
+            <ul>
+                <li><strong>Past Simple:</strong> Acciones completadas en un momento específico del pasado. (e.g., <i>He left.</i>)</li>
+                <li><strong>Past Continuous:</strong> Acciones en progreso en un momento del pasado, a menudo interrumpidas por otra acción. (e.g., <i>He was leaving when...</i>)</li>
+                <li><strong>Past Perfect:</strong> Acciones que ocurrieron antes que otra acción en el pasado. (e.g., <i>He had already left when I arrived.</i>)</li>
+            </ul>
+        </div>
+
+        <div class="exercise-section">
+            <h2>Ejercicio 1: Multiple Choice</h2>
+            <p>Elige la opción correcta para completar cada oración.</p>
+            <form id="exercise1-form">
+                <div class="question">
+                    <p>1. John slipped on the ice while he … the street in front of the house.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="was crossing"> <span>was crossing</span></label>
+                        <label><input type="radio" name="q1" value="crossed"> <span>crossed</span></label>
+                        <label><input type="radio" name="q1" value="had crossed"> <span>had crossed</span></label>
+                    </div>
+                </div>
+                 <div class="question">
+                    <p>2. What … you … when the storm began? I was going to work.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="did - do"> <span>did - do</span></label>
+                        <label><input type="radio" name="q2" value="had - done"> <span>had - done</span></label>
+                        <label><input type="radio" name="q2" value="were - doing"> <span>were - doing</span></label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>3. … he … your email before he left the office?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="Was - receiving"> <span>Was - receiving</span></label>
+                        <label><input type="radio" name="q3" value="Had - received"> <span>Had - received</span></label>
+                        <label><input type="radio" name="q3" value="Did - receive"> <span>Did - receive</span></label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>4. We … happy to hear that you had got a good job!</p>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="had been"> <span>had been</span></label>
+                        <label><input type="radio" name="q4" value="were being"> <span>were being</span></label>
+                        <label><input type="radio" name="q4" value="were"> <span>were</span></label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>5. Rita was not able to answer the questions because she … the chapter.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="wasn't studying"> <span>wasn't studying</span></label>
+                        <label><input type="radio" name="q5" value="hadn't studied"> <span>hadn't studied</span></label>
+                        <label><input type="radio" name="q5" value="didn't study"> <span>didn't study</span></label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>6. I don’t remember I met him in the party last night. What … he …?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="was - wearing"> <span>was - wearing</span></label>
+                        <label><input type="radio" name="q6" value="had - worn"> <span>had - worn</span></label>
+                        <label><input type="radio" name="q6" value="did - wear"> <span>did - wear</span></label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>7. They … the first task before they started the new one.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="already completed"> <span>already completed</span></label>
+                        <label><input type="radio" name="q7" value="had already completed"> <span>had already completed</span></label>
+                        <label><input type="radio" name="q7" value="were already completing"> <span>were already completing</span></label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>8. I was working in the basement and I … the phone.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="hadn't heard"> <span>hadn't heard</span></label>
+                        <label><input type="radio" name="q8" value="wasn't hearing"> <span>wasn't hearing</span></label>
+                        <label><input type="radio" name="q8" value="didn't hear"> <span>didn't hear</span></label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>9. My brother always … reading fairy tales when he was young.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="had enjoyed"> <span>had enjoyed</span></label>
+                        <label><input type="radio" name="q9" value="enjoyed"> <span>enjoyed</span></label>
+                        <label><input type="radio" name="q9" value="was enjoying"> <span>was enjoying</span></label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>10. Nancy … to go with us because she was sick.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="didn't want"> <span>didn't want</span></label>
+                        <label><input type="radio" name="q10" value="wasn't wanting"> <span>wasn't wanting</span></label>
+                        <label><input type="radio" name="q10" value="hadn't wanted"> <span>hadn't wanted</span></label>
+                    </div>
+                </div>
+                <button type="button" class="check-button" onclick="checkExercise1()">Corregir Ejercicio 1</button>
+                <div id="results1" class="results-container"></div>
+            </form>
+        </div>
+
+        <div class="exercise-section">
+            <h2>Ejercicio 2: Fill in the gaps</h2>
+            <p>Completa la historia con el tiempo verbal correcto.</p>
+            <form id="exercise2-form">
+                <div class="question">
+                    <p>
+                        It was Sunday afternoon. I 
+                        <select name="gap1" class="interactive-select"><option value="">--select--</option><option value="watched">watched</option><option value="was watching">was watching</option><option value="had watched">had watched</option></select>
+                        a cookery program on TV when I 
+                        <select name="gap2" class="interactive-select"><option value="">--select--</option><option value="realized">realized</option><option value="was realizing">was realizing</option><option value="had realized">had realized</option></select>
+                        how hungry I was. But of course I was hungry; I 
+                        <select name="gap3" class="interactive-select"><option value="">--select--</option><option value="didn't eat">didn't eat</option><option value="wasn't eating">wasn't eating</option><option value="hadn't eaten">hadn't eaten</option></select>
+                        anything since lunch, and I 
+                        <select name="gap4" class="interactive-select"><option value="">--select--</option><option value="ran">ran</option><option value="was running">was running</option><option value="had run">had run</option></select>
+                        a race in the morning. “Biscuits!” I 
+                        <select name="gap5" class="interactive-select"><option value="">--select--</option><option value="thought">thought</option><option value="was thinking">was thinking</option><option value="had thought">had thought</option></select>
+                        . My mother 
+                        <select name="gap6" class="interactive-select"><option value="">--select--</option><option value="gave">gave</option><option value="was giving">was giving</option><option value="had given">had given</option></select>
+                        me a jar of delicious home-made biscuits.
+                    </p>
+                    <p>
+                        I 
+                        <select name="gap7" class="interactive-select"><option value="">--select--</option><option value="went">went</option><option value="was going">was going</option><option value="had gone">had gone</option></select>
+                        into the kitchen, 
+                        <select name="gap8" class="interactive-select"><option value="">--select--</option><option value="opened">opened</option><option value="was opening">was opening</option><option value="had opened">had opened</option></select>
+                        the fridge and 
+                        <select name="gap9" class="interactive-select"><option value="">--select--</option><option value="poured">poured</option><option value="was pouring">was pouring</option><option value="had poured">had poured</option></select>
+                        some milk in a big glass. Then I 
+                        <select name="gap10" class="interactive-select"><option value="">--select--</option><option value="looked">looked</option><option value="was looking">was looking</option><option value="had looked">had looked</option></select>
+                        for the kitchen chair but it 
+                        <select name="gap11" class="interactive-select"><option value="">--select--</option><option value="wasn't">wasn't</option><option value="hadn't been">hadn't been</option><option value="didn't be">didn't be</option></select>
+                        there: somebody 
+                        <select name="gap12" class="interactive-select"><option value="">--select--</option><option value="took">took</option><option value="was taking">was taking</option><option value="had taken">had taken</option></select>
+                        it away. And there were no biscuits in the biscuit jar: somebody 
+                        <select name="gap13" class="interactive-select"><option value="">--select--</option><option value="ate">ate</option><option value="was eating">was eating</option><option value="had eaten">had eaten</option></select>
+                        them all! I was sure I 
+                        <select name="gap14" class="interactive-select"><option value="">--select--</option><option value="left">left</option><option value="was leaving">was leaving</option><option value="had left">had left</option></select>
+                        the jar there the previous day, and I 
+                        <select name="gap15" class="interactive-select"><option value="">--select--</option><option value="ate">ate</option><option value="was eating">was eating</option><option value="had only eaten">had only eaten</option></select>
+                        only one cookie. It was very strange.
+                    </p>
+                     <p>
+                        A few minutes later, I 
+                        <select name="gap16" class="interactive-select"><option value="">--select--</option><option value="drank">drank</option><option value="was drinking">was drinking</option><option value="had drunk">had drunk</option></select>
+                        my glass of milk when I 
+                        <select name="gap17" class="interactive-select"><option value="">--select--</option><option value="heard">heard</option><option value="was hearing">was hearing</option><option value="had heard">had heard</option></select>
+                        a loud noise from the dining room. I 
+                        <select name="gap18" class="interactive-select"><option value="">--select--</option><option value="ran">ran</option><option value="was running">was running</option><option value="had run">had run</option></select>
+                        there quickly and 
+                        <select name="gap19" class="interactive-select"><option value="">--select--</option><option value="opened">opened</option><option value="was opening">was opening</option><option value="had opened">had opened</option></select>
+                        the door. I couldn’t believe my eyes. An enormous monkey 
+                        <select name="gap20" class="interactive-select"><option value="">--select--</option><option value="ate">ate</option><option value="was eating">was eating</option><option value="had eaten">had eaten</option></select>
+                        the biscuits excitedly on the kitchen chair.
+                    </p>
+                </div>
+                <button type="button" class="check-button" onclick="checkExercise2()">Corregir Ejercicio 2</button>
+                <div id="results2" class="results-container"></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const answers1 = {
+            q1: "was crossing", q2: "were - doing", q3: "Had - received", q4: "were", q5: "hadn't studied",
+            q6: "was - wearing", q7: "had already completed", q8: "didn't hear", q9: "enjoyed", q10: "didn't want"
+        };
+        
+        const answers2 = {
+            gap1: "was watching", gap2: "realized", gap3: "hadn't eaten", gap4: "had run", gap5: "thought",
+            gap6: "had given", gap7: "went", gap8: "opened", gap9: "poured", gap10: "looked",
+            gap11: "wasn't", gap12: "had taken", gap13: "had eaten", gap14: "had left", gap15: "had only eaten",
+            gap16: "was drinking", gap17: "heard", gap18: "ran", gap19: "opened", gap20: "was eating"
+        };
+
+        function checkExercise1() {
+            const form = document.getElementById('exercise1-form');
+            let correctCount = 0;
+            const totalQuestions = Object.keys(answers1).length;
+
+            for (const [qName, correctAnswer] of Object.entries(answers1)) {
+                const radioButtons = form.elements[qName];
+                
+                Array.from(radioButtons).forEach(radio => {
+                    const label = radio.closest('label');
+                    label.classList.remove('correct-option', 'incorrect-option');
+
+                    // Highlight the correct answer in green
+                    if (radio.value === correctAnswer) {
+                        label.classList.add('correct-option');
+                    }
+                    
+                    // If this radio is checked and is incorrect, highlight it in red
+                    if (radio.checked && radio.value !== correctAnswer) {
+                        label.classList.add('incorrect-option');
+                    }
+                });
+
+                if (form.elements[qName].value === correctAnswer) {
+                    correctCount++;
+                }
+            }
+
+            const resultsDiv = document.getElementById('results1');
+            resultsDiv.innerHTML = `Acertaste ${correctCount} de ${totalQuestions}.`;
+            resultsDiv.style.display = 'block';
+        }
+
+        function checkExercise2() {
+            const form = document.getElementById('exercise2-form');
+            let correctCount = 0;
+            const totalQuestions = Object.keys(answers2).length;
+
+            for (const [qName, correctAnswer] of Object.entries(answers2)) {
+                const selectElement = form.elements[qName];
+                selectElement.classList.remove('correct-select', 'incorrect-select');
+
+                if (selectElement.value === correctAnswer) {
+                    selectElement.classList.add('correct-select');
+                    correctCount++;
+                } else {
+                    selectElement.classList.add('incorrect-select');
+                }
+            }
+
+            const resultsDiv = document.getElementById('results2');
+            resultsDiv.innerHTML = `Acertaste ${correctCount} de ${totalQuestions}.`;
+            resultsDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>```

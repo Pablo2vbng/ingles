@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog - Pablo Vidal Vidal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- ESTILOS GENERALES (PARA LA PANTALLA) --- */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #12121c;
+            color: #e0e0e0;
+            line-height: 1.;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: #1e1e2f;
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(76, 0, 255, 0.3);
+            border: 1px solid #4a00e0;
+        }
+        .header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #8e2de2;
+        }
+        .header h1 {
+            font-family: 'Orbitron', sans-serif;
+            color: #fff;
+            margin: 0;
+            font-size: 2em;
+            text-shadow: 0 0 10px #8e2de2;
+        }
+        .header p {
+            margin: 5px 0 0;
+            color: #b0b0b0;
+            font-size: 0.9em;
+        }
+        .blog-title {
+            font-family: 'Orbitron', sans-serif;
+            color: #9f55ff;
+            text-align: center;
+            font-size: 2.2em;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        .blog-meta {
+            text-align: center;
+            color: #aaa;
+            font-size: 0.9em;
+            margin-bottom: 30px;
+        }
+        .blog-content h2 {
+            color: #8e2de2;
+            font-family: 'Orbitron', sans-serif;
+            border-left: 4px solid #4a00e0;
+            padding-left: 10px;
+            margin-top: 40px;
+        }
+        .blog-content p, .blog-content li {
+            font-size: 1.1em;
+            text-align: justify;
+        }
+        strong {
+            color: #a777ff;
+        }
+        .blog-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px auto;
+            display: block;
+            border: 2px solid #4a00e0;
+        }
+        .cta {
+            background: linear-gradient(90deg, #8e2de2, #4a00e0);
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(142, 45, 226, 0.5);
+        }
+        .cta p {
+            margin: 0;
+            font-size: 1.2em;
+            color: #fff;
+            font-weight: bold;
+        }
+        .presentation {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #8e2de2;
+        }
+        .presentation h2 {
+             font-family: 'Orbitron', sans-serif;
+             color: #fff;
+        }
+        .presentation p {
+            font-style: italic;
+            color: #c0c0c0;
+        }
+
+        /* --- REGLAS ESPECIALES PARA IMPRIMIR A PDF --- */
+        
+        /* Regla para la página en sí: elimina márgenes y cabeceras/pies de página */
+        @page {
+            margin: 0;
+            size: A4;
+        }
+
+        /* Reglas para los elementos al imprimir */
+        @media print {
+            body {
+                /* Fuerza la impresión de los colores de fondo */
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .container {
+                margin: 0;
+                padding: 25mm; /* Añade un margen interno para que no quede pegado al borde */
+                max-width: 100%;
+                border-radius: 0;
+                border: none;
+                box-shadow: none;
+                /* Fuerza la impresión del fondo del contenedor */
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .header h1, .blog-title {
+                text-shadow: none; /* Elimina sombras de texto que quedan mal en papel */
+            }
+            .cta {
+                /* Fuerza la impresión del fondo del 'Call to Action' */
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Pablo Vidal Vidal</h1>
+            <p><strong>Subject:</strong> Inglés Profesional</p>
+            <p><strong>Challenge 01:</strong> WRITE A TECH BLOG FOR A SPECIFIC AUDIENCE</p>
+        </div>
+
+        <article>
+            <h1 class="blog-title">Improve Your Language Skills</h1>
+            <p class="blog-meta">The Top 3 Tech Tools for Learners</p>
+
+            <div class="blog-content">
+                <p>
+                    Are you learning a new language? If the answer is yes, you know it can be difficult. Sometimes, you study a lot of grammar but you can't remember new words. Don't worry! Technology is here to help us. Today, there are many amazing apps and tools. In this post, I will show you my three favourite tech tools that make learning a language more easy and fun.
+                </p>
+
+                <img src="https://img.freepik.com/premium-photo/man-using-smartphone-with-social-media-icons-floating-around-him_1187703-155084.jpg?w=360" alt="Man using smartphone with app icons floating around" class="blog-image">
+
+                <h2>1. Anki: The King of Flashcards</h2>
+                <p>
+                    For remember vocabulary, nothing is better than flashcards. But paper flashcards are from the past. <strong>Anki</strong> is a free app for your computer and phone. It uses a system called "Spaced Repetition". This means the app shows you difficult words more often, and easy words less often. It is very intelligent! You can create your own flashcards with text, images, and sounds, or download decks that other people made. It's a fantastic tool for build a strong vocabulary.
+                </p>
+              <hr>
+    
+              <br>
+              <br>
+<br>
+                <h2>2. Tandem: Talk with Native Speakers</h2>
+                <p>
+                    You need to practice speaking, right? <strong>Tandem</strong> is the perfect solution. It's an app that connects you with native speakers from all over the world. You find someone who is learning your language, and you help each other. You can chat with text, send voice messages, or make video calls. It’s like have a friend in another country. Practicing with real people is the best way to improve your fluency and confidence.
+                </p>
+                <hr>
+              
+
+                <h2>3. Toucan: Learn While You Browse</h2>
+                <p>
+                    This tool is very clever. <strong>Toucan</strong> is a free browser extension. When you install it, it changes some words on any website you visit into the language you are learning. For example, if you are reading a news article in English, you will see some words in Spanish or French. You learn new vocabulary in context, without study hard. It’s a very natural way to learn new words every day while you are just navigating the internet.
+                </p>
+                <hr>
+              
+
+                <div class="cta">
+                    <p>What about you? What are your favourite tech tools for learning languages? Share them in the comments below!</p>
+                </div>
+            </div>
+        </article>
+
+        <section class="presentation">
+        
+            <h2>Brief Presentation Outline</h2>
+            <p>
+                <strong>My Niche:</strong> Technology for language learning. I chose this topic because many students use technology every day, and it's a very practical and interesting niche.Also, I´m sure you like it Maite!
+            </p>
+            <p>
+                <strong>My Target Audience:</strong> My blog is for language learners, probably students between 16 and 30 years old. They are comfortable with technology but maybe don't know the best tools available. 
+            </p>
+            <p>
+                <strong>Why my blog caters to their needs:</strong> I used a clear and engaging style, with simple English (B1 level). The post is structured as a "Top 3" list, which is easy to read. I chose tools that solve common problems for learners: remembering vocabulary (Anki), practicing speaking (Tandem), and learning naturally (Toucan). The call to action at the end invites them to participate, creating a community feeling.
+            </p>
+        </section>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario Completo de Inglés</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            padding: 30px 40px;
+            max-width: 800px;
+            width: 100%;
+            margin: auto;
+        }
+        h1 {
+            color: #005f73;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        .quiz-form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .question-block {
+            background-color: #fdfdfd;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #0077b6;
+            transition: border-left 0.3s, box-shadow 0.3s;
+        }
+        .question-block:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .question-text {
+            font-weight: 600;
+            font-size: 1.1em;
+            color: #212529;
+            margin: 0 0 15px 0;
+            line-height: 1.5;
+        }
+        .options-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .options-list li {
+            margin-bottom: 10px;
+        }
+        .options-list li:last-child {
+            margin-bottom: 0;
+        }
+        .options-list label {
+            display: block;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        .options-list label:hover {
+            background-color: #f8f9fa;
+            border-color: #0077b6;
+        }
+        .options-list input[type="radio"] {
+            margin-right: 12px;
+            vertical-align: middle;
+            transform: scale(1.1);
+        }
+        
+        /* Clases para la corrección */
+        .correct-answer {
+            background-color: #e9f7ef !important;
+            border-color: #28a745 !important;
+            font-weight: bold;
+        }
+        .incorrect-answer {
+            background-color: #fce8e6 !important;
+            border-color: #dc3545 !important;
+            text-decoration: line-through;
+            opacity: 0.8;
+        }
+        .question-block.correct-border {
+             border-left: 5px solid #28a745 !important;
+        }
+        .question-block.incorrect-border {
+             border-left: 5px solid #dc3545 !important;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 1em;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #0077b6;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px 10px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background-color: #005f73;
+            transform: translateY(-2px);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        button.reset {
+            background-color: #6c757d;
+        }
+        button.reset:hover {
+            background-color: #5a6268;
+        }
+        #results {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #005f73;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Cuestionario Interactivo</h1>
+        <form id="quizForm" class="quiz-form" onsubmit="return false;">
+
+            <!-- Pregunta 1 -->
+            <div class="question-block" id="q1_block">
+                <p class="question-text">1. You decide to try ... to a colleague who might be able to help you.</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q1" value="a"> a. Delete a message.</label></li>
+                    <li><label><input type="radio" name="q1" value="b"> b. Forwarding the message.</label></li>
+                    <li><label><input type="radio" name="q1" value="c"> c. Retrieve a message.</label></li>
+                    <li><label><input type="radio" name="q1" value="d"> d. Leave a message.</label></li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 2 -->
+            <div class="question-block" id="q2_block">
+                <p class="question-text">2. In which sentence is the Past Continuous tense used correctly?</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q2" value="a"> a. The telecommunications meeting is starting when I arrive.</label></li>
+                    <li><label><input type="radio" name="q2" value="b"> b. The hospitality event was starting when I arrived.</label></li>
+                    <li><label><input type="radio" name="q2" value="c"> c. The finance conference had starting when I arrived.</label></li>
+                    <li><label><input type="radio" name="q2" value="d"> d. The agriculture fair started when I arrive.</label></li>
+                </ul>
+            </div>
+            
+            <!-- Pregunta 3 -->
+            <div class="question-block" id="q3_block">
+                <p class="question-text">3. Hi, Sarah. It’s John. I just wanted to remind you about our meeting tomorrow at 10 a.m. It’s ... to discuss the final details for the presentation. See you then!</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q3" value="a"> a. Important.</label></li>
+                    <li><label><input type="radio" name="q3" value="b"> b. Urgent.</label></li>
+                    <li><label><input type="radio" name="q3" value="c"> c. Forwarding a message.</label></li>
+                    <li><label><input type="radio" name="q3" value="d"> d. Deleted message.</label></li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 4 -->
+            <div class="question-block" id="q4_block">
+                <p class="question-text">4. In which sentence is the Past Continuous tense used correctly?</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q4" value="a"> a. While she worked, she had realising a mistake in the hospitality project.</label></li>
+                    <li><label><input type="radio" name="q4" value="b"> b. While she work, she realises a mistake in the hospitality project.</label></li>
+                    <li><label><input type="radio" name="q4" value="c"> c. While she was working, she had realised a mistake in the hospitality project.</label></li>
+                    <li><label><input type="radio" name="q4" value="d"> d. While she working, she had realised a mistake in the hospitality project.</label></li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 5 -->
+            <div class="question-block" id="q5_block">
+                <p class="question-text">5. A request for someone to return a phone call.</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q5" value="a"> a. Please, call back.</label></li>
+                    <li><label><input type="radio" name="q5" value="b"> b. Important.</label></li>
+                    <li><label><input type="radio" name="q5" value="c"> c. Urgent.</label></li>
+                    <li><label><input type="radio" name="q5" value="d"> d. Leave a message.</label></li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 6 -->
+            <div class="question-block" id="q6_block">
+                <p class="question-text">6. Before joining the energy team, he ... (to work) in retail for five years.</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q6" value="a"> a. Had worked.</label></li>
+                    <li><label><input type="radio" name="q6" value="b"> b. Worked.</label></li>
+                    <li><label><input type="radio" name="q6" value="c"> c. Working.</label></li>
+                    <li><label><input type="radio" name="q6" value="d"> d. Has worked.</label></li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 7 -->
+            <div class="question-block" id="q7_block">
+                <p class="question-text">7. The leader of the department, overseeing recruitment, employee relations, and HR policies.</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q7" value="a"> a. Head of human Resources.</label></li>
+                    <li><label><input type="radio" name="q7" value="b"> b. Head of security.</label></li>
+                    <li><label><input type="radio" name="q7" value="c"> c. Research and Development Specialist.</label></li>
+                    <li><label><input type="radio" name="q7" value="d"> d. Creative Director.</label></li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 8 -->
+            <div class="question-block" id="q8_block">
+                <p class="question-text">8. What is the correct Past Perfect form of the verb? By the time we arrived, the telecommunications team ... (to finish) the project.</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q8" value="a"> a. Is finishing.</label></li>
+                    <li><label><input type="radio" name="q8" value="b"> b. Finished.</label></li>
+                    <li><label><input type="radio" name="q8" value="c"> c. Finishes.</label></li>
+                    <li><label><input type="radio" name="q8" value="d"> d. Had finished.</label></li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 9 -->
+            <div class="question-block" id="q9_block">
+                <p class="question-text">9. Choose the correct sentence.</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q9" value="a"> a. The retail store building a new branch last year.</label></li>
+                    <li><label><input type="radio" name="q9" value="b"> b. The retail store has built a new branch last year.</label></li>
+                    <li><label><input type="radio" name="q9" value="c"> c. The retail store built a new branch last year.</label></li>
+                    <li><label><input type="radio" name="q9" value="d"> d. The retail store had built a new branch last year.</label></li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 10 -->
+            <div class="question-block" id="q10_block">
+                <p class="question-text">10. Choose the correct Past Perfect form: Last week, she ... (to work) in healthcare for three years.</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q10" value="a"> a. Working.</label></li>
+                    <li><label><input type="radio" name="q10" value="b"> b. Has worked.</label></li>
+                    <li><label><input type="radio" name="q10" value="c"> c. Had worked.</label></li>
+                    <li><label><input type="radio" name="q10" value="d"> d. Worked.</label></li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 11 -->
+            <div class="question-block" id="q11_block">
+                <p class="question-text">11. A person who oversees the day-to-day activities of a company, ensuring everything runs smoothly and efficiently.</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q11" value="a"> a. Chief medical officer.</label></li>
+                    <li><label><input type="radio" name="q11" value="b"> b. Operation manager.</label></li>
+                    <li><label><input type="radio" name="q11" value="c"> c. IT director.</label></li>
+                    <li><label><input type="radio" name="q11" value="d"> d. Project Manager.</label></li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 12 -->
+            <div class="question-block" id="q12_block">
+                <p class="question-text">12. Choose the correct sentence with both Past Perfect and Past Continuous.</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q12" value="a"> a. While I working, I had received an urgent call from the energy company.</label></li>
+                    <li><label><input type="radio" name="q12" value="b"> b. While I worked, I had receiving an urgent call from the energy company.</label></li>
+                    <li><label><input type="radio" name="q12" value="c"> c. While I was working, I had received an urgent call from the energy company.</label></li>
+                    <li><label><input type="radio" name="q12" value="d"> d. While I worked, I receive an urgent call from the energy company.</label></li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 13 -->
+            <div class="question-block" id="q13_block">
+                <p class="question-text">13. There are two new messages in your ... .</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q13" value="a"> a. Urgent.</label></li>
+                    <li><label><input type="radio" name="q13" value="b"> b. Voicemail.</label></li>
+                    <li><label><input type="radio" name="q13" value="c"> c. Leave a message.</label></li>
+                    <li><label><input type="radio" name="q13" value="d"> d. Voicemail box.</label></li>
+                </ul>
+            </div>
+            
+            <!-- Pregunta 14 -->
+            <div class="question-block" id="q14_block">
+                <p class="question-text">14. The second message is from a friend. You decide to ... later because you’re busy right now.</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q14" value="a"> a. Retrieve a message.</label></li>
+                    <li><label><input type="radio" name="q14" value="b"> b. Replay the message.</label></li>
+                    <li><label><input type="radio" name="q14" value="c"> c. Forwarding a message.</label></li>
+                    <li><label><input type="radio" name="q14" value="d"> d. Delate a message.</label></li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 15 -->
+            <div class="question-block" id="q15_block">
+                <p class="question-text">15. The executive responsible for managing actions of a company, including budgeting, forecasting, and financial planning.</p>
+                <ul class="options-list">
+                    <li><label><input type="radio" name="q15" value="a"> a. Head of Human resources.</label></li>
+                    <li><label><input type="radio" name="q15" value="b"> b. Chief Financial officer.</label></li>
+                    <li><label><input type="radio" name="q15" value="c"> c. Head of Security.</label></li>
+                    <li><label><input type="radio" name="q15" value="d"> d. Creative Director.</label></li>
+                </ul>
+            </div>
+
+        </form>
+
+        <div class="button-container">
+            <button onclick="checkAnswers()">Corregir Cuestionario</button>
+            <button class="reset" onclick="resetQuiz()">Intentar de Nuevo</button>
+        </div>
+        <div id="results"></div>
+    </div>
+
+<script>
+    const correctAnswers = {
+        q1: 'b', q2: 'b', q3: 'a', q4: 'c', q5: 'a',
+        q6: 'a', q7: 'a', q8: 'd', q9: 'c', q10: 'c',
+        q11: 'b', q12: 'c', q13: 'd', q14: 'b', q15: 'b'
+    };
+
+    function checkAnswers() {
+        resetQuizStyles();
+        let score = 0;
+        const totalQuestions = Object.keys(correctAnswers).length;
+        const resultsElement = document.getElementById('results');
+        const submitButton = document.querySelector('button[onclick="checkAnswers()"]');
+
+        for (let i = 1; i <= totalQuestions; i++) {
+            const questionId = 'q' + i;
+            const correctAnswerValue = correctAnswers[questionId];
+            const questionBlock = document.getElementById(questionId + '_block');
+            const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+            
+            const correctLabel = document.querySelector(`input[name="${questionId}"][value="${correctAnswerValue}"]`).parentElement;
+            correctLabel.classList.add('correct-answer');
+
+            if (selectedOption) {
+                if (selectedOption.value === correctAnswerValue) {
+                    score++;
+                    questionBlock.classList.add('correct-border');
+                } else {
+                    selectedOption.parentElement.classList.add('incorrect-answer');
+                    questionBlock.classList.add('incorrect-border');
+                }
+            } else {
+                questionBlock.classList.add('incorrect-border');
+            }
+        }
+        
+        resultsElement.innerHTML = `Tu puntuación es: ${score} de ${totalQuestions}`;
+        submitButton.disabled = true; // Deshabilita el botón después de corregir
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function resetQuizStyles() {
+        const allLabels = document.querySelectorAll('#quizForm label');
+        allLabels.forEach(label => {
+            label.classList.remove('correct-answer', 'incorrect-answer');
+        });
+        
+        const allQuestionBlocks = document.querySelectorAll('.question-block');
+        allQuestionBlocks.forEach(block => {
+            block.classList.remove('correct-border', 'incorrect-border');
+        });
+    }
+
+    function resetQuiz() {
+        const submitButton = document.querySelector('button[onclick="checkAnswers()"]');
+        resetQuizStyles();
+        document.getElementById('quizForm').reset();
+        document.getElementById('results').innerHTML = '';
+        submitButton.disabled = false; // Vuelve a habilitar el botón
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
